@@ -57,10 +57,8 @@ strong { font-weight: 600; color: var(--ink); }
 }
 
 .nav__logo {
-  font-size: 1rem; font-weight: 700;
-  letter-spacing: -.03em; color: var(--ink);
   flex-shrink: 0;
-  display: flex; align-items: baseline;
+  display: flex; align-items: center;
 }
 
 .nav__logo-dot {
@@ -240,10 +238,8 @@ main { padding-top: 54px; }
 }
 
 .hero__wordmark {
-  font-size: clamp(5.5rem, 19vw, 14rem);
-  font-weight: 800; letter-spacing: -.05em; line-height: .88;
-  color: var(--ink); margin-bottom: 2rem;
-  display: flex; align-items: baseline;
+  margin: 0 0 2rem;
+  line-height: 1;
 }
 
 .hero__wdot {
