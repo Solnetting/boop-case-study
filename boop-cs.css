@@ -872,3 +872,59 @@ main { padding-top: 54px; }
   .lring-row { grid-template-columns: 1.5rem 7rem 1fr; }
   .lring-pulse { display: none; }
 }
+
+/* ── Event carousel ── */
+.evt-car {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 3/2;
+}
+.evt-car__track {
+  display: flex;
+  height: 100%;
+  transition: transform .4s cubic-bezier(.4,0,.2,1);
+}
+.evt-car__slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+.evt-car__slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.evt-car__btn {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px;
+  background: rgba(7,7,7,.45);
+  border: none; border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  transition: background .15s;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+}
+.evt-car__btn:hover { background: rgba(7,7,7,.75); }
+.evt-car__btn--prev { left: 1rem; }
+.evt-car__btn--next { right: 1rem; }
+.evt-car__dots {
+  position: absolute;
+  bottom: 1rem; left: 50%; transform: translateX(-50%);
+  display: flex; gap: .375rem;
+  z-index: 2;
+}
+.evt-car__dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  border: none; padding: 0;
+  background: rgba(255,255,255,.45);
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.evt-car__dot.active {
+  background: #fff;
+  transform: scale(1.3);
+}

@@ -287,6 +287,7 @@
 
   <!-- Guidance screens -->
   <div style="margin-top:2rem;">
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">Guidance screens — shipped in V1</p>
     <div style="display:flex;gap:1rem;overflow-x:auto;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;">
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
         <img src="images/guidance-hover-instruction.png" alt="Hover your hand over the device — illustrated instruction screen" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
@@ -330,13 +331,25 @@
   </div>
 
   <!-- Live event -->
-  <figure class="img-ph img-ph--photo img-ph--wide" style="margin-top:3rem;" aria-label="Live event photo placeholder">
-    <div class="img-ph__inner">
-      <span class="img-ph__type">screenshot / photo</span>
-      <span class="img-ph__desc">Live event — device in use at the kiosk</span>
-      <span class="img-ph__note">Event photography</span>
+  <div class="evt-car" style="margin-top:3rem;">
+    <div class="evt-car__track" id="evtTrack">
+      <div class="evt-car__slide"><img src="images/event-1.jpg" alt="Live event — people registering their palm at the Boop kiosk"></div>
+      <div class="evt-car__slide"><img src="images/event-2.jpg" alt="Live event — hand over the Boop scanner, guidance screen visible on phone"></div>
+      <div class="evt-car__slide"><img src="images/event-3.jpg" alt="Live event — attendee scanning palm at the kiosk with staff assisting"></div>
+      <div class="evt-car__slide"><img src="images/event-4.jpg" alt="Live event — hand hovering over scanner, Find the White Light screen on phone"></div>
+      <div class="evt-car__slide"><img src="images/event-5.jpg" alt="Live event — attendee using phone to complete registration"></div>
+      <div class="evt-car__slide"><img src="images/event-6.jpg" alt="Live event — hand over scanner with blue processing light ring"></div>
+      <div class="evt-car__slide"><img src="images/event-7.jpg" alt="Live event — group of attendees at the Boop payment kiosk"></div>
+      <div class="evt-car__slide"><img src="images/event-8.jpg" alt="Live event — hand over scanner with blue light ring, payment screen on phone"></div>
     </div>
-  </figure>
+    <button class="evt-car__btn evt-car__btn--prev" onclick="evtMove(-1)" aria-label="Previous">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="evt-car__btn evt-car__btn--next" onclick="evtMove(1)" aria-label="Next">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="evt-car__dots" id="evtDots"></div>
+  </div>
 
   <p class="s-body" style="margin-top:2rem;">Purchases of goods, drinks, and food happened at physical kiosks via palm scan. The app was used afterward only to check balance and transaction history. The retail activity was the vehicle — <strong>the actual test was whether registration and payment worked, unassisted, for someone doing it for the first time.</strong></p>
 
@@ -807,6 +820,31 @@
     el.toggleAttribute('open', !open);
     btn.setAttribute('aria-expanded', String(!open));
   }
+
+  // ── Event carousel ──
+  (function() {
+    const track = document.getElementById('evtTrack');
+    const dotsEl = document.getElementById('evtDots');
+    const total = track.children.length;
+    let idx = 0;
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'evt-car__dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i+1));
+      d.onclick = () => evtGoTo(i);
+      dotsEl.appendChild(d);
+    }
+    window.evtMove = function(dir) { evtGoTo((idx + dir + total) % total); };
+    window.evtGoTo = function(n) {
+      idx = n;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dotsEl.querySelectorAll('.evt-car__dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    };
+    // swipe
+    let x0 = null;
+    track.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', e => { if (x0 !== null) { const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) evtMove(dx < 0 ? 1 : -1); x0 = null; } }, {passive:true});
+  })();
 
   // ── Flow lightbox ──
   function openFlow() {
