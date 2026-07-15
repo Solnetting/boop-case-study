@@ -181,7 +181,6 @@ main { padding-top: 54px; }
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   border-radius: var(--r-lg);
-  border: 1px solid var(--border);
 }
 .flow-scroll img {
   height: 780px;
