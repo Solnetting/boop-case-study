@@ -81,13 +81,81 @@
 
   <p class="s-body">Stakeholders came in with a feature-rich brief. Rather than build everything asked for, scope was cut to an MVP built to answer that single question. Everything else — vendor tooling, membership flows, the design system — was in service of proving or disproving it.</p>
 
-  <figure class="img-ph img-ph--doc img-ph--wide" style="margin-top:2.5rem;" aria-label="Stakeholder brief image placeholder">
-    <div class="img-ph__inner">
-      <span class="img-ph__type">doc-notes</span>
-      <span class="img-ph__desc">Original stakeholder brief — full feature list before MVP scoping</span>
-      <span class="img-ph__note">Export from Figma / meeting notes</span>
+  <div class="brief" aria-label="Stakeholder brief artifact">
+
+    <div class="brief__header">
+      <span class="brief__stamp">Reconstructed</span>
+      <span class="brief__title">Stakeholder Brief · V1</span>
+      <span class="brief__subtitle">from notes/context — not a literal screenshot</span>
     </div>
-  </figure>
+
+    <div class="brief__cols">
+
+      <!-- Left: what was asked -->
+      <div class="brief__col">
+        <div class="brief__col-label">What was asked for</div>
+        <ul class="brief__items">
+          <li class="brief__item">
+            Palm-based payment + identity product, demoed live at an event
+          </li>
+          <li class="brief__item">
+            Users interact with the device for the first time on-site — transactions recorded as validation data
+          </li>
+          <li class="brief__item">
+            Settings-heavy home screen: toggles, permissions, account controls visible up front
+          </li>
+          <li class="brief__item">
+            Event-context features: ticketing, entrance/VIP upgrade flows, event calendar
+          </li>
+          <li class="brief__item">
+            Membership perks layer
+          </li>
+          <li class="brief__item">
+            Showcase breadth of functionality at the event
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: MVP outcome -->
+      <div class="brief__col">
+        <div class="brief__col-label">Scoped to MVP</div>
+        <ul class="brief__items">
+          <li class="brief__item brief__item--kept">
+            Palm payment + identity
+            <span class="brief__item-replacement">Core hypothesis — kept</span>
+          </li>
+          <li class="brief__item brief__item--kept">
+            First-time, unassisted, live registration + payment
+            <span class="brief__item-replacement">The entire event was designed around this</span>
+          </li>
+          <li class="brief__item brief__item--transformed">
+            Settings-heavy home
+            <span class="brief__item-replacement">→ Wallet-first home: balance/history primary, settings secondary</span>
+            <span class="brief__item-reason">Would raise cognitive load; doesn't scale beyond the demo context</span>
+          </li>
+          <li class="brief__item brief__item--cut">
+            Ticketing / VIP upgrade / entrance flows
+            <span class="brief__item-reason">Explored in lo-fi, ultimately cut — "event-context screens not used"</span>
+          </li>
+          <li class="brief__item brief__item--cut">
+            Event calendar, membership perks
+            <span class="brief__item-reason">Cut — not essential to answering the core question</span>
+          </li>
+          <li class="brief__item brief__item--cut">
+            Breadth of functionality
+            <span class="brief__item-reason">→ Depth on one thing: does the fundamental interaction work?</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="brief__footer">
+      <span class="brief__footer-label">One question survived the scope cut</span>
+      <p class="brief__footer-q">"Can a stranger register their palm and pay with it, unassisted, in a real live environment?"</p>
+    </div>
+
+  </div>
 </section>
 
 
