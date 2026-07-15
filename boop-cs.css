@@ -181,12 +181,14 @@ main { padding-top: 54px; }
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   border-radius: var(--r-lg);
+  background: transparent;
 }
 .flow-scroll img {
   height: 780px;
   width: auto;
   max-width: none;
   display: block;
+  mix-blend-mode: multiply;
 }
 .flow-expand {
   position: absolute;
