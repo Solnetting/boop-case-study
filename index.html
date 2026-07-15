@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boop — Interview Case Study · Carlos Mera</title>
-  <meta name="description" content="Palm-based payment and identity — a product design case study by Carlos Mera.">
+  <meta name="description" content="Palm-based payment and identity. A product design case study by Carlos Mera.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -12,462 +12,703 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="cs-nav">
-    <div class="cs-nav__inner">
-      <a href="#hero" class="cs-nav__logo">Bo<span class="cs-nav__dot"></span>p</a>
-      <div class="cs-nav__links">
-        <a href="#problem"      data-s="problem">Problem</a>
-        <a href="#research"     data-s="research">Research</a>
-        <a href="#process"      data-s="process">Process</a>
-        <a href="#validation"   data-s="validation">Validation</a>
-        <a href="#tradeoffs"    data-s="tradeoffs">Trade-offs</a>
-        <a href="#stakeholders" data-s="stakeholders">Stakeholders</a>
-        <a href="#v2"           data-s="v2">V2</a>
-        <a href="#reflection"   data-s="reflection">Reflection</a>
+<!-- ─── NAV ─── -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__logo">Bo<span class="nav__logo-dot"></span>p</a>
+    <div class="nav__links">
+      <a href="#throughline" data-s="throughline">Throughline</a>
+      <a href="#research"    data-s="research">Research</a>
+      <a href="#story-1"     data-s="story-1">Story 1</a>
+      <a href="#story-2"     data-s="story-2">Story 2</a>
+      <a href="#story-3"     data-s="story-3">Story 3</a>
+      <a href="#results"     data-s="results">Results</a>
+      <a href="#reflection"  data-s="reflection">Reflection</a>
+    </div>
+  </div>
+  <div class="nav__bar-wrap"><div class="nav__bar" id="navBar"></div></div>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════
+     HERO
+═══════════════════════════════════ -->
+<section id="hero" class="hero">
+  <div class="hero__top">
+    <div class="hero__eyebrow">Interview Case Study</div>
+    <h1 class="hero__wordmark">Bo<span class="hero__wdot"></span>p</h1>
+    <p class="hero__tagline">Palm-based payment and identity — wave your hand to pay, verify age, and access memberships, without exposing personal data.</p>
+
+    <figure class="img-ph img-ph--hifi img-ph--hero" aria-label="Hero image placeholder">
+      <div class="img-ph__inner">
+        <span class="img-ph__type">hi-fi</span>
+        <span class="img-ph__desc">Hero shot — hand over the Boop scanner</span>
+        <span class="img-ph__note">Export from Boop_1.0 Figma before presenting</span>
+      </div>
+    </figure>
+  </div>
+
+  <div class="hero__meta">
+    <div class="hero__meta-item">
+      <div class="hero__meta-label">Role</div>
+      <div class="hero__meta-value">Lead Product Designer</div>
+    </div>
+    <div class="hero__meta-item">
+      <div class="hero__meta-label">Timeline</div>
+      <div class="hero__meta-value">8 months · 2024–2025</div>
+    </div>
+    <div class="hero__meta-item">
+      <div class="hero__meta-label">V1</div>
+      <div class="hero__meta-value">Built · live-tested with ~300 people</div>
+    </div>
+    <div class="hero__meta-item">
+      <div class="hero__meta-label">V2</div>
+      <div class="hero__meta-value">Alpha — unreleased</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     THE THROUGHLINE
+═══════════════════════════════════ -->
+<section id="throughline" class="s">
+  <span class="s-label">The throughline</span>
+  <h2 class="s-headline">One question drove everything</h2>
+
+  <p class="throughline-q">"Can a stranger register their palm and pay with it, unassisted, in a real environment?"</p>
+
+  <p class="s-body">Stakeholders came in with a feature-rich brief. Rather than build everything asked for, scope was cut to an MVP built to answer that single question. Everything else — vendor tooling, membership flows, the design system — was in service of proving or disproving it.</p>
+
+  <figure class="img-ph img-ph--doc img-ph--wide" style="margin-top:2.5rem;" aria-label="Stakeholder brief image placeholder">
+    <div class="img-ph__inner">
+      <span class="img-ph__type">doc-notes</span>
+      <span class="img-ph__desc">Original stakeholder brief — full feature list before MVP scoping</span>
+      <span class="img-ph__note">Export from Figma / meeting notes</span>
+    </div>
+  </figure>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     RESEARCH
+═══════════════════════════════════ -->
+<section id="research" class="s">
+  <span class="s-label">03 · Research</span>
+  <h2 class="s-headline">What the category already proved</h2>
+
+  <div class="competitor-list">
+    <div class="competitor">
+      <div class="competitor__name">Amazon One / Tencent</div>
+      <div class="competitor__body">Speed and 70%+ retention proven at scale — but centralized data and regional silos limit portability and user trust.</div>
+    </div>
+    <div class="competitor">
+      <div class="competitor__name">Redrock Biometrics / Arobix</div>
+      <div class="competitor__body">Strong touchless accuracy — but no consumer ecosystem to convert that performance into daily behaviour.</div>
+    </div>
+    <div class="competitor">
+      <div class="competitor__name">World App / World ID</div>
+      <div class="competitor__body">Decentralized identity via zero-knowledge proofs — the right privacy model, consumer UX still maturing.</div>
+    </div>
+    <div class="competitor">
+      <div class="competitor__name">Revolut / Banking apps</div>
+      <div class="competitor__body">Financial hardware is already biometric-ready — proves the demand, but payments are still tied to a device.</div>
+    </div>
+  </div>
+
+  <figure class="img-ph img-ph--photo img-ph--wide" style="margin-top:2.5rem;" aria-label="Research moodboard placeholder">
+    <div class="img-ph__inner">
+      <span class="img-ph__type">screenshot</span>
+      <span class="img-ph__desc">Research and benchmarking moodboard</span>
+      <span class="img-ph__note">Export from Figma research board</span>
+    </div>
+  </figure>
+
+  <div class="principles">
+    <div class="principles__intro">Four design principles from the research →</div>
+    <div class="principles__grid">
+      <div class="principle"><span class="principle__num">01</span><span class="principle__text">Privacy by default</span></div>
+      <div class="principle"><span class="principle__num">02</span><span class="principle__text">Frictionless payment</span></div>
+      <div class="principle"><span class="principle__num">03</span><span class="principle__text">Automatic access control</span></div>
+      <div class="principle"><span class="principle__num">04</span><span class="principle__text">One unified experience</span></div>
+    </div>
+  </div>
+
+  <!-- DIG DEEPER: Vendor app iterations -->
+  <div class="dd" id="dd-vendor">
+    <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-vendor')">
+      <span class="dd__btn-label">
+        <span class="dd__btn-tag">Dig deeper</span>
+        Vendor app iterations (V1–V3)
+      </span>
+      <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+    </button>
+    <div class="dd__panel">
+      <div class="dd__label">Secondary layer</div>
+      <p class="dd__body">Three versions of the vendor app — checkout, charging, cancel-order, device-pairing flows across iterations. The vendor side was split into three phone-based apps sharing a codebase: access control, bouncer, and payment.</p>
+      <figure class="img-ph img-ph--lofi img-ph--wide" aria-label="Vendor app iterations placeholder">
+        <div class="img-ph__inner">
+          <span class="img-ph__type">lo-fi / hi-fi</span>
+          <span class="img-ph__desc">Vendor app V1–V3 — checkout, charging, cancel-order, device-pairing</span>
+          <span class="img-ph__note">Export from Figma vendor board</span>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     STORY 1 — Discovery → Fix → Live validation
+═══════════════════════════════════ -->
+<section id="story-1" class="s">
+  <span class="s-label">Story 1 · Discovery → Fix → Live validation</span>
+  <h2 class="s-headline">Pre-event test → one finding → shipped fix → 300 strangers</h2>
+
+  <!-- Pre-event test -->
+  <p class="s-body">Every flow was paper-mapped before Figma. Low-fi went through ~9 iterations of the core user flow (V1–V9.2), three vendor-app versions, and separate bouncer/VIP/entrance variants — with friction risk tagged directly on the flow diagrams as they were built.</p>
+  <p class="s-body" style="margin-top:1rem;">Before the event, a small-sample usability test with internal coworkers unrelated to the project surfaced a critical issue.</p>
+
+  <figure class="img-ph img-ph--doc img-ph--wide" style="margin-top:2rem;" aria-label="Friction-tagged flow placeholder">
+    <div class="img-ph__inner">
+      <span class="img-ph__type">doc-notes / flow</span>
+      <span class="img-ph__desc">Friction-tagged flow diagram — red = potential friction, green = expected</span>
+      <span class="img-ph__note">Export from FigJam flow board · Boop_1.0</span>
+    </div>
+  </figure>
+
+  <div class="finding">
+    <span class="finding__label">Finding</span>
+    <span class="finding__text">Users didn't know which hand to start scanning with.</span>
+    <span class="finding__label">Response</span>
+    <span class="finding__text">Guidance screens: move closer, move further, align to centre, per-hand progress with haptic confirmation per scan.</span>
+  </div>
+
+  <!-- Guidance screens -->
+  <div class="story-grid" style="margin-top:2rem;">
+    <figure class="img-ph img-ph--hifi" style="aspect-ratio:3/4; margin:0;" aria-label="Guidance screens placeholder">
+      <div class="img-ph__inner">
+        <span class="img-ph__type">hi-fi</span>
+        <span class="img-ph__desc">Hand-registration guidance sequence — move closer, move further, align to centre, per-hand progress</span>
+        <span class="img-ph__note">Export from Boop_1.0 Figma</span>
+      </div>
+    </figure>
+    <div class="story-col" style="display:flex;flex-direction:column;justify-content:center;gap:1.25rem;">
+      <p class="s-body">The fix was designed directly from the finding: four states of haptic-and-visual guidance that let users calibrate their hand position without reading instructions. The phone becomes a coach, not a manual.</p>
+      <p class="s-body">This was also when the device's own feedback language was designed: a light-ring system (colour + pulse) for charging, processing, success, and error states — entirely independent of the phone screen.</p>
+    </div>
+  </div>
+
+  <!-- Live event -->
+  <figure class="img-ph img-ph--photo img-ph--wide" style="margin-top:3rem;" aria-label="Live event photo placeholder">
+    <div class="img-ph__inner">
+      <span class="img-ph__type">screenshot / photo</span>
+      <span class="img-ph__desc">Live event — device in use at the kiosk</span>
+      <span class="img-ph__note">Event photography</span>
+    </div>
+  </figure>
+
+  <p class="s-body" style="margin-top:2rem;">Purchases of goods, drinks, and food happened at physical kiosks via palm scan. The app was used afterward only to check balance and transaction history. The retail activity was the vehicle — <strong>the actual test was whether registration and payment worked, unassisted, for someone doing it for the first time.</strong></p>
+
+  <p class="s-body" style="margin-top:1rem;">Help-seeking was still fairly common — largely tied to hand-position confusion that the guidance screens reduced but didn't eliminate. Overall experience was rated positively despite that friction.</p>
+
+  <!-- Dig deeper: iteration history -->
+  <div class="dd" id="dd-iterations">
+    <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-iterations')">
+      <span class="dd__btn-label">
+        <span class="dd__btn-tag">Dig deeper</span>
+        Iteration history — full user flow V1–V9.2
+      </span>
+      <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+    </button>
+    <div class="dd__panel">
+      <div class="dd__label">Secondary layer</div>
+      <p class="dd__body">The full FigJam board of user-flow versions — V1 through V9.2 — showing how the registration, payment, and access flows evolved across each iteration, with friction tags preserved.</p>
+      <figure class="img-ph img-ph--flow img-ph--wide" aria-label="Iteration history FigJam board placeholder">
+        <div class="img-ph__inner">
+          <span class="img-ph__type">flow diagram</span>
+          <span class="img-ph__desc">Full FigJam board — user flow versions V1–V9.2</span>
+          <span class="img-ph__note">Export or screenshot from FigJam · Boop_1.0</span>
+        </div>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Dig deeper: bouncer/VIP flows -->
+  <div class="dd" id="dd-bouncer">
+    <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-bouncer')">
+      <span class="dd__btn-label">
+        <span class="dd__btn-tag">Dig deeper</span>
+        Bouncer / VIP / entrance flows
+      </span>
+      <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+    </button>
+    <div class="dd__panel">
+      <div class="dd__label">Secondary layer</div>
+      <p class="dd__body">Separate variants for VIP, bouncer, age verification, and entrance flows — designed in parallel with the core consumer app to cover all event-day personnel touchpoints.</p>
+      <figure class="img-ph img-ph--lofi img-ph--wide" aria-label="Bouncer/VIP flows placeholder">
+        <div class="img-ph__inner">
+          <span class="img-ph__type">lo-fi</span>
+          <span class="img-ph__desc">VIP_Bouncer, VIP_Entrance, Age Verification Bouncer boards</span>
+          <span class="img-ph__note">Export from FigJam / Figma · Boop_1.0</span>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     STORY 2 — Settings vs. wallet pushback
+═══════════════════════════════════ -->
+<section id="story-2" class="s">
+  <span class="s-label">Story 2 · Stakeholder influence</span>
+  <h2 class="s-headline">Not just executing the brief</h2>
+
+  <p class="s-body">Stakeholders explicitly asked for a home screen dense with settings controls, designed for the live event demo. This is where design rationale overrode the brief.</p>
+
+  <div class="story-grid" style="margin-top:2.5rem;">
+    <div>
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">What they asked for</p>
+      <figure class="img-ph img-ph--lofi" style="aspect-ratio:9/16; margin:0;" aria-label="Settings-heavy home concept placeholder">
+        <div class="img-ph__inner">
+          <span class="img-ph__type">lo-fi</span>
+          <span class="img-ph__desc">Early settings-heavy home — as originally briefed</span>
+          <span class="img-ph__note">Export from Boop_1.0 Figma</span>
+        </div>
+      </figure>
+    </div>
+    <div>
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.875rem;">What shipped</p>
+      <figure class="img-ph img-ph--hifi" style="aspect-ratio:9/16; margin:0;" aria-label="Wallet-first home placeholder">
+        <div class="img-ph__inner">
+          <span class="img-ph__type">hi-fi</span>
+          <span class="img-ph__desc">Shipped wallet-first home — balance/history primary, settings secondary</span>
+          <span class="img-ph__note">Export from Boop_1.0 Figma</span>
+        </div>
+      </figure>
+    </div>
+  </div>
+
+  <div class="finding" style="margin-top:2.5rem;">
+    <span class="finding__label">Situation</span>
+    <span class="finding__text">Stakeholders explicitly asked for a home screen dense with settings controls for the event demo.</span>
+    <span class="finding__label">My call</span>
+    <span class="finding__text">Pushed back with design rationale — wallet-style home with balance and transaction history as the primary surface; settings to secondary/quick-access.</span>
+    <span class="finding__label">Outcome</span>
+    <span class="finding__text">Won the argument. The wallet-first home shipped. <span class="tbd">Add conversation specifics before presenting</span></span>
+  </div>
+
+  <p class="s-body" style="margin-top:2rem;">The rationale: the event was a first-impression moment for real users, not a stakeholder demo. A settings-heavy home would have oriented the product around configuration rather than value — the opposite of what needed to be validated.</p>
+
+  <!-- Dig deeper: remaining trade-offs -->
+  <div class="dd" id="dd-tradeoffs">
+    <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-tradeoffs')">
+      <span class="dd__btn-label">
+        <span class="dd__btn-tag">Dig deeper</span>
+        Remaining trade-offs (transaction legibility · card linking · card fidelity)
+      </span>
+      <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+    </button>
+    <div class="dd__panel">
+      <div class="dd__label">Secondary layer</div>
+      <div class="tradeoff-list">
+        <div class="tradeoff">
+          <div class="tradeoff__title">Transaction legibility</div>
+          <div class="tradeoff__row">
+            <span class="tradeoff__row-label">Discovery</span>
+            <span class="tradeoff__row-text">Users couldn't recognize payments without a visual anchor to the venue.</span>
+          </div>
+          <div class="tradeoff__row">
+            <span class="tradeoff__row-label">Decision</span>
+            <span class="tradeoff__row-text"><strong>Establishment-specific iconography</strong> — Kiosk/Cafe badges for at-a-glance recognition.</span>
+          </div>
+          <div class="tradeoff__row">
+            <span class="tradeoff__row-label">Rejected</span>
+            <span class="tradeoff__row-text">Richer transaction detail pages — adds depth, not at-a-glance recognition.</span>
+          </div>
+          <figure class="img-ph img-ph--hifi img-ph--std" style="margin-top:1rem;" aria-label="Transaction iconography placeholder">
+            <div class="img-ph__inner">
+              <span class="img-ph__type">hi-fi</span>
+              <span class="img-ph__desc">Transaction list with establishment icons (Kiosk/Cafe badges)</span>
+            </div>
+          </figure>
+        </div>
+        <div class="tradeoff">
+          <div class="tradeoff__title">Card-to-palm linking</div>
+          <div class="tradeoff__row">
+            <span class="tradeoff__row-label">Discovery</span>
+            <span class="tradeoff__row-text">Standard tap-to-link felt procedurally weak for something meant to feel permanent.</span>
+          </div>
+          <div class="tradeoff__row">
+            <span class="tradeoff__row-label">Decision</span>
+            <span class="tradeoff__row-text">Moving toward <strong>drag-and-drop / pull-to-link</strong> (future iteration, not yet shipped).</span>
+          </div>
+          <div class="tradeoff__row">
+            <span class="tradeoff__row-label">Rejected</span>
+            <span class="tradeoff__row-text">Shipping only the simpler tap flow long-term.</span>
+          </div>
+          <figure class="img-ph img-ph--hifi img-ph--std" style="margin-top:1rem;" aria-label="Card linking placeholder">
+            <div class="img-ph__inner">
+              <span class="img-ph__type">hi-fi</span>
+              <span class="img-ph__desc">Current tap-based card assignment flow</span>
+            </div>
+          </figure>
+        </div>
+        <div class="tradeoff">
+          <div class="tradeoff__title">Card visual fidelity vs. API limits</div>
+          <div class="tradeoff__row">
+            <span class="tradeoff__row-label">Discovery</span>
+            <span class="tradeoff__row-text">Users wanted the digital card to match their physical card. The API couldn't return card skins.</span>
+          </div>
+          <div class="tradeoff__row">
+            <span class="tradeoff__row-label">Decision</span>
+            <span class="tradeoff__row-text"><strong>"Universal Boop Card" aesthetic</strong> — branding and utility over plastic-mimicry. Sets digital-first expectations.</span>
+          </div>
+          <div class="tradeoff__row">
+            <span class="tradeoff__row-label">Rejected</span>
+            <span class="tradeoff__row-text">Engineering a workaround for card skin data.</span>
+          </div>
+          <figure class="img-ph img-ph--hifi img-ph--std" style="margin-top:1rem;" aria-label="Universal Boop Card placeholder">
+            <div class="img-ph__inner">
+              <span class="img-ph__type">hi-fi</span>
+              <span class="img-ph__desc">Universal Boop Card design</span>
+            </div>
+          </figure>
+        </div>
       </div>
     </div>
-    <div class="cs-nav__bar-wrap">
-      <div class="cs-nav__bar" id="bar"></div>
+  </div>
+
+  <!-- Dig deeper: device light-ring system -->
+  <div class="dd" id="dd-lightring">
+    <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-lightring')">
+      <span class="dd__btn-label">
+        <span class="dd__btn-tag">Dig deeper</span>
+        Device light-ring system
+      </span>
+      <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+    </button>
+    <div class="dd__panel">
+      <div class="dd__label">Secondary layer</div>
+      <p class="dd__body">A feedback language designed for the physical scanner itself — colour and pulse states independent of the phone screen. The device communicates state to both the user and the venue operator without requiring phone-glancing.</p>
+      <div class="lring-table">
+        <div class="lring-row lring-row--head">
+          <span class="lring-head">Colour</span>
+          <span class="lring-head">Pulse</span>
+          <span class="lring-head">State</span>
+          <span class="lring-head">Meaning</span>
+        </div>
+        <div class="lring-row">
+          <span class="lring-state" style="background:#F59E0B;"></span>
+          <span class="lring-pulse">Slow</span>
+          <span class="lring-name">Charging</span>
+          <span class="lring-desc">Device is charging, not yet ready for use.</span>
+        </div>
+        <div class="lring-row">
+          <span class="lring-state" style="background:#3B82F6;"></span>
+          <span class="lring-pulse">Steady</span>
+          <span class="lring-name">Processing</span>
+          <span class="lring-desc">Scanning in progress — hold hand in position.</span>
+        </div>
+        <div class="lring-row">
+          <span class="lring-state" style="background:#5CBCB0;"></span>
+          <span class="lring-pulse">Single flash</span>
+          <span class="lring-name">Success</span>
+          <span class="lring-desc">Palm recognised — payment or access approved.</span>
+        </div>
+        <div class="lring-row">
+          <span class="lring-state" style="background:#EF4444;"></span>
+          <span class="lring-pulse">Rapid</span>
+          <span class="lring-name">Error</span>
+          <span class="lring-desc">Palm not recognised or transaction failed.</span>
+        </div>
+      </div>
+      <figure class="img-ph img-ph--device img-ph--wide" style="margin-top:1.5rem;" aria-label="Device light ring pattern placeholder">
+        <div class="img-ph__inner">
+          <span class="img-ph__type">device-pattern</span>
+          <span class="img-ph__desc">Colour/pulse states — charging, processing, success, error</span>
+          <span class="img-ph__note">Export from Figma device spec board</span>
+        </div>
+      </figure>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <main>
 
-    <!-- S1 · HERO -->
-    <section id="hero" class="cs-hero">
-      <div class="cs-hero__top">
-        <div class="cs-hero__eyebrow">Interview Case Study</div>
-        <h1 class="cs-hero__wordmark">Bo<span class="cs-hero__wdot"></span>p</h1>
-        <p class="cs-hero__tagline">Palm-based payment and identity — wave your hand to pay, verify age, and access memberships, without exposing personal data.</p>
+<!-- ═══════════════════════════════════
+     STORY 3 — Technical trade-off
+═══════════════════════════════════ -->
+<section id="story-3" class="s">
+  <span class="s-label">Story 3 · Technical trade-off</span>
+  <h2 class="s-headline">The decision that shaped V2</h2>
+  <p class="s-body">Two strong stories here — pick one before presenting. Both are available below.</p>
+
+  <div class="s3-tabs" style="margin-top:2rem;">
+    <button class="s3-tab active" onclick="switchS3('s3a', this)">Mini-app vs. native app</button>
+    <button class="s3-tab"        onclick="switchS3('s3b', this)">Puck-First vs. 3 proposals</button>
+  </div>
+
+  <!-- Option A: Mini-app vs. native -->
+  <div id="s3a" class="s3-panel active">
+    <p class="s-body">The initial brief implied a World mini-app. A native React Native app was chosen explicitly to avoid install friction and dependency on the World app ecosystem.</p>
+
+    <figure class="img-ph img-ph--doc img-ph--wide" style="margin-top:2rem;" aria-label="Requirements doc placeholder">
+      <div class="img-ph__inner">
+        <span class="img-ph__type">doc-notes</span>
+        <span class="img-ph__desc">Requirements doc excerpt — "Not a World mini-app (avoid dependency and clunky install)"</span>
+        <span class="img-ph__note">Screenshot from dated Requirements meeting note</span>
       </div>
+    </figure>
 
-      <div class="cs-hero__meta">
-        <div class="cs-hero__meta-item">
-          <div class="cs-hero__meta-label">Role</div>
-          <div class="cs-hero__meta-value">Lead Product Designer</div>
-        </div>
-        <div class="cs-hero__meta-item">
-          <div class="cs-hero__meta-label">Scope</div>
-          <div class="cs-hero__meta-value">Consumer app + vendor app</div>
-        </div>
-        <div class="cs-hero__meta-item">
-          <div class="cs-hero__meta-label">V1</div>
-          <div class="cs-hero__meta-value">Built and live-tested, ~300 people</div>
-        </div>
-        <div class="cs-hero__meta-item">
-          <div class="cs-hero__meta-label">V2</div>
-          <div class="cs-hero__meta-value">Alpha — unreleased</div>
-        </div>
+    <div class="finding" style="margin-top:2rem;">
+      <span class="finding__label">Brief implied</span>
+      <span class="finding__text">World mini-app — leverages the World ecosystem, no separate install needed.</span>
+      <span class="finding__label">Decision</span>
+      <span class="finding__text"><strong>Native React Native app</strong> — avoids install dependency and friction. Users shouldn't need to install World App to use Boop.</span>
+      <span class="finding__label">Confirmed</span>
+      <span class="finding__text">Explicitly documented in the "Requirements" meeting note. Aligned with Justin/Nathan as top-priority V2 decision, with a 6–7 week milestone runway to an April showcase.</span>
+    </div>
+
+    <figure class="img-ph img-ph--hifi img-ph--wide" style="margin-top:2rem;" aria-label="V2 native registration flow placeholder">
+      <div class="img-ph__inner">
+        <span class="img-ph__type">hi-fi</span>
+        <span class="img-ph__desc">V2 native registration flow — World ID link/create, hand registration</span>
+        <span class="img-ph__note">Export from Boop_2.0 Figma</span>
       </div>
-    </section>
+    </figure>
+  </div>
 
-    <!-- S2 · THE PROBLEM -->
-    <section id="problem" class="cs-s">
-      <span class="label">02 · The Problem</span>
-      <h2 class="headline">Contactless still needs a device.</h2>
-      <p class="body">Payment already went contactless, but it's still tied to a card or phone. Venues verifying age or membership means manual checks or extra hardware. The question: can the body become a universal key?</p>
+  <!-- Option B: Puck-First -->
+  <div id="s3b" class="s3-panel">
+    <p class="s-body">Four competing UX concepts were evaluated for scanning guidance in V2. The core problem: the V1 guidance screens still required users to look at their phone instead of the scanner.</p>
 
-      <div class="cs-callout" style="margin-top:2rem;">
-        <p>Stakeholders came in with a list of desired features. Scope was cut to an MVP because the goal wasn't to ship every idea — it was to validate one thing: <strong>can a stranger register their palm and pay with it, unassisted, in a real live environment?</strong></p>
+    <figure class="img-ph img-ph--doc img-ph--wide" style="margin-top:2rem;" aria-label="Four proposals comparison placeholder">
+      <div class="img-ph__inner">
+        <span class="img-ph__type">doc-notes</span>
+        <span class="img-ph__desc">Four-proposal comparison — Static Guidance, Dynamic Feedback, Hybrid Mix, Puck-First</span>
+        <span class="img-ph__note">Export from decision doc / FigJam</span>
       </div>
-    </section>
+    </figure>
 
-    <!-- S3 · RESEARCH -->
-    <section id="research" class="cs-s">
-      <span class="label">03 · Research</span>
-      <h2 class="headline">What the category already proved</h2>
-
-      <div class="cs-competitors">
-        <div class="cs-competitor">
-          <div class="cs-competitor__name">Amazon One / Tencent</div>
-          <div class="cs-competitor__body">Speed and 70%+ retention proven — but centralized data and regional silos limit trust and portability.</div>
-        </div>
-        <div class="cs-competitor">
-          <div class="cs-competitor__name">Redrock Biometrics / Arobix</div>
-          <div class="cs-competitor__body">Strong touchless accuracy — but no consumer ecosystem to convert that into daily behaviour.</div>
-        </div>
-        <div class="cs-competitor">
-          <div class="cs-competitor__name">World App / World ID</div>
-          <div class="cs-competitor__body">Decentralized identity via zero-knowledge proofs — the right privacy model, consumer UX still maturing.</div>
-        </div>
-        <div class="cs-competitor">
-          <div class="cs-competitor__name">Revolut / Banking apps</div>
-          <div class="cs-competitor__body">Financial hardware is already biometric-ready — proves the demand, but payments are still tied to a device.</div>
-        </div>
-      </div>
-
-      <div class="cs-principles" style="margin-top:2.5rem;">
-        <div class="cs-principles__intro">Four design principles from the research →</div>
-        <div class="cs-principles__grid">
-          <div class="cs-principle">
-            <span class="cs-principle__num">01</span>
-            <span class="cs-principle__text">Privacy by default</span>
-          </div>
-          <div class="cs-principle">
-            <span class="cs-principle__num">02</span>
-            <span class="cs-principle__text">Frictionless payment</span>
-          </div>
-          <div class="cs-principle">
-            <span class="cs-principle__num">03</span>
-            <span class="cs-principle__text">Automatic access control</span>
-          </div>
-          <div class="cs-principle">
-            <span class="cs-principle__num">04</span>
-            <span class="cs-principle__text">One unified experience</span>
-          </div>
+    <div class="proposals" style="margin-top:2rem;">
+      <div class="proposal">
+        <div class="proposal__num">01</div>
+        <div>
+          <div class="proposal__title">Static Guidance</div>
+          <div class="proposal__body">Video tutorial before scanning. Requires users to watch and recall — adds cognitive load and another step before the actual gesture.</div>
         </div>
       </div>
-    </section>
-
-    <!-- S4 · PROCESS V1 -->
-    <section id="process" class="cs-s">
-      <span class="label">04 · Process · V1</span>
-      <h2 class="headline">Paper first, then friction-tested</h2>
-
-      <div class="cs-process">
-        <div class="cs-process-item">
-          <div class="cs-process-item__num">01</div>
-          <div>
-            <div class="cs-process-item__title">Every flow mapped on paper before any screen was drawn</div>
-            <div class="cs-process-item__body">Registration, payment, tickets, and the full app — all sketched first. Low-fi went through ~9 iterations of the user flow (V1–V9.2), 3 vendor-app versions, plus bouncer/VIP/entrance variants.</div>
-          </div>
-        </div>
-        <div class="cs-process-item">
-          <div class="cs-process-item__num">02</div>
-          <div>
-            <div class="cs-process-item__title">Flows were tagged live with friction markers during design</div>
-            <div class="cs-process-item__body">Annotating "potential friction" / "expected" directly on flows as they were designed — not after — kept the team honest before any testing happened.</div>
-          </div>
-        </div>
-        <div class="cs-process-item">
-          <div class="cs-process-item__num">03</div>
-          <div>
-            <div class="cs-process-item__title">Key architecture decisions made early</div>
-            <div class="cs-process-item__body">One main screen, 3–4 features max. NFC tap skips straight to pairing. No ID uploads in-app (bouncers check physical ID). Vendor side split into access control / bouncer / payment apps — phone-based, sharing a codebase.</div>
-          </div>
+      <div class="proposal">
+        <div class="proposal__num">02</div>
+        <div>
+          <div class="proposal__title">Dynamic Real-Time Feedback</div>
+          <div class="proposal__body">Live coaching GIF on-screen during scanning. Solves real-time feedback but keeps the user's eyes on the phone, not the device.</div>
         </div>
       </div>
-
-      <div class="cs-finding" style="margin-top:2rem;">
-        <span class="cs-finding__label">Finding</span>
-        <span class="cs-finding__text"><strong>Pre-event usability test:</strong> users didn't know which hand to start with. Small sample, internal coworkers unrelated to the project.</span>
-        <span class="cs-finding__label">Response</span>
-        <span class="cs-finding__text">Guidance screens — move closer, move further, align to centre, per-hand progress, haptic confirmation per scan.</span>
-      </div>
-    </section>
-
-    <!-- S5 · LIVE VALIDATION -->
-    <section id="validation" class="cs-s">
-      <span class="label">05 · Live Validation</span>
-      <h2 class="headline">~300 strangers, one real test</h2>
-      <p class="body">Purchases happened at the kiosk via palm scan — not inside the app. The app was for checking balance and history afterward. The retail transactions were the vehicle; registration and payment were what was actually being tested.</p>
-
-      <div class="cs-validation">
-        <div class="cs-stat-row">
-          <div class="cs-stat cs-stat--tbd">Add reg. rate <span class="cs-tbd">TBD</span></div>
-          <div class="cs-stat-desc">Registration success rate from the live event — pull from the event data before presenting.</div>
-        </div>
-        <div class="cs-stat-row">
-          <div class="cs-stat">90%</div>
-          <div class="cs-stat-desc"><strong>Completed the base payment flow without assistance.</strong> Distinct from registration — keep the two numbers separate when presenting.</div>
+      <div class="proposal">
+        <div class="proposal__num">03</div>
+        <div>
+          <div class="proposal__title">Hybrid Mix</div>
+          <div class="proposal__body">Lottie animation + progress bar. Richer feedback but still phone-centric — same fundamental attention-split problem.</div>
         </div>
       </div>
-
-      <p class="cs-stat-note">Help-seeking was still common, mostly tied to hand positioning — the guidance-screen fix helped but didn't fully solve it. Overall experience rated positively.</p>
-    </section>
-
-    <!-- S6 · TRADE-OFFS -->
-    <section id="tradeoffs" class="cs-s">
-      <span class="label">06 · Trade-offs</span>
-      <h2 class="headline">Every decision came with a rejected path</h2>
-
-      <div class="cs-tradeoffs">
-
-        <div class="cs-tradeoff">
-          <div class="cs-tradeoff__num">01</div>
-          <div>
-            <div class="cs-tradeoff__title">Hardware–mobile attention gap</div>
-            <div class="cs-tradeoff__rows">
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Discovery</span>
-                <span class="cs-tradeoff__row-text">Users watched their phone screen instead of the physical scanner during enrollment.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Decision</span>
-                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Contextual haptic feedback</strong> — the phone "taps" a pattern when the user needs to adjust.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Rejected</span>
-                <span class="cs-tradeoff__row-text">More on-screen instructional text — adds friction, doesn't fix the attention split.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-tradeoff">
-          <div class="cs-tradeoff__num">02</div>
-          <div>
-            <div class="cs-tradeoff__title">Transaction legibility</div>
-            <div class="cs-tradeoff__rows">
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Discovery</span>
-                <span class="cs-tradeoff__row-text">Users couldn't recognize payments without a visual anchor to the venue.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Decision</span>
-                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Establishment-specific iconography</strong> — Kiosk/Cafe badges for at-a-glance recognition.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Rejected</span>
-                <span class="cs-tradeoff__row-text">Richer transaction detail pages — adds depth, not at-a-glance recognition.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-tradeoff">
-          <div class="cs-tradeoff__num">03</div>
-          <div>
-            <div class="cs-tradeoff__title">Card-to-palm linking</div>
-            <div class="cs-tradeoff__rows">
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Discovery</span>
-                <span class="cs-tradeoff__row-text">Standard tap-to-link felt procedurally weak for something meant to feel permanent.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Decision</span>
-                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision">Moving toward <strong>drag-and-drop / pull-to-link</strong> (future iteration, not yet shipped).</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Rejected</span>
-                <span class="cs-tradeoff__row-text">Shipping only the simpler tap flow long-term.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-tradeoff">
-          <div class="cs-tradeoff__num">04</div>
-          <div>
-            <div class="cs-tradeoff__title">Card visual fidelity vs. API limits</div>
-            <div class="cs-tradeoff__rows">
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Discovery</span>
-                <span class="cs-tradeoff__row-text">Users wanted the digital card to match their physical card. API couldn't return card skins.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Decision</span>
-                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>"Universal Boop Card" aesthetic</strong> — branding and utility over plastic-mimicry. Sets digital-first expectations.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Rejected</span>
-                <span class="cs-tradeoff__row-text">Engineering a workaround for skin data.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-tradeoff">
-          <div class="cs-tradeoff__num">05</div>
-          <div>
-            <div class="cs-tradeoff__title">Settings-heavy home vs. wallet-first home</div>
-            <div class="cs-tradeoff__rows">
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Discovery</span>
-                <span class="cs-tradeoff__row-text">Stakeholders explicitly asked for a home screen dense with settings controls for the event demo.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Decision</span>
-                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Pushed back</strong> — wallet-style home with balance/history as primary, settings as secondary quick-access.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Rejected</span>
-                <span class="cs-tradeoff__row-text">Settings-forward IA as originally briefed. <span class="cs-tbd">Add conversation specifics</span></span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-tradeoff">
-          <div class="cs-tradeoff__num">06</div>
-          <div>
-            <div class="cs-tradeoff__title">Mini-app vs. native app (V2)</div>
-            <div class="cs-tradeoff__rows">
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Discovery</span>
-                <span class="cs-tradeoff__row-text">Initial ask implied a World mini-app.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Decision</span>
-                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Native React Native app</strong> — avoids install dependency and friction.</span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Rejected</span>
-                <span class="cs-tradeoff__row-text">Mini-app route — explicitly documented in the V2 requirements doc.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cs-tradeoff">
-          <div class="cs-tradeoff__num">07</div>
-          <div>
-            <div class="cs-tradeoff__title">Scanning guidance — four proposals evaluated (V2)</div>
-            <div class="cs-tradeoff__proposals">
-              <div class="cs-tradeoff__proposal"><strong>Static Guidance</strong> — video tutorial</div>
-              <div class="cs-tradeoff__proposal"><strong>Dynamic Real-Time Feedback</strong> — live coaching GIF</div>
-              <div class="cs-tradeoff__proposal"><strong>Hybrid Mix</strong> — Lottie + progress bar</div>
-              <div class="cs-tradeoff__proposal"><strong>Puck-First</strong> — minimal UI, haptic/audio-led, no need to watch the screen</div>
-            </div>
-            <div class="cs-tradeoff__rows">
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Decision</span>
-                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Puck-First direction</strong> — haptics only on critical moments, happy path needs zero phone-glancing. <span class="cs-tbd">Confirm shipped</span></span>
-              </div>
-              <div class="cs-tradeoff__row">
-                <span class="cs-tradeoff__row-label">Rejected</span>
-                <span class="cs-tradeoff__row-text">The other three — all kept more attention on-screen, perpetuating the hardware–mobile attention gap.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- S7 · STAKEHOLDERS -->
-    <section id="stakeholders" class="cs-s">
-      <span class="label">07 · Stakeholders</span>
-      <h2 class="headline">Not just executing the brief</h2>
-
-      <div class="cs-stake-body">
-        <p class="body">A dated "Requirements" doc from a stakeholder meeting captured explicit architecture decisions (native app, not mini-app) and follow-up ownership: confirming mobile hand-registration feasibility with Emmanuel (backend) within 2–3 weeks, and syncing with Justin/Nathan to confirm the mini-app was dropped and align milestones for a 6–7 week runway to showcase.</p>
-        <p class="body" style="margin-top:1rem;">App Store/Play Store account setup had to start immediately given the timeline — a non-design dependency factored into planning from the start.</p>
-      </div>
-
-      <div class="cs-stake-box">
-        <div class="cs-stake-box__head">
-          <span class="cs-stake-box__tag">Strongest story</span>
-          <span class="cs-stake-box__title">Settings-vs-wallet pushback</span>
-        </div>
-        <div class="cs-stake-box__body">
-          <div class="cs-stake-box__row">
-            <span class="cs-stake-box__row-label">Situation</span>
-            <span class="cs-stake-box__row-text">Stakeholders explicitly asked for a home screen dense with settings controls for the event demo.</span>
-          </div>
-          <div class="cs-stake-box__row">
-            <span class="cs-stake-box__row-label">My call</span>
-            <span class="cs-stake-box__row-text">Pushed back with design rationale — wallet-style home with balance and history as the primary surface, settings as secondary quick-access.</span>
-          </div>
-          <div class="cs-stake-box__row">
-            <span class="cs-stake-box__row-label">Outcome</span>
-            <span class="cs-stake-box__row-text">Won the argument. The wallet-first home shipped. <span class="cs-tbd">Add specifics before presenting</span></span>
-          </div>
+      <div class="proposal proposal--chosen">
+        <div class="proposal__num">04 →</div>
+        <div>
+          <div class="proposal__title">Puck-First <span class="tbd">Confirm shipped</span></div>
+          <div class="proposal__body">Minimal UI. Haptic and audio-led — the device does the coaching, the phone stays quiet. Haptics reserved for critical moments only. The happy path requires zero phone-glancing.</div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- S8 · V2 -->
-    <section id="v2" class="cs-s">
-      <span class="label">08 · V2</span>
-      <div class="cs-v2-status">
-        <span class="cs-v2-dot"></span>
-        <span class="cs-v2-status-text">Alpha — not yet live-tested</span>
+    <figure class="img-ph img-ph--hifi img-ph--wide" style="margin-top:2rem;" aria-label="Puck-First screens placeholder">
+      <div class="img-ph__inner">
+        <span class="img-ph__type">hi-fi</span>
+        <span class="img-ph__desc">Puck-First registration screens — minimal UI, haptic/audio-led</span>
+        <span class="img-ph__note">Export from Boop_2.0 Figma</span>
       </div>
-      <h2 class="headline">What came after</h2>
-      <p class="body">A native app with deeper World ID 4.0 integration, rethought registration guidance, and a multi-card wallet — everything the live test taught us, rebuilt from a stronger foundation.</p>
+    </figure>
+  </div>
 
-      <div class="cs-v2-features">
-        <div class="cs-v2-item">
-          <div class="cs-v2-item__num">01</div>
-          <div>
-            <div class="cs-v2-item__title">Native React Native app</div>
-            <div class="cs-v2-item__body">Avoids install dependency and friction. The mini-app route was explicitly dropped in the V2 requirements doc.</div>
-          </div>
+  <!-- Dig deeper: full four proposals -->
+  <div class="dd" id="dd-proposals">
+    <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-proposals')">
+      <span class="dd__btn-label">
+        <span class="dd__btn-tag">Dig deeper</span>
+        Full four-proposal comparison (scanning guidance)
+      </span>
+      <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+    </button>
+    <div class="dd__panel">
+      <div class="dd__label">Secondary layer</div>
+      <p class="dd__body">The full comparison document used to evaluate all four scanning-guidance proposals, with rationale for each and the decision criteria that landed on Puck-First.</p>
+      <figure class="img-ph img-ph--doc img-ph--wide" aria-label="Full proposals doc placeholder">
+        <div class="img-ph__inner">
+          <span class="img-ph__type">doc-notes</span>
+          <span class="img-ph__desc">Static Guidance, Dynamic Real-Time Feedback, Hybrid Mix, Puck-First — full comparison</span>
+          <span class="img-ph__note">Export from decision doc / FigJam</span>
         </div>
-        <div class="cs-v2-item">
-          <div class="cs-v2-item__num">02</div>
-          <div>
-            <div class="cs-v2-item__title">World ID 4.0 integration</div>
-            <div class="cs-v2-item__body">Link an existing ID or create one in-flow — deeper but optional identity layer.</div>
-          </div>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Dig deeper: Requirements doc -->
+  <div class="dd" id="dd-requirements">
+    <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-requirements')">
+      <span class="dd__btn-label">
+        <span class="dd__btn-tag">Dig deeper</span>
+        Requirements doc (full) — cross-functional coordination
+      </span>
+      <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+    </button>
+    <div class="dd__panel">
+      <div class="dd__label">Secondary layer</div>
+      <p class="dd__body">A dated "Requirements" meeting note that captured explicit architecture decisions and cross-functional follow-up: backend feasibility with Emmanuel (mobile hand-registration performance, 2–3 week window), alignment with Justin/Nathan on scope and milestones, 6–7 week runway to an April showcase. Also confirmed: native app, not World mini-app; full World ID 4.0 integration; both at-home pre-registration and on-site fallback; multi-card wallet (max 2 active, last activated = primary).</p>
+      <figure class="img-ph img-ph--doc img-ph--wide" aria-label="Requirements doc placeholder">
+        <div class="img-ph__inner">
+          <span class="img-ph__type">doc-notes</span>
+          <span class="img-ph__desc">Full "Requirements" + "To Do list" — incl. Emmanuel/Justin/Nathan coordination</span>
+          <span class="img-ph__note">Screenshot from meeting notes</span>
         </div>
-        <div class="cs-v2-item">
-          <div class="cs-v2-item__num">03</div>
-          <div>
-            <div class="cs-v2-item__title">Multi-card wallet</div>
-            <div class="cs-v2-item__body">Max 2 active cards. Last activated becomes primary — removes ambiguity about which card is charged.</div>
-          </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     RESULTS
+═══════════════════════════════════ -->
+<section id="results" class="s">
+  <span class="s-label">Results</span>
+  <h2 class="s-headline">Validated in the wild</h2>
+
+  <figure class="img-ph img-ph--hifi img-ph--wide" aria-label="Transaction history screen placeholder">
+    <div class="img-ph__inner">
+      <span class="img-ph__type">screenshot</span>
+      <span class="img-ph__desc">Transaction history / balance screen — from the live app</span>
+      <span class="img-ph__note">Screenshot from V1 live app</span>
+    </div>
+  </figure>
+
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat__num stat__num--tbd">— %<span class="tbd">TBD</span></div>
+      <div class="stat__label">Registration success rate from the live event</div>
+      <div class="stat__note">Pull from event data. Do not use a placeholder number in the presentation.</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">90%</div>
+      <div class="stat__label">Completed the base payment flow without assistance</div>
+      <div class="stat__note">Distinct from registration — keep the two numbers separate when presenting.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     REFLECTION / WHAT'S NEXT
+═══════════════════════════════════ -->
+<section id="reflection" class="s">
+  <span class="s-label">Reflection</span>
+  <h2 class="s-headline">What the loop taught</h2>
+
+  <div class="reflect-grid">
+    <div>
+      <div class="reflect-col__label reflect-col__label--teal">What worked</div>
+      <ul class="reflect-list">
+        <li>Pre-event test → fix → live validation loop proved the concept with real strangers, not proxies.</li>
+        <li>Scoping hard to one hypothesis made the event genuinely useful as a test, not just a demo.</li>
+        <li>Architecture decisions made early (one screen, 3–4 features, NFC tap) avoided mid-build pivots.</li>
+        <li>Pushing back on the settings-first home protected the product's identity at the highest-stakes moment.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="reflect-col__label reflect-col__label--coral">What's still unresolved</div>
+      <ul class="reflect-list">
+        <li><strong>Merchant/vendor dashboard</strong> — its own design problem, not yet started.</li>
+        <li><strong>Accessibility audit</strong> — biometric-first flows carry exclusion risk; alternative auth paths are needed.</li>
+        <li><strong>Wearable extension</strong> of the same gesture.</li>
+        <li><strong>Hand-position confusion persisted</strong> even after the V1 guidance fix. Puck-First (V2) is the next attempt — not yet validated.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Dig deeper: V2 full flow -->
+  <div class="dd" id="dd-v2">
+    <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-v2')">
+      <span class="dd__btn-label">
+        <span class="dd__btn-tag">Dig deeper</span>
+        V2 full flow — welcome → World ID → hand registration → wallet → card adding
+      </span>
+      <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+    </button>
+    <div class="dd__panel">
+      <div class="dd__label">Secondary layer · Alpha — not live-tested</div>
+      <p class="dd__body">The complete V2 registration flow: welcome screen, World ID link or create new, generic hand registration (non-handed illustration that mirrors whichever hand the user picks), multi-card wallet setup (max 2 active), card adding via scan or manual entry, and device/scanner locator map.</p>
+      <figure class="img-ph img-ph--hifi img-ph--wide" aria-label="V2 full flow placeholder">
+        <div class="img-ph__inner">
+          <span class="img-ph__type">hi-fi</span>
+          <span class="img-ph__desc">V2 full flow — welcome → World ID link/create → hand registration → wallet → card adding</span>
+          <span class="img-ph__note">Export from Boop_2.0 Figma · Alpha</span>
         </div>
-        <div class="cs-v2-item">
-          <div class="cs-v2-item__num">04</div>
-          <div>
-            <div class="cs-v2-item__title">Refined registration</div>
-            <div class="cs-v2-item__body">Generic hand illustration with no handedness bias — mirrors whichever hand the user picks. Directly addresses the "which hand?" problem from V1.</div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </figure>
+    </div>
+  </div>
 
-    <!-- S9 · REFLECTION -->
-    <section id="reflection" class="cs-s">
-      <span class="label">09 · Results & Reflection</span>
-      <h2 class="headline">What the loop taught</h2>
+  <!-- Before presenting -->
+  <div class="before-presenting">
+    <div class="before-presenting__label">Before presenting</div>
+    <ul class="before-presenting__list">
+      <li>Pull the real registration success % from the live-event data → replace TBD in the Results section.</li>
+      <li>Pick Story 3 — mini-app vs. native OR Puck-First. The tab shows both; decide which to lead with.</li>
+      <li>Add the specific dialogue from the settings-vs-wallet pushback → Story 2, Outcome row.</li>
+      <li>Export all Figma images and replace every placeholder before the interview.</li>
+    </ul>
+  </div>
+</section>
 
-      <div class="cs-reflection-grid">
-        <div class="cs-reflection-col">
-          <div class="cs-reflection-col__label">What worked</div>
-          <ul class="cs-reflection-list">
-            <li>Pre-event test → fix → live validation loop proved the concept with real strangers, not proxies.</li>
-            <li>The core concept clearly landed — people registered and paid with their palm in a real environment.</li>
-            <li>Architecture decisions made early (one screen, 3–4 features, NFC tap) avoided mid-build pivots.</li>
-            <li>Pushing back on the settings-first home protected the product's identity in the highest-stakes demo.</li>
-          </ul>
-        </div>
-        <div class="cs-reflection-col">
-          <div class="cs-reflection-col__label">What's next</div>
-          <ul class="cs-reflection-list">
-            <li>Merchant/vendor dashboard — its own design problem, not yet started.</li>
-            <li>Accessibility audit — biometric-first flows carry exclusion risk, alternative auth paths are needed.</li>
-            <li>Wearable extension of the same gesture.</li>
-            <li>Hand-position confusion persisted even after the V1 fix — Puck-First (V2) is the next attempt.</li>
-          </ul>
-        </div>
-      </div>
+</main>
 
-      <div class="cs-needed">
-        <div class="cs-needed__label">Before presenting</div>
-        <ul class="cs-needed__list">
-          <li>Pull the real registration success % from the live-event data → replace TBD in Section 05.</li>
-          <li>Confirm which V2 scanning proposal actually shipped → Section 06, Trade-off 07.</li>
-          <li>Add the specific dialogue from the settings-vs-wallet pushback → Section 06 #05 / Section 07.</li>
-        </ul>
-      </div>
-    </section>
+<footer class="footer">
+  <span>Carlos Mera · Lead Product Designer</span>
+  <a href="https://www.carlos-mera.com">carlos-mera.com ↗</a>
+</footer>
 
-  </main>
+<script>
+  // ── Nav progress + scroll-spy ──
+  const bar   = document.getElementById('navBar');
+  const secs  = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav__links a[data-s]');
 
-  <footer class="cs-footer">
-    <span class="cs-footer__copy">Carlos Mera · Lead Product Designer</span>
-    <a href="https://www.carlos-mera.com" class="cs-footer__link">carlos-mera.com ↗</a>
-  </footer>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    bar.style.width = (window.scrollY / (h.scrollHeight - h.clientHeight) * 100) + '%';
+    const y = window.scrollY + 80;
+    let cur = '';
+    secs.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
+    links.forEach(a => a.classList.toggle('active', a.dataset.s === cur));
+  }, { passive: true });
 
-  <script>
-    const bar  = document.getElementById('bar');
-    const secs = document.querySelectorAll('section[id]');
-    const links = document.querySelectorAll('.cs-nav__links a[data-s]');
+  // ── Dig deeper accordion ──
+  function toggleDD(id) {
+    const el  = document.getElementById(id);
+    const btn = el.querySelector('.dd__btn');
+    const open = el.hasAttribute('open');
+    el.toggleAttribute('open', !open);
+    btn.setAttribute('aria-expanded', String(!open));
+  }
 
-    window.addEventListener('scroll', () => {
-      const h = document.documentElement;
-      bar.style.width = (window.scrollY / (h.scrollHeight - h.clientHeight) * 100) + '%';
-
-      const y = window.scrollY + 80;
-      let cur = '';
-      secs.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
-      links.forEach(a => a.classList.toggle('active', a.dataset.s === cur));
-    }, { passive: true });
-  </script>
+  // ── Story 3 tabs ──
+  function switchS3(panelId, btn) {
+    document.querySelectorAll('.s3-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.s3-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById(panelId).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
