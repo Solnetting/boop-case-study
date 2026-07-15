@@ -960,7 +960,6 @@ main { padding-top: 54px; }
   position: relative;
   width: 100%;
   max-width: 300px;
-  margin: 0 auto;
   aspect-ratio: 866 / 1758;
 }
 .phone-mock__screen {
