@@ -286,7 +286,7 @@
     <span class="finding__label">Finding</span>
     <span class="finding__text">The registration flow was weak — users needed too many instructions to complete it. Most critically, they didn't know which hand to start scanning with, and the flow didn't guide them through it confidently.</span>
     <span class="finding__label">Response</span>
-    <span class="finding__text">Guidance screens designed around a "find the white light" mechanic: hover the palm over the device until a white light appears, hold still, then capture that light 3 times per hand to complete registration — with a "Position X of 3" progress indicator per hand. Two deliberate error-handling calls: errors only prompt after 3 seconds (avoids flashing false errors on brief misalignment), and an X is used instead of a close/cancel button so there's always a way to exit — critical if the device has connection issues that could otherwise strand the user on the screen indefinitely. Haptics weren't introduced until V2.</span>
+    <span class="finding__text">A video tutorial plays once at the start — showing the gesture before the user attempts it. From there the screen stays out of the way: the rest of the guidance only appears when something needs resolving — hand misalignment, a prompt to switch hands, or a success confirmation. Two deliberate error-handling rules: errors only surface after 3 seconds (no false positives on a brief misalignment), and exit is always an X — never a close/cancel label — so there is always a way out if the device loses connection and the user would otherwise be stranded on-screen indefinitely. Haptics weren't introduced until V2.</span>
   </div>
 
   <!-- Guidance screens -->
@@ -294,32 +294,32 @@
     <hr class="evt-divider">
     <div class="evt-header__text">
       <span class="s-label" style="margin:0;">Guidance screens · shipped in V1</span>
-      <h3 class="evt-title">Hover, find the light, confirm</h3>
+      <h3 class="evt-title">Video first — guidance only when needed</h3>
     </div>
   </div>
 
   <div style="margin-top:0;">
     <div style="display:flex;gap:1rem;overflow-x:auto;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;">
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
-        <img src="images/guidance-hover-instruction.png" alt="Hover your hand over the device — illustrated instruction screen" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
+        <img src="images/guidance-hover-instruction.png" alt="Video tutorial — plays once at the start to show the gesture before the user attempts it" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
       </figure>
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
-        <img src="images/guidance-find-light.png" alt="Find the white light 3 times — scanning tutorial screen" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
+        <img src="images/guidance-find-light.png" alt="Find the white light — contextual screen shown only on misalignment" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
       </figure>
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
-        <img src="images/guidance-scanning-pos1.png" alt="Hover first hand over the device — Position 1 of 3 active scanning screen" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
+        <img src="images/guidance-scanning-pos1.png" alt="Scanning in progress — active capture, Position 1 of 3" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
       </figure>
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
-        <img src="images/guidance-pos1-complete.png" alt="Position 1 of 3 Complete — lift your hand to start Position 2" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
+        <img src="images/guidance-pos1-complete.png" alt="Position complete — contextual success state, prompts to switch hand" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
       </figure>
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
-        <img src="images/guidance-error-state.png" alt="Network issues error state — persistent error card shown after 3 seconds" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
+        <img src="images/guidance-error-state.png" alt="Error state — appears only after 3 seconds of misalignment, always escapable via X" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
       </figure>
     </div>
   </div>
 
   <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;">
-    <p class="s-body">The fix was designed directly from the finding: hover-to-find-the-light replaced distance-based instructions, with per-hand progress (3 of 3) making the multi-step capture legible without extra text.</p>
+    <p class="s-body">The fix was designed directly from the finding: a single video tutorial front-loads the gesture so users know what to do before they try. The screen then gets out of the way — no static instruction walls, no coaching during the scan. Guidance only reappears when something goes wrong (misalignment after 3 seconds), when the flow needs an action (switch hands), or when a step succeeds.</p>
     <p class="s-body">This was also when the device's own feedback language was designed: a light-ring system (colour + pulse) for charging, processing, success, and error states — entirely independent of the phone screen.</p>
   </div>
 
@@ -418,15 +418,17 @@
   <div class="story-grid" style="margin-top:2.5rem;">
     <div>
       <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">What they asked for</p>
-      <figure style="margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--border-s);">
-        <img src="images/s2-settings-lofi.png" alt="Early settings-heavy home — as originally briefed" style="width:100%;display:block;">
-      </figure>
+      <div class="phone-mock">
+        <img class="phone-mock__screen" src="images/s2-settings-lofi.png" alt="Early settings-heavy home — as originally briefed">
+        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
+      </div>
     </div>
     <div>
       <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.875rem;">What shipped</p>
-      <figure style="margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--border-s);">
-        <img src="images/s2-wallet-hifi.png" alt="Shipped wallet-first home — balance/history primary, settings secondary" style="width:100%;display:block;">
-      </figure>
+      <div class="phone-mock">
+        <img class="phone-mock__screen" src="images/s2-wallet-hifi.png" alt="Shipped wallet-first home — balance/history primary, settings secondary">
+        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
+      </div>
     </div>
   </div>
 
@@ -436,7 +438,7 @@
     <span class="finding__label">My call</span>
     <span class="finding__text">Pushed back with design rationale — wallet-style home with balance and transaction history as the primary surface; settings to secondary/quick-access.</span>
     <span class="finding__label">Outcome</span>
-    <span class="finding__text">Won the argument. The wallet-first home shipped. <span class="tbd">Add conversation specifics before presenting</span></span>
+    <span class="finding__text">Won the argument. The wallet-first home shipped.</span>
   </div>
 
   <p class="s-body" style="margin-top:2rem;">The rationale: the event was a first-impression moment for real users, not a stakeholder demo. A settings-heavy home would have oriented the product around configuration rather than value — the opposite of what needed to be validated.</p>
@@ -582,45 +584,8 @@
 <section id="story-3" class="s">
   <span class="s-label">Story 3 · Technical trade-off</span>
   <h2 class="s-headline">The decision that shaped V2</h2>
-  <p class="s-body">Two strong stories here — pick one before presenting. Both are available below.</p>
 
-  <div class="s3-tabs" style="margin-top:2rem;">
-    <button class="s3-tab active" onclick="switchS3('s3a', this)">Mini-app vs. native app</button>
-    <button class="s3-tab"        onclick="switchS3('s3b', this)">Puck-First vs. 3 proposals</button>
-  </div>
-
-  <!-- Option A: Mini-app vs. native -->
-  <div id="s3a" class="s3-panel active">
-    <p class="s-body">V1 was a browser-only web app — the fastest way to get a testable product in front of strangers at the live event. Once validated, V2 moved to a native app. The initial brief for V2 implied a World mini-app; a native React Native app was chosen instead, explicitly to avoid install friction and dependency on the World app ecosystem.</p>
-
-    <figure class="img-ph img-ph--doc img-ph--wide" style="margin-top:2rem;" aria-label="Requirements doc placeholder">
-      <div class="img-ph__inner">
-        <span class="img-ph__type">doc-notes</span>
-        <span class="img-ph__desc">Requirements doc excerpt — "Not a World mini-app (avoid dependency and clunky install)"</span>
-        <span class="img-ph__note">Screenshot from dated Requirements meeting note</span>
-      </div>
-    </figure>
-
-    <div class="finding" style="margin-top:2rem;">
-      <span class="finding__label">Brief implied</span>
-      <span class="finding__text">World mini-app — leverages the World ecosystem, no separate install needed.</span>
-      <span class="finding__label">Decision</span>
-      <span class="finding__text"><strong>Native React Native app</strong> — avoids install dependency and friction. Users shouldn't need to install World App to use Boop.</span>
-      <span class="finding__label">Confirmed</span>
-      <span class="finding__text">Explicitly documented in the "Requirements" meeting note. Aligned with Justin/Nathan as top-priority V2 decision, with a 6–7 week milestone runway to an April showcase.</span>
-    </div>
-
-    <figure class="img-ph img-ph--hifi img-ph--wide" style="margin-top:2rem;" aria-label="V2 native registration flow placeholder">
-      <div class="img-ph__inner">
-        <span class="img-ph__type">hi-fi</span>
-        <span class="img-ph__desc">V2 native registration flow — World ID link/create, hand registration</span>
-        <span class="img-ph__note">Export from Boop_2.0 Figma</span>
-      </div>
-    </figure>
-  </div>
-
-  <!-- Option B: Puck-First -->
-  <div id="s3b" class="s3-panel">
+  <div id="s3b" class="s3-panel active">
     <p class="s-body">Four competing UX concepts were evaluated for scanning guidance in V2. The core problem: the V1 guidance screens still required users to look at their phone instead of the scanner.</p>
 
     <figure class="img-ph img-ph--doc img-ph--wide" style="margin-top:2rem;" aria-label="Four proposals comparison placeholder">
@@ -656,7 +621,7 @@
       <div class="proposal proposal--chosen">
         <div class="proposal__num">04 →</div>
         <div>
-          <div class="proposal__title">Puck-First <span class="tbd">Confirm shipped</span></div>
+          <div class="proposal__title">Puck-First — shipped</div>
           <div class="proposal__body">Minimal UI. Haptic and audio-led — the device does the coaching, the phone stays quiet. Haptics reserved for critical moments only. The happy path requires zero phone-glancing.</div>
         </div>
       </div>
