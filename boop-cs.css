@@ -172,8 +172,11 @@ main { padding-top: 54px; }
 .img-ph--hero   { aspect-ratio: 16/7; padding: 0; }
 .img-ph--wide   { aspect-ratio: 16/9; padding: 0; }
 
-.flow-scroll {
+.flow-wrap {
+  position: relative;
   margin-top: 1.5rem;
+}
+.flow-scroll {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -185,6 +188,52 @@ main { padding-top: 54px; }
   width: auto;
   max-width: none;
   display: block;
+}
+.flow-expand {
+  position: absolute;
+  top: .75rem; right: .75rem;
+  width: 32px; height: 32px;
+  background: rgba(7,7,7,.65);
+  border: none; border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  transition: background .15s;
+  z-index: 2;
+}
+.flow-expand:hover { background: rgba(7,7,7,.9); }
+
+.flow-lb {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(7,7,7,.92);
+  z-index: 1000;
+  align-items: center; justify-content: center;
+}
+.flow-lb.open { display: flex; }
+.flow-lb__x {
+  position: absolute;
+  top: 1.25rem; right: 1.25rem;
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,.12);
+  border: none; border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  transition: background .15s;
+  z-index: 2;
+}
+.flow-lb__x:hover { background: rgba(255,255,255,.24); }
+.flow-lb__scroll {
+  overflow: auto;
+  max-width: 96vw; max-height: 92vh;
+  border-radius: var(--r-lg);
+}
+.flow-lb__scroll img {
+  display: block;
+  width: auto; height: auto;
+  max-height: 92vh;
+  max-width: none;
 }
 .img-ph--std    { aspect-ratio: 4/3;  }
 .img-ph--tall   { aspect-ratio: 3/4; max-width: 460px; }

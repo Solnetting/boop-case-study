@@ -260,8 +260,22 @@
 
   <p class="s-body" style="margin-top:1.5rem; font-weight:600; color:var(--ink);">~9 versions of the core flow · 3 vendor-app iterations · friction-tagged live during design</p>
 
-  <div class="flow-scroll">
-    <img src="images/final-flow.png" alt="Final low-fi flow — logic behind the shipped registration flow">
+  <div class="flow-wrap">
+    <div class="flow-scroll">
+      <img src="images/final-flow.png" alt="Final low-fi flow — logic behind the shipped registration flow">
+    </div>
+    <button class="flow-expand" onclick="openFlow()" aria-label="Expand fullscreen">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 2h4v4M6 14H2v-4M14 10v4h-4M2 6V2h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <div class="flow-lb" id="flowLb" onclick="closeFlow()">
+    <button class="flow-lb__x" onclick="closeFlow();event.stopPropagation()" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+    </button>
+    <div class="flow-lb__scroll" onclick="event.stopPropagation()">
+      <img src="images/final-flow.png" alt="Final low-fi flow — logic behind the shipped registration flow">
+    </div>
   </div>
 
   <div class="finding">
@@ -775,6 +789,17 @@
     el.toggleAttribute('open', !open);
     btn.setAttribute('aria-expanded', String(!open));
   }
+
+  // ── Flow lightbox ──
+  function openFlow() {
+    document.getElementById('flowLb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeFlow() {
+    document.getElementById('flowLb').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFlow(); });
 
   // ── Story 3 tabs ──
   function switchS3(panelId, btn) {
