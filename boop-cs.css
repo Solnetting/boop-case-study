@@ -178,8 +178,7 @@ main { padding-top: 54px; }
 }
 .flow-scroll {
   height: 480px;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
   border-radius: var(--r-lg);
   border: 1px solid var(--border);
