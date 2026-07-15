@@ -200,13 +200,32 @@
     </div>
   </div>
 
-  <figure class="img-ph img-ph--photo img-ph--wide" style="margin-top:2.5rem;" aria-label="Research moodboard placeholder">
-    <div class="img-ph__inner">
-      <span class="img-ph__type">screenshot</span>
-      <span class="img-ph__desc">Research and benchmarking moodboard</span>
-      <span class="img-ph__note">Export from Figma research board</span>
+  <div class="research-grid" style="margin-top:2.5rem;">
+    <div class="research-grid__item research-grid__item--feature">
+      <img src="images/research-amazon-one.png" alt="Amazon One palm scanner" loading="lazy">
+      <span class="research-grid__label">Amazon One</span>
     </div>
-  </figure>
+    <div class="research-grid__item">
+      <img src="images/research-humanity-protocol.png" alt="Humanity Protocol app" loading="lazy">
+      <span class="research-grid__label">Humanity Protocol</span>
+    </div>
+    <div class="research-grid__item">
+      <img src="images/research-revolut.png" alt="Revolut app" loading="lazy">
+      <span class="research-grid__label">Revolut</span>
+    </div>
+    <div class="research-grid__item">
+      <img src="images/research-palm-scan.png" alt="Palm scanning UX" loading="lazy">
+      <span class="research-grid__label">Palm scanning UX</span>
+    </div>
+    <div class="research-grid__item">
+      <img src="images/research-redrock.png" alt="Redrock Biometrics" loading="lazy">
+      <span class="research-grid__label">Redrock Biometrics</span>
+    </div>
+    <div class="research-grid__item">
+      <img src="images/research-world-id.png" alt="World ID verification" loading="lazy">
+      <span class="research-grid__label">World ID</span>
+    </div>
+  </div>
 
   <div class="principles">
     <div class="principles__intro">Four design principles from the research →</div>
@@ -300,16 +319,16 @@
   <div style="margin-top:0;">
     <div style="display:flex;gap:1rem;overflow-x:auto;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;">
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
-        <img src="images/guidance-hover-instruction.png" alt="Video tutorial — plays once at the start to show the gesture before the user attempts it" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
+        <img src="images/guidance-hover-instruction.png" alt="Hover your hand over the device — illustrated instruction screen, shown to every user" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
       </figure>
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
-        <img src="images/guidance-find-light.png" alt="Find the white light — contextual screen shown only on misalignment" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
+        <img src="images/guidance-find-light.png" alt="Find the white light 3 times — scanning tutorial screen, shown to every user" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
       </figure>
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
-        <img src="images/guidance-scanning-pos1.png" alt="Scanning in progress — active capture, Position 1 of 3" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
+        <img src="images/guidance-scanning-pos1.png" alt="Hover first hand over the device — Position 1 of 3, active scanning screen" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
       </figure>
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
-        <img src="images/guidance-pos1-complete.png" alt="Position complete — contextual success state, prompts to switch hand" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
+        <img src="images/guidance-pos1-complete.png" alt="Position 1 of 3 Complete — lift your hand to start Position 2" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
       </figure>
       <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
         <img src="images/guidance-error-state.png" alt="Error state — appears only after 3 seconds of misalignment, always escapable via X" style="width:100%;display:block;border-radius:var(--r);border:1px solid var(--border-s);">
@@ -318,7 +337,7 @@
   </div>
 
   <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;">
-    <p class="s-body">The fix was designed directly from the finding: a single video tutorial front-loads the gesture so users know what to do before they try. The screen then gets out of the way — no static instruction walls, no coaching during the scan. Guidance only reappears when something goes wrong (misalignment after 3 seconds), when the flow needs an action (switch hands), or when a step succeeds.</p>
+    <p class="s-body">The fix was designed directly from the finding: hover-to-find-the-light replaced distance-based instructions, with per-hand progress ("Position X of 3") shown on-screen throughout so the multi-step capture stayed legible without extra text.</p>
     <p class="s-body">This was also when the device's own feedback language was designed: a light-ring system (colour + pulse) for charging, processing, success, and error states — entirely independent of the phone screen.</p>
   </div>
 
@@ -423,6 +442,11 @@
       <div class="stat__num">~50%</div>
       <div class="stat__label">Registered without any help</div>
       <div class="stat__note">Staff estimate, based on how many people asked event staff for assistance — mostly for hand-position confusion the guidance screens reduced but didn't fully solve.</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">~94%</div>
+      <div class="stat__label">Of registered users went on to pay with their hand</div>
+      <div class="stat__note">Registration-to-payment conversion, not a payment-method share — once someone registered, this many actually used it at the point of sale.</div>
     </div>
   </div>
 
