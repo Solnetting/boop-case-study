@@ -23,7 +23,6 @@
       <a href="#story-1"     data-s="story-1">Story 1</a>
       <a href="#story-2"     data-s="story-2">Story 2</a>
       <a href="#story-3"     data-s="story-3">Story 3</a>
-      <a href="#results"     data-s="results">Results</a>
       <a href="#reflection"  data-s="reflection">Reflection</a>
     </div>
   </div>
@@ -382,6 +381,27 @@
 
   <p class="s-body" style="margin-top:1rem;">Help-seeking was still fairly common — largely tied to hand-position confusion that the guidance screens reduced but didn't eliminate. Overall experience was rated positively despite that friction.</p>
 
+  <figure class="img-ph img-ph--hifi img-ph--wide" style="margin-top:2rem;" aria-label="Transaction history screen placeholder">
+    <div class="img-ph__inner">
+      <span class="img-ph__type">screenshot</span>
+      <span class="img-ph__desc">Transaction history / balance screen — from the live app</span>
+      <span class="img-ph__note">Screenshot from V1 live app</span>
+    </div>
+  </figure>
+
+  <div class="stats-row" style="margin-top:1.5rem;">
+    <div class="stat">
+      <div class="stat__num">~90%</div>
+      <div class="stat__label">Of ~300 attendees completed registration</div>
+      <div class="stat__note">Overall completion — with or without help.</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">~50%</div>
+      <div class="stat__label">Registered without any help</div>
+      <div class="stat__note">The rest sought help, mostly for hand-position confusion the guidance screens reduced but didn't fully solve.</div>
+    </div>
+  </div>
+
   <!-- Dig deeper: bouncer/VIP flows -->
   <div class="dd" id="dd-bouncer">
     <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-bouncer')">
@@ -442,6 +462,39 @@
   </div>
 
   <p class="s-body" style="margin-top:2rem;">The rationale: the event was a first-impression moment for real users, not a stakeholder demo. A settings-heavy home would have oriented the product around configuration rather than value — the opposite of what needed to be validated.</p>
+
+  <!-- Live app screens -->
+  <div class="evt-header" style="margin-top:2.5rem;">
+    <hr class="evt-divider">
+    <div class="evt-header__text">
+      <span class="s-label" style="margin:0;">Live app · V1</span>
+      <h3 class="evt-title">Shipped screens from the event</h3>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
+    <div>
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">Home — age unverified</p>
+      <div class="phone-mock">
+        <img class="phone-mock__screen" src="images/s2-home-noage.png" alt="V1 live app home — wallet-first, age not verified banner">
+        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.875rem;">Home — verified</p>
+      <div class="phone-mock">
+        <img class="phone-mock__screen" src="images/s2-home-v2.png" alt="V1 live app home — wallet-first, age verified state">
+        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">Transaction history</p>
+      <div class="phone-mock">
+        <img class="phone-mock__screen" src="images/s2-all-signatures.png" alt="V1 live app — All Signatures transaction history screen">
+        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
+      </div>
+    </div>
+  </div>
 
   <!-- Dig deeper: remaining trade-offs -->
   <div class="dd" id="dd-tradeoffs">
@@ -622,7 +675,7 @@
         <div class="proposal__num">04 →</div>
         <div>
           <div class="proposal__title">Puck-First — shipped</div>
-          <div class="proposal__body">Minimal UI. Haptic and audio-led — the device does the coaching, the phone stays quiet. Haptics reserved for critical moments only. The happy path requires zero phone-glancing.</div>
+          <div class="proposal__body">A short on-screen tutorial is shown once, the first time a user registers. After that, the phone stays quiet — notifications and haptics only fire when needed: alignment problems, switching hands, or success. No persistent on-screen coaching. The tutorial also drops the earlier "which hand first" confusion at the illustration level: rather than prescribing left-then-right, it mirrors whichever hand the user actually places first and second, in that same order — solving the original V1 finding without adding instructional text.</div>
         </div>
       </div>
     </div>
@@ -683,36 +736,6 @@
 
 
 <!-- ═══════════════════════════════════
-     RESULTS
-═══════════════════════════════════ -->
-<section id="results" class="s">
-  <span class="s-label">Results</span>
-  <h2 class="s-headline">Validated in the wild</h2>
-
-  <figure class="img-ph img-ph--hifi img-ph--wide" aria-label="Transaction history screen placeholder">
-    <div class="img-ph__inner">
-      <span class="img-ph__type">screenshot</span>
-      <span class="img-ph__desc">Transaction history / balance screen — from the live app</span>
-      <span class="img-ph__note">Screenshot from V1 live app</span>
-    </div>
-  </figure>
-
-  <div class="stats-row">
-    <div class="stat">
-      <div class="stat__num">~90%</div>
-      <div class="stat__label">Of ~300 attendees completed registration</div>
-      <div class="stat__note">Overall completion — with or without help.</div>
-    </div>
-    <div class="stat">
-      <div class="stat__num">~50%</div>
-      <div class="stat__label">Registered without any help</div>
-      <div class="stat__note">The rest sought help, mostly for hand-position confusion the guidance screens reduced but didn't fully solve.</div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════
      REFLECTION / WHAT'S NEXT
 ═══════════════════════════════════ -->
 <section id="reflection" class="s">
@@ -762,16 +785,6 @@
     </div>
   </div>
 
-  <!-- Before presenting -->
-  <div class="before-presenting">
-    <div class="before-presenting__label">Before presenting</div>
-    <ul class="before-presenting__list">
-      <li>Pull the real registration success % from the live-event data → replace TBD in the Results section.</li>
-      <li>Pick Story 3 — mini-app vs. native OR Puck-First. The tab shows both; decide which to lead with.</li>
-      <li>Add the specific dialogue from the settings-vs-wallet pushback → Story 2, Outcome row.</li>
-      <li>Export all Figma images and replace every placeholder before the interview.</li>
-    </ul>
-  </div>
 </section>
 
 </main>
