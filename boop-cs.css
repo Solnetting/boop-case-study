@@ -928,3 +928,27 @@ main { padding-top: 54px; }
   background: #fff;
   transform: scale(1.3);
 }
+
+/* ── Event carousel header ── */
+.evt-header {
+  margin-top: 4rem;
+}
+.evt-divider {
+  border: none;
+  border-top: 1px solid var(--border-s);
+  margin: 0 0 2.5rem;
+}
+.evt-header__text {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-bottom: 1.5rem;
+}
+.evt-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
