@@ -266,22 +266,41 @@
     <span class="finding__label">Finding</span>
     <span class="finding__text">The registration flow was weak — users needed too many instructions to complete it. Most critically, they didn't know which hand to start scanning with, and the flow didn't guide them through it confidently.</span>
     <span class="finding__label">Response</span>
-    <span class="finding__text">Guidance screens designed to replace instruction text with contextual feedback: move closer, move further, align to centre, per-hand progress, haptic confirmation per scan. The goal was to make the device do the coaching — not the UI.</span>
+    <span class="finding__text">Guidance screens designed around a "find the white light" mechanic: hover the palm over the device until a white light appears, hold still, then capture that light 3 times per hand to complete registration — with a "Position X of 3" progress indicator per hand. Two deliberate error-handling calls: errors only prompt after 3 seconds (avoids flashing false errors on brief misalignment), and an X is used instead of a close/cancel button so there's always a way to exit — critical if the device has connection issues that could otherwise strand the user on the screen indefinitely. Haptics weren't introduced until V2.</span>
   </div>
 
   <!-- Guidance screens -->
-  <div class="story-grid" style="margin-top:2rem;">
-    <figure class="img-ph img-ph--hifi" style="aspect-ratio:3/4; margin:0;" aria-label="Guidance screens placeholder">
-      <div class="img-ph__inner">
-        <span class="img-ph__type">hi-fi</span>
-        <span class="img-ph__desc">Hand-registration guidance sequence — move closer, move further, align to centre, per-hand progress</span>
-        <span class="img-ph__note">Export from Boop_1.0 Figma</span>
-      </div>
-    </figure>
-    <div class="story-col" style="display:flex;flex-direction:column;justify-content:center;gap:1.25rem;">
-      <p class="s-body">The fix was designed directly from the finding: four states of haptic-and-visual guidance that let users calibrate their hand position without reading instructions. The phone becomes a coach, not a manual.</p>
-      <p class="s-body">This was also when the device's own feedback language was designed: a light-ring system (colour + pulse) for charging, processing, success, and error states — entirely independent of the phone screen.</p>
+  <div style="margin-top:2rem;">
+    <div style="display:flex;gap:1rem;overflow-x:auto;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;">
+      <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
+        <img src="images/guidance-hover-instruction.png" alt="Hover your hand over the device — illustrated instruction screen" style="width:100%;display:block;border-radius:var(--r);">
+      </figure>
+      <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
+        <img src="images/guidance-find-light.png" alt="Find the white light 3 times — scanning tutorial screen" style="width:100%;display:block;border-radius:var(--r);">
+      </figure>
+      <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
+        <img src="images/guidance-scanning-pos1.png" alt="Hover first hand over the device — Position 1 of 3 active scanning screen" style="width:100%;display:block;border-radius:var(--r);">
+      </figure>
+      <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
+        <img src="images/guidance-pos1-complete.png" alt="Position 1 of 3 Complete — lift your hand to start Position 2" style="width:100%;display:block;border-radius:var(--r);">
+      </figure>
+      <figure style="flex:0 0 auto;width:clamp(140px,22vw,200px);margin:0;">
+        <img src="images/guidance-error-state.png" alt="Network issues error state — persistent error card shown after 3 seconds" style="width:100%;display:block;border-radius:var(--r);">
+      </figure>
     </div>
+    <div style="display:flex;gap:1rem;margin-top:.875rem;">
+      <figure style="flex:1;margin:0;">
+        <img src="images/guidance-note-error-timing.png" alt="Design note: persistent errors prompted after 3 seconds" style="width:100%;display:block;border-radius:var(--r);">
+      </figure>
+      <figure style="flex:1;margin:0;">
+        <img src="images/guidance-note-x-button.png" alt="Design note: X instead of close button so there's always a way to exit" style="width:100%;display:block;border-radius:var(--r);">
+      </figure>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;">
+    <p class="s-body">The fix was designed directly from the finding: hover-to-find-the-light replaced distance-based instructions, with per-hand progress (3 of 3) making the multi-step capture legible without extra text.</p>
+    <p class="s-body">This was also when the device's own feedback language was designed: a light-ring system (colour + pulse) for charging, processing, success, and error states — entirely independent of the phone screen.</p>
   </div>
 
   <!-- Live event -->
