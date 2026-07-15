@@ -964,13 +964,12 @@ main { padding-top: 54px; }
 }
 .phone-mock__screen {
   position: absolute;
-  top: 2.5%;
+  top: 7.8%;
   left: 5.5%;
   width: 89%;
-  height: 95.5%;
+  height: 89.7%;
   object-fit: cover;
   z-index: 1;
-  border-radius: 12%;
 }
 .phone-mock__frame {
   position: absolute;
