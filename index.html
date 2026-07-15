@@ -381,48 +381,43 @@
 
   <p class="s-body" style="margin-top:1rem;">Help-seeking was still fairly common — largely tied to hand-position confusion that the guidance screens reduced but didn't eliminate. Overall experience was rated positively despite that friction.</p>
 
-  <figure class="img-ph img-ph--hifi img-ph--wide" style="margin-top:2rem;" aria-label="Transaction history screen placeholder">
-    <div class="img-ph__inner">
-      <span class="img-ph__type">screenshot</span>
-      <span class="img-ph__desc">Transaction history / balance screen — from the live app</span>
-      <span class="img-ph__note">Screenshot from V1 live app</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:2rem;">
+    <div>
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">Home — age unverified</p>
+      <div class="phone-mock">
+        <img class="phone-mock__screen" src="images/s2-home-noage.png" alt="V1 live app home — wallet-first, age not verified banner">
+        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
+      </div>
     </div>
-  </figure>
+    <div>
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.875rem;">Home — verified</p>
+      <div class="phone-mock">
+        <img class="phone-mock__screen" src="images/s2-home-v2.png" alt="V1 live app home — wallet-first, age verified state">
+        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">Transaction history</p>
+      <div class="phone-mock">
+        <img class="phone-mock__screen" src="images/s2-all-signatures.png" alt="V1 live app — All Signatures transaction history screen">
+        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
+      </div>
+    </div>
+  </div>
 
   <div class="stats-row" style="margin-top:1.5rem;">
     <div class="stat">
       <div class="stat__num">~90%</div>
-      <div class="stat__label">Of ~300 attendees completed registration</div>
-      <div class="stat__note">Overall completion — with or without help.</div>
+      <div class="stat__label">Of people who started registration before the event, completed the hand scan on-site</div>
+      <div class="stat__note">Started vs. finished — with or without help.</div>
     </div>
     <div class="stat">
       <div class="stat__num">~50%</div>
       <div class="stat__label">Registered without any help</div>
-      <div class="stat__note">The rest sought help, mostly for hand-position confusion the guidance screens reduced but didn't fully solve.</div>
+      <div class="stat__note">Staff estimate, based on how many people asked event staff for assistance — mostly for hand-position confusion the guidance screens reduced but didn't fully solve.</div>
     </div>
   </div>
 
-  <!-- Dig deeper: bouncer/VIP flows -->
-  <div class="dd" id="dd-bouncer">
-    <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-bouncer')">
-      <span class="dd__btn-label">
-        <span class="dd__btn-tag">Dig deeper</span>
-        Bouncer / VIP / entrance flows
-      </span>
-      <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
-    </button>
-    <div class="dd__panel">
-      <div class="dd__label">Secondary layer</div>
-      <p class="dd__body">Separate variants for VIP, bouncer, age verification, and entrance flows — designed in parallel with the core consumer app to cover all event-day personnel touchpoints.</p>
-      <figure class="img-ph img-ph--lofi img-ph--wide" aria-label="Bouncer/VIP flows placeholder">
-        <div class="img-ph__inner">
-          <span class="img-ph__type">lo-fi</span>
-          <span class="img-ph__desc">VIP_Bouncer, VIP_Entrance, Age Verification Bouncer boards</span>
-          <span class="img-ph__note">Export from FigJam / Figma · Boop_1.0</span>
-        </div>
-      </figure>
-    </div>
-  </div>
 </section>
 
 
@@ -462,39 +457,6 @@
   </div>
 
   <p class="s-body" style="margin-top:2rem;">The rationale: the event was a first-impression moment for real users, not a stakeholder demo. A settings-heavy home would have oriented the product around configuration rather than value — the opposite of what needed to be validated.</p>
-
-  <!-- Live app screens -->
-  <div class="evt-header" style="margin-top:2.5rem;">
-    <hr class="evt-divider">
-    <div class="evt-header__text">
-      <span class="s-label" style="margin:0;">Live app · V1</span>
-      <h3 class="evt-title">Shipped screens from the event</h3>
-    </div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
-    <div>
-      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">Home — age unverified</p>
-      <div class="phone-mock">
-        <img class="phone-mock__screen" src="images/s2-home-noage.png" alt="V1 live app home — wallet-first, age not verified banner">
-        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
-      </div>
-    </div>
-    <div>
-      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.875rem;">Home — verified</p>
-      <div class="phone-mock">
-        <img class="phone-mock__screen" src="images/s2-home-v2.png" alt="V1 live app home — wallet-first, age verified state">
-        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
-      </div>
-    </div>
-    <div>
-      <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">Transaction history</p>
-      <div class="phone-mock">
-        <img class="phone-mock__screen" src="images/s2-all-signatures.png" alt="V1 live app — All Signatures transaction history screen">
-        <img class="phone-mock__frame" src="images/iphone-mockup.png" alt="">
-      </div>
-    </div>
-  </div>
 
   <!-- Dig deeper: remaining trade-offs -->
   <div class="dd" id="dd-tradeoffs">
@@ -674,7 +636,7 @@
       <div class="proposal proposal--chosen">
         <div class="proposal__num">04 →</div>
         <div>
-          <div class="proposal__title">Puck-First — shipped</div>
+          <div class="proposal__title">Puck-First — built in V2, not yet tested</div>
           <div class="proposal__body">A short on-screen tutorial is shown once, the first time a user registers. After that, the phone stays quiet — notifications and haptics only fire when needed: alignment problems, switching hands, or success. No persistent on-screen coaching. The tutorial also drops the earlier "which hand first" confusion at the illustration level: rather than prescribing left-then-right, it mirrors whichever hand the user actually places first and second, in that same order — solving the original V1 finding without adding instructional text.</div>
         </div>
       </div>
@@ -758,7 +720,7 @@
         <li><strong>Merchant/vendor dashboard</strong> — its own design problem, not yet started.</li>
         <li><strong>Accessibility audit</strong> — biometric-first flows carry exclusion risk; alternative auth paths are needed.</li>
         <li><strong>Wearable extension</strong> of the same gesture.</li>
-        <li><strong>Hand-position confusion persisted</strong> even after the V1 guidance fix. Puck-First (V2) is the next attempt — not yet validated.</li>
+        <li><strong>Hand-position confusion persisted</strong> even after the V1 guidance fix. Puck-First (V2) is a reasoned next attempt, not a proven one — it's an assumption based on the V1 data, not a tested result. The next step would be measuring the same unassisted-registration rate against it before calling it solved.</li>
       </ul>
     </div>
   </div>
