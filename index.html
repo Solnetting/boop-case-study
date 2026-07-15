@@ -285,7 +285,7 @@
     <span class="finding__label">Finding</span>
     <span class="finding__text">The registration flow was weak — users needed too many instructions to complete it. Most critically, they didn't know which hand to start scanning with, and the flow didn't guide them through it confidently.</span>
     <span class="finding__label">Response</span>
-    <span class="finding__text">A video tutorial plays once at the start — showing the gesture before the user attempts it. From there the screen stays out of the way: the rest of the guidance only appears when something needs resolving — hand misalignment, a prompt to switch hands, or a success confirmation. Two deliberate error-handling rules: errors only surface after 3 seconds (no false positives on a brief misalignment), and exit is always an X — never a close/cancel label — so there is always a way out if the device loses connection and the user would otherwise be stranded on-screen indefinitely. Haptics weren't introduced until V2.</span>
+    <span class="finding__text">Guidance screens designed around a "find the white light" mechanic, shown step-by-step on-screen the entire time: hover the palm over the device until a white light appears, hold still, then capture that light 3 times per hand to complete registration — with a "Position X of 3" progress indicator per hand, visible throughout. Two deliberate error-handling calls: errors only prompt after 3 seconds (avoids flashing false errors on brief misalignment), and an X is used instead of a close/cancel button so there's always a way to exit — critical if the device has connection issues that could otherwise strand the user on the screen indefinitely. Haptics weren't introduced until V2 — V1 relied entirely on on-screen text and visuals.</span>
   </div>
 
   <!-- Guidance screens -->
@@ -293,7 +293,7 @@
     <hr class="evt-divider">
     <div class="evt-header__text">
       <span class="s-label" style="margin:0;">Guidance screens · shipped in V1</span>
-      <h3 class="evt-title">Video first — guidance only when needed</h3>
+      <h3 class="evt-title">Step-by-step, on-screen, every time</h3>
     </div>
   </div>
 
@@ -381,7 +381,7 @@
 
   <p class="s-body" style="margin-top:1rem;">Help-seeking was still fairly common — largely tied to hand-position confusion that the guidance screens reduced but didn't eliminate. Overall experience was rated positively despite that friction.</p>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:2rem;">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:2rem;margin-bottom:3.5rem;">
     <div>
       <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;">Home — age unverified</p>
       <div class="phone-mock">
