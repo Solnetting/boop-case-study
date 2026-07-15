@@ -180,7 +180,8 @@ main { padding-top: 54px; }
   height: 480px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  background: var(--bg);
+  position: relative;
+  background: #ECF0F6;
 }
 .flow-scroll img {
   height: 780px;
