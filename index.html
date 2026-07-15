@@ -61,11 +61,11 @@
     </div>
     <div class="hero__meta-item">
       <div class="hero__meta-label">V1</div>
-      <div class="hero__meta-value">Built · live-tested with ~300 people</div>
+      <div class="hero__meta-value">Web app, browser-only · live-tested with ~300 people</div>
     </div>
     <div class="hero__meta-item">
       <div class="hero__meta-label">V2</div>
-      <div class="hero__meta-value">Alpha — unreleased</div>
+      <div class="hero__meta-value">Native app · Alpha — unreleased</div>
     </div>
   </div>
 </section>
@@ -256,7 +256,7 @@
 
   <!-- Pre-event test -->
   <p class="s-body">Every flow was paper-mapped before Figma. Low-fi went through ~9 iterations of the core user flow (V1–V9.2), three vendor-app versions, and separate bouncer/VIP/entrance variants — with friction risk tagged directly on the flow diagrams as they were built.</p>
-  <p class="s-body" style="margin-top:1rem;">Before the event, a small-sample usability test with internal coworkers unrelated to the project surfaced a critical issue.</p>
+  <p class="s-body" style="margin-top:1rem;">Before the event, a small-sample usability test (think-aloud protocol) with internal coworkers unrelated to the project surfaced a critical issue.</p>
 
   <p class="s-body" style="margin-top:1.5rem; font-weight:600; color:var(--ink);">~9 versions of the core flow · 3 vendor-app iterations · friction-tagged live during design</p>
 
@@ -309,6 +309,24 @@
   <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;">
     <p class="s-body">The fix was designed directly from the finding: hover-to-find-the-light replaced distance-based instructions, with per-hand progress (3 of 3) making the multi-step capture legible without extra text.</p>
     <p class="s-body">This was also when the device's own feedback language was designed: a light-ring system (colour + pulse) for charging, processing, success, and error states — entirely independent of the phone screen.</p>
+  </div>
+
+  <div class="flow-wrap" style="margin-top:2rem;">
+    <div class="flow-scroll">
+      <img src="images/v1-hifi-flow.jpg" alt="V1 hi-fi — shipped registration and payment flow">
+    </div>
+    <button class="flow-expand" onclick="openHifi()" aria-label="Expand fullscreen">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 2h4v4M6 14H2v-4M14 10v4h-4M2 6V2h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <div class="flow-lb" id="hifiLb" onclick="closeHifi()">
+    <button class="flow-lb__x" onclick="closeHifi();event.stopPropagation()" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+    </button>
+    <div class="flow-lb__scroll" onclick="event.stopPropagation()">
+      <img src="images/v1-hifi-flow.jpg" alt="V1 hi-fi — shipped registration and payment flow">
+    </div>
   </div>
 
   <!-- Live event -->
@@ -541,7 +559,7 @@
 
   <!-- Option A: Mini-app vs. native -->
   <div id="s3a" class="s3-panel active">
-    <p class="s-body">The initial brief implied a World mini-app. A native React Native app was chosen explicitly to avoid install friction and dependency on the World app ecosystem.</p>
+    <p class="s-body">V1 was a browser-only web app — the fastest way to get a testable product in front of strangers at the live event. Once validated, V2 moved to a native app. The initial brief for V2 implied a World mini-app; a native React Native app was chosen instead, explicitly to avoid install friction and dependency on the World app ecosystem.</p>
 
     <figure class="img-ph img-ph--doc img-ph--wide" style="margin-top:2rem;" aria-label="Requirements doc placeholder">
       <div class="img-ph__inner">
@@ -799,7 +817,15 @@
     document.getElementById('flowLb').classList.remove('open');
     document.body.style.overflow = '';
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFlow(); });
+  function openHifi() {
+    document.getElementById('hifiLb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeHifi() {
+    document.getElementById('hifiLb').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeFlow(); closeHifi(); } });
 
   // ── Story 3 tabs ──
   function switchS3(panelId, btn) {
