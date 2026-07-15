@@ -971,6 +971,7 @@ main { padding-top: 54px; }
   width: 89%;
   height: 89.7%;
   object-fit: cover;
+  object-position: top;
   z-index: 1;
 }
 .phone-mock__frame {
