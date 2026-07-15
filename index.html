@@ -4,67 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boop — Interview Case Study · Carlos Mera</title>
-  <meta name="description" content="Palm-based payment and identity — a UX/product design case study by Carlos Mera.">
+  <meta name="description" content="Palm-based payment and identity — a product design case study by Carlos Mera.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="boop-cs.css">
 </head>
 <body>
 
-  <!-- ─── NAV ─── -->
-  <nav class="cs-nav" id="csNav">
+  <!-- NAV -->
+  <nav class="cs-nav">
     <div class="cs-nav__inner">
       <a href="#hero" class="cs-nav__logo">Bo<span class="cs-nav__dot"></span>p</a>
-      <div class="cs-nav__links" id="csNavLinks">
-        <a href="#problem" data-section="problem">Problem</a>
-        <a href="#research" data-section="research">Research</a>
-        <a href="#process" data-section="process">Process</a>
-        <a href="#validation" data-section="validation">Validation</a>
-        <a href="#tradeoffs" data-section="tradeoffs">Trade-offs</a>
-        <a href="#stakeholders" data-section="stakeholders">Stakeholders</a>
-        <a href="#v2" data-section="v2">V2</a>
-        <a href="#reflection" data-section="reflection">Reflection</a>
+      <div class="cs-nav__links">
+        <a href="#problem"      data-s="problem">Problem</a>
+        <a href="#research"     data-s="research">Research</a>
+        <a href="#process"      data-s="process">Process</a>
+        <a href="#validation"   data-s="validation">Validation</a>
+        <a href="#tradeoffs"    data-s="tradeoffs">Trade-offs</a>
+        <a href="#stakeholders" data-s="stakeholders">Stakeholders</a>
+        <a href="#v2"           data-s="v2">V2</a>
+        <a href="#reflection"   data-s="reflection">Reflection</a>
       </div>
     </div>
     <div class="cs-nav__bar-wrap">
-      <div class="cs-nav__bar" id="csNavBar"></div>
+      <div class="cs-nav__bar" id="bar"></div>
     </div>
   </nav>
 
   <main>
 
-    <!-- ─── S1: HERO ─── -->
+    <!-- S1 · HERO -->
     <section id="hero" class="cs-hero">
       <div class="cs-hero__top">
-        <div class="cs-hero__copy">
-          <div class="cs-hero__eyebrow">Interview Case Study</div>
-          <h1 class="cs-hero__wordmark">
-            Bo<span class="cs-hero__wordmark-dot"></span>p
-          </h1>
-          <p class="cs-hero__tagline">
-            Palm-based payment and identity — wave your hand to pay, verify age, and access memberships, without exposing personal data.
-          </p>
-        </div>
-
-        <div class="cs-hero__visual" aria-hidden="true">
-          <div class="palm-scene">
-            <div class="palm-halo"></div>
-            <div class="palm-hand">
-              <div class="palm-fingers">
-                <div class="palm-finger"></div>
-                <div class="palm-finger"></div>
-                <div class="palm-finger"></div>
-                <div class="palm-finger"></div>
-                <div class="palm-finger"></div>
-              </div>
-              <div class="palm-palm"></div>
-            </div>
-            <div class="palm-scanner">
-              <div class="palm-scan-line"></div>
-            </div>
-          </div>
-        </div>
+        <div class="cs-hero__eyebrow">Interview Case Study</div>
+        <h1 class="cs-hero__wordmark">Bo<span class="cs-hero__wdot"></span>p</h1>
+        <p class="cs-hero__tagline">Palm-based payment and identity — wave your hand to pay, verify age, and access memberships, without exposing personal data.</p>
       </div>
 
       <div class="cs-hero__meta">
@@ -74,11 +49,11 @@
         </div>
         <div class="cs-hero__meta-item">
           <div class="cs-hero__meta-label">Scope</div>
-          <div class="cs-hero__meta-value">Two apps — consumer + vendor</div>
+          <div class="cs-hero__meta-value">Consumer app + vendor app</div>
         </div>
         <div class="cs-hero__meta-item">
           <div class="cs-hero__meta-label">V1</div>
-          <div class="cs-hero__meta-value">Built and live-tested with ~300 people</div>
+          <div class="cs-hero__meta-value">Built and live-tested, ~300 people</div>
         </div>
         <div class="cs-hero__meta-item">
           <div class="cs-hero__meta-label">V2</div>
@@ -87,319 +62,272 @@
       </div>
     </section>
 
-    <!-- ─── S2: THE PROBLEM ─── -->
-    <section id="problem" class="cs-s cs-s--border">
-      <div class="cs-s__label">02 — The Problem</div>
-      <h2 class="cs-s__headline">Contactless still needs a device.</h2>
-      <p class="cs-s__body">
-        Payment already went contactless, but it's still tied to a card or phone. Venues verifying age or membership means manual checks or extra hardware. The question: can the body become a universal key?
-      </p>
+    <!-- S2 · THE PROBLEM -->
+    <section id="problem" class="cs-s">
+      <span class="label">02 · The Problem</span>
+      <h2 class="headline">Contactless still needs a device.</h2>
+      <p class="body">Payment already went contactless, but it's still tied to a card or phone. Venues verifying age or membership means manual checks or extra hardware. The question: can the body become a universal key?</p>
 
       <div class="cs-callout" style="margin-top:2rem;">
-        <div class="cs-callout__label">Scope constraint</div>
-        <div class="cs-callout__text">
-          Stakeholders came in with a list of desired features. Scope was cut to an MVP because the goal wasn't to ship every idea — it was to validate one thing: <strong>can a stranger register their palm and pay with it, unassisted, in a real live environment?</strong>
-        </div>
+        <p>Stakeholders came in with a list of desired features. Scope was cut to an MVP because the goal wasn't to ship every idea — it was to validate one thing: <strong>can a stranger register their palm and pay with it, unassisted, in a real live environment?</strong></p>
       </div>
     </section>
 
-    <!-- ─── S3: RESEARCH ─── -->
-    <section id="research" class="cs-s cs-s--border">
-      <div class="cs-s__label">03 — Research</div>
-      <h2 class="cs-s__headline">What the category already proved</h2>
-      <p class="cs-s__body">
-        Four clusters in the competitive landscape — each with a clear ceiling that informed our design direction.
-      </p>
+    <!-- S3 · RESEARCH -->
+    <section id="research" class="cs-s">
+      <span class="label">03 · Research</span>
+      <h2 class="headline">What the category already proved</h2>
 
-      <div class="cs-research-grid">
-        <div class="cs-research-card">
-          <div class="cs-research-card__name">Amazon One / Tencent</div>
-          <div class="cs-research-card__body">Speed and 70%+ retention — but <strong>centralized data and regional silos</strong> limit trust and portability.</div>
+      <div class="cs-competitors">
+        <div class="cs-competitor">
+          <div class="cs-competitor__name">Amazon One / Tencent</div>
+          <div class="cs-competitor__body">Speed and 70%+ retention proven — but centralized data and regional silos limit trust and portability.</div>
         </div>
-        <div class="cs-research-card">
-          <div class="cs-research-card__name">Redrock Biometrics / Arobix</div>
-          <div class="cs-research-card__body">Strong touchless accuracy — but <strong>no consumer ecosystem</strong> to convert that into daily behaviour.</div>
+        <div class="cs-competitor">
+          <div class="cs-competitor__name">Redrock Biometrics / Arobix</div>
+          <div class="cs-competitor__body">Strong touchless accuracy — but no consumer ecosystem to convert that into daily behaviour.</div>
         </div>
-        <div class="cs-research-card">
-          <div class="cs-research-card__name">World App / World ID</div>
-          <div class="cs-research-card__body">Decentralized identity via zero-knowledge proofs — the right privacy model, <strong>consumer UX still maturing</strong>.</div>
+        <div class="cs-competitor">
+          <div class="cs-competitor__name">World App / World ID</div>
+          <div class="cs-competitor__body">Decentralized identity via zero-knowledge proofs — the right privacy model, consumer UX still maturing.</div>
         </div>
-        <div class="cs-research-card">
-          <div class="cs-research-card__name">Revolut / Banking apps</div>
-          <div class="cs-research-card__body"><strong>Financial hardware is already biometric-ready</strong> — proves the demand, but payments are still bound to a device.</div>
+        <div class="cs-competitor">
+          <div class="cs-competitor__name">Revolut / Banking apps</div>
+          <div class="cs-competitor__body">Financial hardware is already biometric-ready — proves the demand, but payments are still tied to a device.</div>
         </div>
       </div>
 
-      <div class="cs-takeaway">
-        <div class="cs-takeaway__label">→ Design principles</div>
-        <div class="cs-takeaway__principles">
-          <div class="cs-takeaway__principle">
-            <span class="cs-takeaway__principle-num">01</span>
-            Privacy by default
+      <div class="cs-principles" style="margin-top:2.5rem;">
+        <div class="cs-principles__intro">Four design principles from the research →</div>
+        <div class="cs-principles__grid">
+          <div class="cs-principle">
+            <span class="cs-principle__num">01</span>
+            <span class="cs-principle__text">Privacy by default</span>
           </div>
-          <div class="cs-takeaway__principle">
-            <span class="cs-takeaway__principle-num">02</span>
-            Frictionless payment
+          <div class="cs-principle">
+            <span class="cs-principle__num">02</span>
+            <span class="cs-principle__text">Frictionless payment</span>
           </div>
-          <div class="cs-takeaway__principle">
-            <span class="cs-takeaway__principle-num">03</span>
-            Automatic access control
+          <div class="cs-principle">
+            <span class="cs-principle__num">03</span>
+            <span class="cs-principle__text">Automatic access control</span>
           </div>
-          <div class="cs-takeaway__principle">
-            <span class="cs-takeaway__principle-num">04</span>
-            One unified experience
+          <div class="cs-principle">
+            <span class="cs-principle__num">04</span>
+            <span class="cs-principle__text">One unified experience</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── S4: PROCESS V1 ─── -->
-    <section id="process" class="cs-s cs-s--border">
-      <div class="cs-s__label">04 — Process · V1</div>
-      <h2 class="cs-s__headline">Paper first, then friction-tested</h2>
+    <!-- S4 · PROCESS V1 -->
+    <section id="process" class="cs-s">
+      <span class="label">04 · Process · V1</span>
+      <h2 class="headline">Paper first, then friction-tested</h2>
 
-      <div class="cs-process-list">
+      <div class="cs-process">
         <div class="cs-process-item">
           <div class="cs-process-item__num">01</div>
-          <div class="cs-process-item__content">
+          <div>
             <div class="cs-process-item__title">Every flow mapped on paper before any screen was drawn</div>
-            <div class="cs-process-item__body">
-              Registration, payment, tickets, and the full app — all sketched first. Low-fi went through ~9 iterations of the user flow (V1–V9.2), 3 vendor-app versions, plus bouncer/VIP/entrance variants.
-            </div>
+            <div class="cs-process-item__body">Registration, payment, tickets, and the full app — all sketched first. Low-fi went through ~9 iterations of the user flow (V1–V9.2), 3 vendor-app versions, plus bouncer/VIP/entrance variants.</div>
           </div>
         </div>
         <div class="cs-process-item">
           <div class="cs-process-item__num">02</div>
-          <div class="cs-process-item__content">
-            <div class="cs-process-item__title">Flows were tagged live with "potential friction" / "expected" markers during design</div>
-            <div class="cs-process-item__body">
-              Annotating flows as they were designed — not after — kept the team honest about where we expected users to struggle before any testing happened.
-            </div>
+          <div>
+            <div class="cs-process-item__title">Flows were tagged live with friction markers during design</div>
+            <div class="cs-process-item__body">Annotating "potential friction" / "expected" directly on flows as they were designed — not after — kept the team honest before any testing happened.</div>
           </div>
         </div>
         <div class="cs-process-item">
           <div class="cs-process-item__num">03</div>
-          <div class="cs-process-item__content">
+          <div>
             <div class="cs-process-item__title">Key architecture decisions made early</div>
-            <div class="cs-process-item__body">
-              One main screen, 3–4 features max. NFC tap skips straight to pairing. No ID uploads in-app (bouncers check physical ID). Vendor side split into access control / bouncer / payment apps — all phone-based, sharing a codebase.
-            </div>
+            <div class="cs-process-item__body">One main screen, 3–4 features max. NFC tap skips straight to pairing. No ID uploads in-app (bouncers check physical ID). Vendor side split into access control / bouncer / payment apps — phone-based, sharing a codebase.</div>
           </div>
         </div>
       </div>
 
-      <div class="cs-callout cs-callout--warn" style="margin-top:2rem;">
-        <div class="cs-callout__label">Pre-event usability test</div>
-        <div class="cs-callout__text">
-          <strong>Finding:</strong> users didn't know which hand to start with.<br><br>
-          <strong>Response:</strong> guidance screens — move closer, move further, align to centre, per-hand progress, haptic confirmation per scan.
-          Small sample, internal coworkers unrelated to the project.
-        </div>
+      <div class="cs-finding" style="margin-top:2rem;">
+        <span class="cs-finding__label">Finding</span>
+        <span class="cs-finding__text"><strong>Pre-event usability test:</strong> users didn't know which hand to start with. Small sample, internal coworkers unrelated to the project.</span>
+        <span class="cs-finding__label">Response</span>
+        <span class="cs-finding__text">Guidance screens — move closer, move further, align to centre, per-hand progress, haptic confirmation per scan.</span>
       </div>
     </section>
 
-    <!-- ─── S5: LIVE VALIDATION ─── -->
-    <section id="validation" class="cs-s cs-s--border">
-      <div class="cs-s__label">05 — Live Validation</div>
-      <h2 class="cs-s__headline">~300 strangers, one real test</h2>
-      <p class="cs-s__body">
-        Purchases (goods, drinks, food) happened at the kiosk via palm scan — not inside the app. The app was for checking balance and history afterward. The retail transactions were the vehicle; <strong>registration and payment were what was actually being tested.</strong>
-      </p>
+    <!-- S5 · LIVE VALIDATION -->
+    <section id="validation" class="cs-s">
+      <span class="label">05 · Live Validation</span>
+      <h2 class="headline">~300 strangers, one real test</h2>
+      <p class="body">Purchases happened at the kiosk via palm scan — not inside the app. The app was for checking balance and history afterward. The retail transactions were the vehicle; registration and payment were what was actually being tested.</p>
 
-      <div class="cs-validation-wrap">
-        <div class="cs-validation__stat">
-          <div class="cs-validation__number--placeholder cs-validation__number">
-            [REG. SUCCESS %]
-          </div>
-          <div class="cs-validation__desc">
-            Registration success rate from the live event.
-            <span class="cs-placeholder">Needs real data</span>
-          </div>
+      <div class="cs-validation">
+        <div class="cs-stat-row">
+          <div class="cs-stat cs-stat--tbd">Add reg. rate <span class="cs-tbd">TBD</span></div>
+          <div class="cs-stat-desc">Registration success rate from the live event — pull from the event data before presenting.</div>
         </div>
-
-        <div class="cs-validation__divider"></div>
-
-        <div class="cs-validation__stat">
-          <div class="cs-validation__number">90%</div>
-          <div class="cs-validation__desc">completed the base payment flow without assistance (distinct from registration — keep the two numbers separate when presenting).</div>
-        </div>
-
-        <div class="cs-validation__divider"></div>
-
-        <div class="cs-validation__desc" style="margin-bottom:.75rem;">
-          Help-seeking was still common, mostly tied to hand positioning — the guidance-screen fix helped but didn't fully solve it. Overall experience rated positively.
-        </div>
-
-        <div class="cs-validation__note">
-          Note: the 90% figure is payment completion, not registration. These are different milestones — the registration success rate still needs to be pulled from the live-event data.
+        <div class="cs-stat-row">
+          <div class="cs-stat">90%</div>
+          <div class="cs-stat-desc"><strong>Completed the base payment flow without assistance.</strong> Distinct from registration — keep the two numbers separate when presenting.</div>
         </div>
       </div>
+
+      <p class="cs-stat-note">Help-seeking was still common, mostly tied to hand positioning — the guidance-screen fix helped but didn't fully solve it. Overall experience rated positively.</p>
     </section>
 
-    <!-- ─── S6: TRADE-OFFS ─── -->
-    <section id="tradeoffs" class="cs-s cs-s--border">
-      <div class="cs-s__label">06 — Trade-offs</div>
-      <h2 class="cs-s__headline">Every decision came with a rejected path</h2>
-      <p class="cs-s__body">Seven moments where the design could have gone a different direction — and why it didn't.</p>
+    <!-- S6 · TRADE-OFFS -->
+    <section id="tradeoffs" class="cs-s">
+      <span class="label">06 · Trade-offs</span>
+      <h2 class="headline">Every decision came with a rejected path</h2>
 
-      <div class="cs-tradeoffs-grid">
+      <div class="cs-tradeoffs">
 
-        <!-- 1 -->
-        <div class="cs-tradeoff-card">
-          <div class="cs-tradeoff-card__head">
-            <span class="cs-tradeoff-card__num">01</span>
-            <span class="cs-tradeoff-card__title">Hardware–mobile attention gap</span>
-          </div>
-          <div class="cs-tradeoff-card__body">
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--discovery">Discovery</span>
-              <span class="cs-tradeoff-text">Users watched their phone screen instead of the physical scanner during enrollment.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--decision">Decision</span>
-              <span class="cs-tradeoff-text"><strong>Contextual haptic feedback</strong> — the phone "taps" a pattern when the user needs to adjust.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--rejected">Rejected</span>
-              <span class="cs-tradeoff-text">More on-screen instructional text — adds friction, doesn't fix the attention split.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2 -->
-        <div class="cs-tradeoff-card">
-          <div class="cs-tradeoff-card__head">
-            <span class="cs-tradeoff-card__num">02</span>
-            <span class="cs-tradeoff-card__title">Transaction legibility</span>
-          </div>
-          <div class="cs-tradeoff-card__body">
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--discovery">Discovery</span>
-              <span class="cs-tradeoff-text">Users couldn't recognize payments without a visual anchor to the venue.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--decision">Decision</span>
-              <span class="cs-tradeoff-text"><strong>Establishment-specific iconography</strong> — Kiosk/Cafe badges for at-a-glance recognition.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--rejected">Rejected</span>
-              <span class="cs-tradeoff-text">Richer transaction detail pages — adds depth, not at-a-glance recognition.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3 -->
-        <div class="cs-tradeoff-card">
-          <div class="cs-tradeoff-card__head">
-            <span class="cs-tradeoff-card__num">03</span>
-            <span class="cs-tradeoff-card__title">Card-to-palm linking</span>
-          </div>
-          <div class="cs-tradeoff-card__body">
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--discovery">Discovery</span>
-              <span class="cs-tradeoff-text">Standard tap-to-link felt procedurally weak for something meant to feel permanent.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--decision">Decision</span>
-              <span class="cs-tradeoff-text">Moving toward <strong>drag-and-drop / pull-to-link</strong> (future iteration, not yet shipped).</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--rejected">Rejected</span>
-              <span class="cs-tradeoff-text">Shipping only the simpler tap flow long-term.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4 -->
-        <div class="cs-tradeoff-card">
-          <div class="cs-tradeoff-card__head">
-            <span class="cs-tradeoff-card__num">04</span>
-            <span class="cs-tradeoff-card__title">Card visual fidelity vs. API limits</span>
-          </div>
-          <div class="cs-tradeoff-card__body">
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--discovery">Discovery</span>
-              <span class="cs-tradeoff-text">Users wanted the digital card to exactly match their physical card. API couldn't return card skins.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--decision">Decision</span>
-              <span class="cs-tradeoff-text"><strong>"Universal Boop Card" aesthetic</strong> — branding/utility over plastic-mimicry. Sets digital-first expectations.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--rejected">Rejected</span>
-              <span class="cs-tradeoff-text">Engineering a workaround for skin data.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="cs-tradeoff-card">
-          <div class="cs-tradeoff-card__head">
-            <span class="cs-tradeoff-card__num">05</span>
-            <span class="cs-tradeoff-card__title">Settings-heavy home vs. wallet-first home</span>
-          </div>
-          <div class="cs-tradeoff-card__body">
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--discovery">Discovery</span>
-              <span class="cs-tradeoff-text">Stakeholders wanted a home screen dense with settings for the event demo.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--decision">Decision</span>
-              <span class="cs-tradeoff-text"><strong>Pushed back</strong> — wallet-style home with balance/history as primary, settings as secondary quick-access.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--rejected">Rejected</span>
-              <span class="cs-tradeoff-text">Settings-forward IA as originally briefed. <span class="cs-placeholder">Fill in the actual dialogue before presenting</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6 -->
-        <div class="cs-tradeoff-card">
-          <div class="cs-tradeoff-card__head">
-            <span class="cs-tradeoff-card__num">06</span>
-            <span class="cs-tradeoff-card__title">Mini-app vs. native app (V2)</span>
-          </div>
-          <div class="cs-tradeoff-card__body">
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--discovery">Discovery</span>
-              <span class="cs-tradeoff-text">Initial ask implied a World mini-app.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--decision">Decision</span>
-              <span class="cs-tradeoff-text"><strong>Native React Native app</strong> — avoids install dependency and friction.</span>
-            </div>
-            <div class="cs-tradeoff-row">
-              <span class="cs-tradeoff-tag cs-tradeoff-tag--rejected">Rejected</span>
-              <span class="cs-tradeoff-text">Mini-app route — explicitly documented in the V2 requirements doc.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7 -->
-        <div class="cs-tradeoff-card" style="grid-column: span 2;">
-          <div class="cs-tradeoff-card__head">
-            <span class="cs-tradeoff-card__num">07</span>
-            <span class="cs-tradeoff-card__title">Puck-First vs. three other scanning-guidance concepts (V2)</span>
-          </div>
-          <div class="cs-tradeoff-card__body" style="display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--border);">
-            <div style="padding:1rem 1.5rem; border-right:1px solid var(--border);">
-              <div style="font-size:.6875rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-muted); margin-bottom:.75rem;">Four proposals evaluated</div>
-              <div style="display:flex; flex-direction:column; gap:.5rem; font-size:.875rem; color:var(--ink-sec); line-height:1.6;">
-                <div>1. <strong>Static Guidance</strong> — video tutorial</div>
-                <div>2. <strong>Dynamic Real-Time Feedback</strong> — live coaching GIF</div>
-                <div>3. <strong>Hybrid Mix</strong> — Lottie + progress bar</div>
-                <div>4. <strong>Puck-First</strong> — minimal UI, haptic/audio-led, no need to watch the screen</div>
+        <div class="cs-tradeoff">
+          <div class="cs-tradeoff__num">01</div>
+          <div>
+            <div class="cs-tradeoff__title">Hardware–mobile attention gap</div>
+            <div class="cs-tradeoff__rows">
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Discovery</span>
+                <span class="cs-tradeoff__row-text">Users watched their phone screen instead of the physical scanner during enrollment.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Decision</span>
+                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Contextual haptic feedback</strong> — the phone "taps" a pattern when the user needs to adjust.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Rejected</span>
+                <span class="cs-tradeoff__row-text">More on-screen instructional text — adds friction, doesn't fix the attention split.</span>
               </div>
             </div>
-            <div style="padding:1rem 1.5rem; display:flex; flex-direction:column; gap:.875rem;">
-              <div class="cs-tradeoff-row" style="padding:0; border:none;">
-                <span class="cs-tradeoff-tag cs-tradeoff-tag--decision">Decision</span>
-                <span class="cs-tradeoff-text"><strong>Puck-First direction</strong> — haptics only on critical moments, happy path needs zero phone-glancing. <span class="cs-placeholder">Confirm which actually shipped</span></span>
+          </div>
+        </div>
+
+        <div class="cs-tradeoff">
+          <div class="cs-tradeoff__num">02</div>
+          <div>
+            <div class="cs-tradeoff__title">Transaction legibility</div>
+            <div class="cs-tradeoff__rows">
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Discovery</span>
+                <span class="cs-tradeoff__row-text">Users couldn't recognize payments without a visual anchor to the venue.</span>
               </div>
-              <div class="cs-tradeoff-row" style="padding:0; border:none; margin-top:.25rem;">
-                <span class="cs-tradeoff-tag cs-tradeoff-tag--rejected">Rejected</span>
-                <span class="cs-tradeoff-text">The other three — all kept more attention on-screen, perpetuating the hardware–mobile attention gap.</span>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Decision</span>
+                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Establishment-specific iconography</strong> — Kiosk/Cafe badges for at-a-glance recognition.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Rejected</span>
+                <span class="cs-tradeoff__row-text">Richer transaction detail pages — adds depth, not at-a-glance recognition.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-tradeoff">
+          <div class="cs-tradeoff__num">03</div>
+          <div>
+            <div class="cs-tradeoff__title">Card-to-palm linking</div>
+            <div class="cs-tradeoff__rows">
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Discovery</span>
+                <span class="cs-tradeoff__row-text">Standard tap-to-link felt procedurally weak for something meant to feel permanent.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Decision</span>
+                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision">Moving toward <strong>drag-and-drop / pull-to-link</strong> (future iteration, not yet shipped).</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Rejected</span>
+                <span class="cs-tradeoff__row-text">Shipping only the simpler tap flow long-term.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-tradeoff">
+          <div class="cs-tradeoff__num">04</div>
+          <div>
+            <div class="cs-tradeoff__title">Card visual fidelity vs. API limits</div>
+            <div class="cs-tradeoff__rows">
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Discovery</span>
+                <span class="cs-tradeoff__row-text">Users wanted the digital card to match their physical card. API couldn't return card skins.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Decision</span>
+                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>"Universal Boop Card" aesthetic</strong> — branding and utility over plastic-mimicry. Sets digital-first expectations.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Rejected</span>
+                <span class="cs-tradeoff__row-text">Engineering a workaround for skin data.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-tradeoff">
+          <div class="cs-tradeoff__num">05</div>
+          <div>
+            <div class="cs-tradeoff__title">Settings-heavy home vs. wallet-first home</div>
+            <div class="cs-tradeoff__rows">
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Discovery</span>
+                <span class="cs-tradeoff__row-text">Stakeholders explicitly asked for a home screen dense with settings controls for the event demo.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Decision</span>
+                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Pushed back</strong> — wallet-style home with balance/history as primary, settings as secondary quick-access.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Rejected</span>
+                <span class="cs-tradeoff__row-text">Settings-forward IA as originally briefed. <span class="cs-tbd">Add conversation specifics</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-tradeoff">
+          <div class="cs-tradeoff__num">06</div>
+          <div>
+            <div class="cs-tradeoff__title">Mini-app vs. native app (V2)</div>
+            <div class="cs-tradeoff__rows">
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Discovery</span>
+                <span class="cs-tradeoff__row-text">Initial ask implied a World mini-app.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Decision</span>
+                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Native React Native app</strong> — avoids install dependency and friction.</span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Rejected</span>
+                <span class="cs-tradeoff__row-text">Mini-app route — explicitly documented in the V2 requirements doc.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-tradeoff">
+          <div class="cs-tradeoff__num">07</div>
+          <div>
+            <div class="cs-tradeoff__title">Scanning guidance — four proposals evaluated (V2)</div>
+            <div class="cs-tradeoff__proposals">
+              <div class="cs-tradeoff__proposal"><strong>Static Guidance</strong> — video tutorial</div>
+              <div class="cs-tradeoff__proposal"><strong>Dynamic Real-Time Feedback</strong> — live coaching GIF</div>
+              <div class="cs-tradeoff__proposal"><strong>Hybrid Mix</strong> — Lottie + progress bar</div>
+              <div class="cs-tradeoff__proposal"><strong>Puck-First</strong> — minimal UI, haptic/audio-led, no need to watch the screen</div>
+            </div>
+            <div class="cs-tradeoff__rows">
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Decision</span>
+                <span class="cs-tradeoff__row-text cs-tradeoff__row-text--decision"><strong>Puck-First direction</strong> — haptics only on critical moments, happy path needs zero phone-glancing. <span class="cs-tbd">Confirm shipped</span></span>
+              </div>
+              <div class="cs-tradeoff__row">
+                <span class="cs-tradeoff__row-label">Rejected</span>
+                <span class="cs-tradeoff__row-text">The other three — all kept more attention on-screen, perpetuating the hardware–mobile attention gap.</span>
               </div>
             </div>
           </div>
@@ -408,102 +336,112 @@
       </div>
     </section>
 
-    <!-- ─── S7: STAKEHOLDERS ─── -->
-    <section id="stakeholders" class="cs-s cs-s--border">
-      <div class="cs-s__label">07 — Stakeholders</div>
-      <h2 class="cs-s__headline">Not just executing the brief</h2>
-      <div class="cs-stake-wrap">
-        <p class="cs-s__body">
-          A dated "Requirements" doc from a stakeholder meeting captured explicit architecture decisions — native app, not mini-app — and follow-up ownership: confirming mobile hand-registration feasibility with Emmanuel (backend) within 2–3 weeks, and syncing with Justin/Nathan to confirm the mini-app was dropped and align milestones for a 6–7 week runway to showcase.
-        </p>
-        <p class="cs-s__body" style="margin-top:1rem;">
-          App Store/Play Store account setup had to start immediately given the timeline — a non-design dependency factored into planning from the start.
-        </p>
+    <!-- S7 · STAKEHOLDERS -->
+    <section id="stakeholders" class="cs-s">
+      <span class="label">07 · Stakeholders</span>
+      <h2 class="headline">Not just executing the brief</h2>
 
-        <div class="cs-stake-highlight">
-          <div class="cs-stake-highlight__head">
-            <span class="cs-stake-highlight__badge">Strongest story</span>
-            <span class="cs-stake-highlight__head-title">Settings-vs-wallet pushback</span>
+      <div class="cs-stake-body">
+        <p class="body">A dated "Requirements" doc from a stakeholder meeting captured explicit architecture decisions (native app, not mini-app) and follow-up ownership: confirming mobile hand-registration feasibility with Emmanuel (backend) within 2–3 weeks, and syncing with Justin/Nathan to confirm the mini-app was dropped and align milestones for a 6–7 week runway to showcase.</p>
+        <p class="body" style="margin-top:1rem;">App Store/Play Store account setup had to start immediately given the timeline — a non-design dependency factored into planning from the start.</p>
+      </div>
+
+      <div class="cs-stake-box">
+        <div class="cs-stake-box__head">
+          <span class="cs-stake-box__tag">Strongest story</span>
+          <span class="cs-stake-box__title">Settings-vs-wallet pushback</span>
+        </div>
+        <div class="cs-stake-box__body">
+          <div class="cs-stake-box__row">
+            <span class="cs-stake-box__row-label">Situation</span>
+            <span class="cs-stake-box__row-text">Stakeholders explicitly asked for a home screen dense with settings controls for the event demo.</span>
           </div>
-          <div class="cs-stake-highlight__body">
-            <div class="cs-stake-highlight__row">
-              <span class="cs-stake-highlight__label">Situation</span>
-              <span class="cs-stake-highlight__text">Stakeholders explicitly asked for a home screen dense with settings controls for the event demo.</span>
-            </div>
-            <div class="cs-stake-highlight__row">
-              <span class="cs-stake-highlight__label">My call</span>
-              <span class="cs-stake-highlight__text">Pushed back with design rationale — wallet-style home with balance and history as the primary surface, settings as secondary quick-access.</span>
-            </div>
-            <div class="cs-stake-highlight__row">
-              <span class="cs-stake-highlight__label">Outcome</span>
-              <span class="cs-stake-highlight__text">Won the argument. The wallet-first home shipped. <span class="cs-placeholder">Add the actual conversation specifics before presenting</span></span>
-            </div>
+          <div class="cs-stake-box__row">
+            <span class="cs-stake-box__row-label">My call</span>
+            <span class="cs-stake-box__row-text">Pushed back with design rationale — wallet-style home with balance and history as the primary surface, settings as secondary quick-access.</span>
+          </div>
+          <div class="cs-stake-box__row">
+            <span class="cs-stake-box__row-label">Outcome</span>
+            <span class="cs-stake-box__row-text">Won the argument. The wallet-first home shipped. <span class="cs-tbd">Add specifics before presenting</span></span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── S8: V2 ─── -->
-    <section id="v2" class="cs-s cs-s--border">
-      <div class="cs-s__label">08 — V2</div>
-      <div class="cs-v2-badge">Alpha — Not yet live-tested</div>
-      <h2 class="cs-s__headline">What came after</h2>
-      <p class="cs-s__body">
-        A native app with deeper World ID 4.0 integration, rethought registration guidance, and a multi-card wallet — everything the live test taught us, rebuilt from a stronger foundation.
-      </p>
+    <!-- S8 · V2 -->
+    <section id="v2" class="cs-s">
+      <span class="label">08 · V2</span>
+      <div class="cs-v2-status">
+        <span class="cs-v2-dot"></span>
+        <span class="cs-v2-status-text">Alpha — not yet live-tested</span>
+      </div>
+      <h2 class="headline">What came after</h2>
+      <p class="body">A native app with deeper World ID 4.0 integration, rethought registration guidance, and a multi-card wallet — everything the live test taught us, rebuilt from a stronger foundation.</p>
 
       <div class="cs-v2-features">
-        <div class="cs-v2-feature">
-          <div class="cs-v2-feature__title">Native React Native app</div>
-          <div class="cs-v2-feature__body">Avoids install dependency and friction of the mini-app route, which was explicitly dropped.</div>
+        <div class="cs-v2-item">
+          <div class="cs-v2-item__num">01</div>
+          <div>
+            <div class="cs-v2-item__title">Native React Native app</div>
+            <div class="cs-v2-item__body">Avoids install dependency and friction. The mini-app route was explicitly dropped in the V2 requirements doc.</div>
+          </div>
         </div>
-        <div class="cs-v2-feature">
-          <div class="cs-v2-feature__title">World ID 4.0 integration</div>
-          <div class="cs-v2-feature__body">Link an existing ID or create one in-flow — deeper but optional identity layer.</div>
+        <div class="cs-v2-item">
+          <div class="cs-v2-item__num">02</div>
+          <div>
+            <div class="cs-v2-item__title">World ID 4.0 integration</div>
+            <div class="cs-v2-item__body">Link an existing ID or create one in-flow — deeper but optional identity layer.</div>
+          </div>
         </div>
-        <div class="cs-v2-feature">
-          <div class="cs-v2-feature__title">Multi-card wallet</div>
-          <div class="cs-v2-feature__body">Max 2 active cards. Last activated becomes primary — removes ambiguity about which card is charged.</div>
+        <div class="cs-v2-item">
+          <div class="cs-v2-item__num">03</div>
+          <div>
+            <div class="cs-v2-item__title">Multi-card wallet</div>
+            <div class="cs-v2-item__body">Max 2 active cards. Last activated becomes primary — removes ambiguity about which card is charged.</div>
+          </div>
         </div>
-        <div class="cs-v2-feature">
-          <div class="cs-v2-feature__title">Refined registration</div>
-          <div class="cs-v2-feature__body">Generic hand illustration (no handedness bias) that mirrors whichever hand the user picks — directly addresses the "which hand?" problem from V1.</div>
+        <div class="cs-v2-item">
+          <div class="cs-v2-item__num">04</div>
+          <div>
+            <div class="cs-v2-item__title">Refined registration</div>
+            <div class="cs-v2-item__body">Generic hand illustration with no handedness bias — mirrors whichever hand the user picks. Directly addresses the "which hand?" problem from V1.</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── S9: RESULTS & REFLECTION ─── -->
-    <section id="reflection" class="cs-s cs-s--border">
-      <div class="cs-s__label">09 — Results & Reflection</div>
-      <h2 class="cs-s__headline">What the loop taught</h2>
+    <!-- S9 · REFLECTION -->
+    <section id="reflection" class="cs-s">
+      <span class="label">09 · Results & Reflection</span>
+      <h2 class="headline">What the loop taught</h2>
 
-      <div class="cs-results-grid">
-        <div class="cs-results-col">
-          <div class="cs-results-col__label">What worked</div>
-          <ul class="cs-results-list">
+      <div class="cs-reflection-grid">
+        <div class="cs-reflection-col">
+          <div class="cs-reflection-col__label">What worked</div>
+          <ul class="cs-reflection-list">
             <li>Pre-event test → fix → live validation loop proved the concept with real strangers, not proxies.</li>
             <li>The core concept clearly landed — people registered and paid with their palm in a real environment.</li>
             <li>Architecture decisions made early (one screen, 3–4 features, NFC tap) avoided mid-build pivots.</li>
             <li>Pushing back on the settings-first home protected the product's identity in the highest-stakes demo.</li>
           </ul>
         </div>
-        <div class="cs-results-col">
-          <div class="cs-results-col__label cs-results-col__label--next">What's next</div>
-          <ul class="cs-results-list">
+        <div class="cs-reflection-col">
+          <div class="cs-reflection-col__label">What's next</div>
+          <ul class="cs-reflection-list">
             <li>Merchant/vendor dashboard — its own design problem, not yet started.</li>
             <li>Accessibility audit — biometric-first flows carry exclusion risk, alternative auth paths are needed.</li>
             <li>Wearable extension of the same gesture.</li>
-            <li>Hand-position confusion persisted even after the V1 guidance-screen fix — Puck-First (V2) is the next attempt.</li>
+            <li>Hand-position confusion persisted even after the V1 fix — Puck-First (V2) is the next attempt.</li>
           </ul>
         </div>
       </div>
 
-      <div class="cs-missing-data">
-        <div class="cs-missing-data__label">Before presenting this case study</div>
-        <ul class="cs-missing-data__list">
-          <li>Pull the real registration success % from the live-event data and replace the placeholder in Section 05.</li>
-          <li>Confirm which V2 scanning proposal actually shipped (Section 06, Trade-off #7).</li>
-          <li>Add the specific dialogue and outcome from the settings-vs-wallet pushback (Section 06 #5 / Section 07).</li>
+      <div class="cs-needed">
+        <div class="cs-needed__label">Before presenting</div>
+        <ul class="cs-needed__list">
+          <li>Pull the real registration success % from the live-event data → replace TBD in Section 05.</li>
+          <li>Confirm which V2 scanning proposal actually shipped → Section 06, Trade-off 07.</li>
+          <li>Add the specific dialogue from the settings-vs-wallet pushback → Section 06 #05 / Section 07.</li>
         </ul>
       </div>
     </section>
@@ -512,45 +450,24 @@
 
   <footer class="cs-footer">
     <span class="cs-footer__copy">Carlos Mera · Lead Product Designer</span>
-    <a href="https://www.carlos-mera.com" class="cs-footer__link">
-      carlos-mera.com
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M7 17L17 7M17 7H7M17 7v10"/>
-      </svg>
-    </a>
+    <a href="https://www.carlos-mera.com" class="cs-footer__link">carlos-mera.com ↗</a>
   </footer>
 
   <script>
-    // ── Scroll progress bar ──
-    const navBar = document.getElementById('csNavBar');
-    function updateProgress() {
-      const scrollTop = window.scrollY;
-      const docH = document.documentElement.scrollHeight - window.innerHeight;
-      navBar.style.width = (docH > 0 ? (scrollTop / docH) * 100 : 0) + '%';
-    }
-
-    // ── Active nav link (scroll-spy) ──
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.cs-nav__links a[data-section]');
-
-    function updateNav() {
-      const scrollY = window.scrollY + 80;
-      let active = '';
-      sections.forEach(s => {
-        if (s.offsetTop <= scrollY) active = s.id;
-      });
-      navLinks.forEach(a => {
-        a.classList.toggle('active', a.dataset.section === active);
-      });
-    }
+    const bar  = document.getElementById('bar');
+    const secs = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.cs-nav__links a[data-s]');
 
     window.addEventListener('scroll', () => {
-      updateProgress();
-      updateNav();
-    }, { passive: true });
+      const h = document.documentElement;
+      bar.style.width = (window.scrollY / (h.scrollHeight - h.clientHeight) * 100) + '%';
 
-    updateProgress();
-    updateNav();
+      const y = window.scrollY + 80;
+      let cur = '';
+      secs.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
+      links.forEach(a => a.classList.toggle('active', a.dataset.s === cur));
+    }, { passive: true });
   </script>
+
 </body>
 </html>
