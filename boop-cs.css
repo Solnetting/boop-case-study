@@ -206,7 +206,7 @@ main { padding-top: 54px; }
 .flow-lb {
   display: none;
   position: fixed; inset: 0;
-  background: rgba(7,7,7,.92);
+  background: var(--bg);
   z-index: 1000;
   align-items: center; justify-content: center;
 }
@@ -215,15 +215,15 @@ main { padding-top: 54px; }
   position: absolute;
   top: 1.25rem; right: 1.25rem;
   width: 40px; height: 40px;
-  background: rgba(255,255,255,.12);
+  background: rgba(7,7,7,.08);
   border: none; border-radius: 50%;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  color: #fff;
+  color: var(--ink);
   transition: background .15s;
   z-index: 2;
 }
-.flow-lb__x:hover { background: rgba(255,255,255,.24); }
+.flow-lb__x:hover { background: rgba(7,7,7,.16); }
 .flow-lb__scroll {
   overflow: auto;
   max-width: 96vw; max-height: 92vh;
