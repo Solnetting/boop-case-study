@@ -1095,6 +1095,16 @@
                       <button style="display:flex;align-items:center;justify-content:center;width:100%;height:31px;border-radius:100px;background:transparent;border:1px solid #475569;color:#475569;font:500 8px/1 'Inter',sans-serif;cursor:default;">Enter card details manually</button>
                     </div>
                   </div>
+                  <!-- Screen 2: Card Details -->
+                  <div class="bd-screen"><img src="images/bc-card-details.png" alt="Card details form"></div>
+                  <!-- Screen 3: Cards with active palms -->
+                  <div class="bd-screen"><img src="images/bc-cards-active.png" alt="Cards — active palms"></div>
+                  <!-- Screen 4: Card name / label -->
+                  <div class="bd-screen"><img src="images/bc-card-name.png" alt="Card name"></div>
+                  <!-- Screen 5: Assign palm to this card -->
+                  <div class="bd-screen"><img src="images/bc-assign-palm.png" alt="Assign palm to card"></div>
+                  <!-- Screen 6: Rewards -->
+                  <div class="bd-screen"><img src="images/bc-rewards.png" alt="Rewards"></div>
                 </div><!-- /#bcSlide -->
 
                 <!-- Fixed Continue button — lives outside the slide track, never moves -->
@@ -1593,13 +1603,28 @@
                     if(!ok()) return;
                     bcGoTo(1);
                     setTimeout(function(){
-                      if(!ok()) return;
-                      bcSlide.style.transition = 'none'; bcGoTo(0);
-                      requestAnimationFrame(function(){ requestAnimationFrame(function(){
-                        bcSlide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
-                        setTimeout(runCard, 500);
-                      }); });
-                    }, 3000);
+                      if(!ok()) return; bcGoTo(2);
+                      setTimeout(function(){
+                        if(!ok()) return; bcGoTo(3);
+                        setTimeout(function(){
+                          if(!ok()) return; bcGoTo(4);
+                          setTimeout(function(){
+                            if(!ok()) return; bcGoTo(5);
+                            setTimeout(function(){
+                              if(!ok()) return; bcGoTo(6);
+                              setTimeout(function(){
+                                if(!ok()) return;
+                                bcSlide.style.transition = 'none'; bcGoTo(0);
+                                requestAnimationFrame(function(){ requestAnimationFrame(function(){
+                                  bcSlide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
+                                  setTimeout(runCard, 500);
+                                }); });
+                              }, 2500);
+                            }, 2000);
+                          }, 2000);
+                        }, 2000);
+                      }, 2000);
+                    }, 2000);
                   });
                 }, 1800);
               }); });
