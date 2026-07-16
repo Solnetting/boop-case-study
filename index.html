@@ -1107,6 +1107,16 @@
                   <div class="bd-screen"><img src="images/bc-rewards.png" alt="Rewards"></div>
                 </div><!-- /#bcSlide -->
 
+                <!-- Transaction track -->
+                <div id="btSlide" style="position:absolute;top:0;left:0;display:none;width:100%;height:100%;overflow:hidden;">
+                  <img src="images/proto-transactions.png" alt="Transactions" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+                </div>
+
+                <!-- Account track -->
+                <div id="baSlide" style="position:absolute;top:0;left:0;display:none;width:100%;height:100%;overflow:hidden;">
+                  <img src="images/proto-account.png" alt="Account" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+                </div>
+
                 <!-- Fixed Continue button — lives outside the slide track, never moves -->
                 <button id="bdContBtn" style="
                   position:absolute;bottom:28px;left:12px;right:12px;
@@ -1469,9 +1479,8 @@
               <div id="bdBoopNavItem" class="bd-flow-nav__item"><span>02</span><span>Sign in with Boop account</span></div>
               <div class="bd-flow-nav__item"><span>03</span><span>Scanning</span></div>
               <div id="bcCardNavItem" class="bd-flow-nav__item"><span>04</span><span>Adding card</span></div>
-              <div class="bd-flow-nav__item"><span>05</span><span>Terms</span></div>
-              <div class="bd-flow-nav__item"><span>06</span><span>Date of birth</span></div>
-              <div class="bd-flow-nav__item"><span>07</span><span>Account</span></div>
+              <div id="bdTxNavItem" class="bd-flow-nav__item"><span>05</span><span>Transactions</span></div>
+              <div id="bdAccNavItem" class="bd-flow-nav__item"><span>06</span><span>Account</span></div>
             </div>
 
           </div><!-- /.bd-demo-wrap -->
@@ -1486,10 +1495,14 @@
             var cursor      = document.getElementById('bdCursor');
             var ripple      = document.getElementById('bdRipple');
             var bcSlide      = document.getElementById('bcSlide');
+            var btSlide      = document.getElementById('btSlide');
+            var baSlide      = document.getElementById('baSlide');
             var boopNavItem  = document.getElementById('bdBoopNavItem');
             var cardNavItem  = document.getElementById('bcCardNavItem');
+            var txNavItem    = document.getElementById('bdTxNavItem');
+            var accNavItem   = document.getElementById('bdAccNavItem');
             var allNavItems  = document.querySelectorAll('#bdRegDemoWrap .bd-flow-nav__item');
-            var regItems     = Array.from(allNavItems).filter(function(el){ return el !== boopNavItem && el !== cardNavItem; });
+            var regItems     = Array.from(allNavItems).filter(function(el){ return el !== boopNavItem && el !== cardNavItem && el !== txNavItem && el !== accNavItem; });
             var brBoopBtn    = document.getElementById('brBoopBtn');
             var bcAddBtn     = document.getElementById('bcAddBtn');
 
@@ -1630,12 +1643,19 @@
               }); });
             }
 
+            function hideAllTracks(){
+              bdSlide.style.display = 'none';
+              brSlide.style.display = 'none';
+              bcSlide.style.display = 'none';
+              btSlide.style.display = 'none';
+              baSlide.style.display = 'none';
+            }
+
             function showRecovery(){
               window.bdCancelReg && window.bdCancelReg();
               ++_brGen;
               ++_bcGen;
-              bcSlide.style.display = 'none';
-              bdSlide.style.display = 'none';
+              hideAllTracks();
               bdCont.style.opacity  = '0';
               cursor.style.opacity  = '0';
               resetSlide();
@@ -1646,18 +1666,18 @@
             }
 
             function showRegistration(idx){
+              window.bdCancelReg && window.bdCancelReg();
               ++_brGen;
               ++_bcGen;
-              brSlide.style.display = 'none';
-              bcSlide.style.display = 'none';
+              hideAllTracks();
               bdSlide.style.display = 'flex';
               allNavItems.forEach(function(el){ el.classList.remove('is-active'); });
               regItems[idx || 0].classList.add('is-active');
               if (idx === 0) {
                 window.bdRegRestart();
               } else {
-                /* regItems: [0:Splash, 1:03Scan, 2:05Terms, 3:06DOB, 4:07Account] */
-                var screenMap = [0, 6, 3, 4, 5];
+                /* regItems: [0:Splash, 1:03Scanning] */
+                var screenMap = [0, 6];
                 window.bdRunFrom(screenMap[idx]);
               }
             }
@@ -1666,8 +1686,7 @@
               ++_brGen;
               ++_bcGen;
               window.bdCancelReg && window.bdCancelReg();
-              brSlide.style.display = 'none';
-              bdSlide.style.display = 'none';
+              hideAllTracks();
               bcSlide.style.display = 'flex';
               bdCont.style.opacity  = '0';
               cursor.style.opacity = '0';
@@ -1677,8 +1696,32 @@
               setTimeout(runCard, 400);
             }
 
+            function showTransaction(){
+              window.bdCancelReg && window.bdCancelReg();
+              ++_brGen; ++_bcGen;
+              hideAllTracks();
+              btSlide.style.display = 'block';
+              bdCont.style.opacity = '0';
+              cursor.style.opacity = '0';
+              allNavItems.forEach(function(el){ el.classList.remove('is-active'); });
+              txNavItem.classList.add('is-active');
+            }
+
+            function showAccount(){
+              window.bdCancelReg && window.bdCancelReg();
+              ++_brGen; ++_bcGen;
+              hideAllTracks();
+              baSlide.style.display = 'block';
+              bdCont.style.opacity = '0';
+              cursor.style.opacity = '0';
+              allNavItems.forEach(function(el){ el.classList.remove('is-active'); });
+              accNavItem.classList.add('is-active');
+            }
+
             boopNavItem.addEventListener('click', showRecovery);
             cardNavItem.addEventListener('click', showCardDemo);
+            txNavItem.addEventListener('click', showTransaction);
+            accNavItem.addEventListener('click', showAccount);
             regItems.forEach(function(el, i){
               el.addEventListener('click', function(){ showRegistration(i); });
             });
