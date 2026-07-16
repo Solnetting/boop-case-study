@@ -383,7 +383,22 @@
     <div class="dd__panel">
       <div class="dd__label">Secondary layer</div>
       <p class="dd__body">Three versions of the vendor app — checkout, charging, cancel-order, device-pairing flows across iterations. The vendor side was split into three phone-based apps sharing a codebase: access control, bouncer, and payment.</p>
-      <img src="images/vendor-app-iterations.png" alt="Vendor app V1–V3 iterations" style="width:100%;border-radius:var(--r-lg);margin-top:1.5rem;display:block;">
+      <div class="flow-wrap" style="margin-top:1.5rem;">
+        <div class="flow-scroll">
+          <img src="images/vendor-app-iterations.png" alt="Vendor app V1–V3 iterations">
+        </div>
+        <button class="flow-expand" onclick="openVendor()" aria-label="Expand fullscreen">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 2h4v4M6 14H2v-4M14 10v4h-4M2 6V2h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="flow-lb" id="vendorLb" onclick="closeVendor()">
+        <button class="flow-lb__x" onclick="closeVendor();event.stopPropagation()" aria-label="Close">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        </button>
+        <div class="flow-lb__scroll" onclick="event.stopPropagation()">
+          <img src="images/vendor-app-iterations.png" alt="Vendor app V1–V3 iterations">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1787,7 +1802,15 @@
     document.getElementById('hifiLb').classList.remove('open');
     document.body.style.overflow = '';
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeFlow(); closeHifi(); } });
+  function openVendor() {
+    document.getElementById('vendorLb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVendor() {
+    document.getElementById('vendorLb').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeFlow(); closeHifi(); closeVendor(); } });
 
   // ── Story 3 tabs ──
   function switchS3(panelId, btn) {
