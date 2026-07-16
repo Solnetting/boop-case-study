@@ -643,7 +643,27 @@
   <h2 class="s-headline">The decision that shaped V2</h2>
 
   <div id="s3b" class="s3-panel active">
-    <p class="s-body">Four competing UX concepts were evaluated for scanning guidance in V2. The core problem: the V1 guidance screens still required users to look at their phone instead of the scanner.</p>
+    <p class="s-body">V1 was scoped to answer one question inside a single event: can a stranger register their palm and pay with it, unassisted. V2 became something bigger — a general-purpose financial bridge, not an event tool. There's no top-up balance anymore; users add their own bank cards and assign them to a registered hand, and the palm authenticates a payment that routes straight to that card.</p>
+
+    <div class="evt-header" style="margin-top:2.5rem;">
+      <hr class="evt-divider">
+      <div class="evt-header__text">
+        <span class="s-label" style="margin:0;">App structure · V2</span>
+        <h3 class="evt-title">One flow, four persistent sections</h3>
+      </div>
+    </div>
+
+    <p class="s-body" style="margin-top:1rem;">V2 introduced a persistent bottom tab bar — <strong>Payments, Card, Permissions, Account</strong> — replacing V1's single-screen design. Payments is the transaction list. Card shows linked cards and a separate Boop Rewards points balance (deducted first, before the linked card is charged). Permissions is where palm-payment and per-palm detection are toggled on or off, and where each palm's assigned card is managed. Account handles device management and profile. The tab bar drops away only on drill-down screens, like assigning a card to a palm, which use a back-arrow pattern instead.</p>
+
+    <figure class="img-ph img-ph--hifi img-ph--wide" style="margin-top:1.5rem;" aria-label="V2 nav bar screens placeholder">
+      <div class="img-ph__inner">
+        <span class="img-ph__type">hi-fi</span>
+        <span class="img-ph__desc">V2 bottom nav — Payments / Card / Permissions / Account, plus Assign-to-palm detail screen</span>
+        <span class="img-ph__note">Export from Boop_2.0 Figma</span>
+      </div>
+    </figure>
+
+    <p class="s-body" style="margin-top:1.5rem;">Four competing UX concepts were evaluated for scanning guidance in this new context. The core problem: the V1 guidance screens still required users to look at their phone instead of the scanner.</p>
 
   <!-- Interactive prototype -->
   <div class="evt-header" style="margin-top:3rem;">
@@ -653,10 +673,6 @@
       <h3 class="evt-title">Try the registration flow</h3>
     </div>
   </div>
-
-  <p class="s-body" style="margin-top:1rem;">V2 also moved from V1's single main screen to <strong>dedicated screens per step</strong>, tracked in the nav strip below the demo — Splash, Sign in, Scanning, Adding a card, Terms, Date of birth, Account. V1 kept everything on one screen by design (3–4 features max, no mid-flow navigation); V2's longer, more branching flow needed a clearer sense of where you are and what's next.</p>
-
-  <p class="s-body" style="margin-top:1rem;">The balance is gone in V2. V1 held its own top-up balance that you'd spend down and check afterward; V2 has no stored balance at all — it authenticates your palm and routes the payment straight to a linked bank card. The app is a bridge between your hand and your existing cards, not a wallet of its own.</p>
 
           <style>
             @keyframes bd-cursor-in  { from{opacity:0;transform:translate(-50%,-50%) scale(.4)} to{opacity:1;transform:translate(-50%,-50%) scale(1)} }
@@ -680,7 +696,7 @@
 
             /* 04 Add new card — same pill as #bdBtn, absolutely positioned over bc-card-01.png */
             #bcAddBtn {
-              position:absolute; left:12px; right:12px; top:calc(75% - 16px);
+              position:absolute; left:12px; right:12px; top:68.5%;
               display:flex; align-items:center; justify-content:center;
               height:33px; border-radius:100px;
               background:#070707; color:#fefefe;
@@ -1554,7 +1570,7 @@
                 setCursorX('50%');
                 setTimeout(function(){
                   if(!ok()) return;
-                  animateTap('75%', function(pressed){ if(bcAddBtn){ bcAddBtn.classList.toggle('pressed', pressed); } }, function(){
+                  animateTap('71.7%', function(pressed){ if(bcAddBtn){ bcAddBtn.classList.toggle('pressed', pressed); } }, function(){
                     if(!ok()) return;
                     bcGoTo(1);
                     setTimeout(function(){
