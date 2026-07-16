@@ -56,7 +56,7 @@
     </div>
     <div class="hero__meta-item">
       <div class="hero__meta-label">V1</div>
-      <div class="hero__meta-value">Web app, browser-only · live-tested with ~300 people</div>
+      <div class="hero__meta-value">Web app, browser-only · live-tested with ~250 people</div>
     </div>
     <div class="hero__meta-item">
       <div class="hero__meta-label">V2</div>
@@ -266,7 +266,7 @@
 ═══════════════════════════════════ -->
 <section id="story-1" class="s">
   <span class="s-label">Story 1 · Discovery → Fix → Live validation</span>
-  <h2 class="s-headline">Pre-event test → one finding → shipped fix → 300 strangers</h2>
+  <h2 class="s-headline">Pre-event test → one finding → shipped fix → 250 strangers</h2>
 
   <!-- Pre-event test -->
   <p class="s-body">Every flow was paper-mapped before Figma. Low-fi went through ~9 iterations of the core user flow (V1–V9.2), three vendor-app versions, and separate bouncer/VIP/entrance variants — with friction risk tagged directly on the flow diagrams as they were built.</p>
@@ -368,1004 +368,9 @@
   </div>
 
 
-  <!-- Interactive prototype -->
-  <div class="evt-header" style="margin-top:3rem;">
-    <hr class="evt-divider">
-    <div class="evt-header__text">
-      <span class="s-label" style="margin:0;">Interactive prototype · V2</span>
-      <h3 class="evt-title">Try the registration flow</h3>
-    </div>
-  </div>
 
-  <style>
-    @keyframes bd-cursor-in  { from{opacity:0;transform:translate(-50%,-50%) scale(.4)} to{opacity:1;transform:translate(-50%,-50%) scale(1)} }
-    @keyframes bd-cursor-out { from{opacity:1;transform:translate(-50%,-50%) scale(1)} to{opacity:0;transform:translate(-50%,-50%) scale(.4)} }
-    @keyframes bd-ripple     { 0%{transform:translate(-50%,-50%) scale(0);opacity:.45} 100%{transform:translate(-50%,-50%) scale(2);opacity:0} }
-    .bd-screen { flex:0 0 100%; min-width:0; position:relative; overflow:hidden; }
-    .bd-screen img { width:100%;height:100%;object-fit:cover;display:block; }
-    #bdBtn {
-      display:flex;align-items:center;justify-content:center;
-      width:100%;height:33px;border-radius:100px;
-      background:#070707;color:#fefefe;
-      font-family:'Inter',sans-serif;font-size:12px;font-weight:500;
-      border:none;cursor:default;transition:background .15s, transform .12s;
-    }
-    #bdBtn.pressed { background:#2d2d2d; transform:scale(.97); }
-    #bcAddBtn {
-      position:absolute; left:12px; right:12px; top:calc(75% - 16px);
-      display:flex; align-items:center; justify-content:center;
-      height:33px; border-radius:100px;
-      background:#070707; color:#fefefe;
-      font-family:'Inter',sans-serif; font-size:10px; font-weight:500;
-      border:none; cursor:default; pointer-events:none;
-      transition:background .15s, transform .12s;
-    }
-    #bcAddBtn.pressed { background:#2d2d2d; transform:scale(.97); }
-    .bd-continue {
-      display:flex;align-items:center;justify-content:center;
-      width:100%;height:33px;border-radius:100px;
-      background:#070707;color:#fefefe;
-      font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
-      border:none;cursor:default;transition:background .15s, transform .12s;
-    }
-    .bd-btn2 {
-      display:flex;align-items:center;justify-content:center;gap:5px;
-      width:100%;height:33px;border-radius:9999px;
-      background:rgba(255,255,255,0.4);border:1px solid #525252;
-      font-family:'Inter',sans-serif;font-size:10px;font-weight:500;color:#070707;
-      box-sizing:border-box;cursor:default;
-    }
-  </style>
-
-  <div class="bd-demo-wrap" id="bdRegDemoWrap">
-    <!-- aspect-ratio:433/879 establishes parent height from width before images load -->
-    <div style="position:relative;width:260px;flex-shrink:0;aspect-ratio:433/879;">
-
-      <!-- Screen viewport -->
-      <div id="bdPort" style="position:absolute;top:2.5%;left:5.5%;width:89%;height:95.5%;overflow:hidden;z-index:1;">
-
-        <!-- Registration track -->
-        <div id="bdSlide" style="position:absolute;top:0;left:0;display:flex;flex-direction:row;width:100%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);">
-
-          <!-- Screen 0: splash bg + button panel overlay (exact Figma layout, scaled ×0.59) -->
-          <div class="bd-screen">
-    <img src="images/boop-splash-nobtn.png" alt="">
-    <!-- Button panel: pt-19 pb-28 px-12 col gap-9 — from Figma pt-32 pb-48 px-20 gap-16 -->
-    <div style="position:absolute;bottom:0;left:0;width:100%;box-sizing:border-box;
-        background:rgba(255,255,255,0.97);padding:19px 12px 28px;">
-      <div style="display:flex;flex-direction:column;gap:9px;width:100%;">
-
-        <!-- Primary -->
-        <button id="bdBtn">Create a new account</button>
-
-        <!-- Sub-group: divider + boop + world -->
-        <div style="display:flex;flex-direction:column;gap:9px;">
-
-          <!-- Divider -->
-          <div style="display:flex;gap:6px;align-items:center;overflow:hidden;">
-            <div style="background:#e6e6e6;height:1px;flex:1;flex-shrink:1;"></div>
-            <span style="font-family:'Inter',sans-serif;font-size:7px;font-weight:400;color:#525252;white-space:nowrap;">or sign in with</span>
-            <div style="background:#e6e6e6;height:1px;flex:1;flex-shrink:1;"></div>
-          </div>
-
-          <!-- Boop + World col, gap-5 -->
-          <div style="display:flex;flex-direction:column;gap:5px;align-items:center;">
-
-            <!-- Boop account -->
-            <div class="bd-btn2">
-      <svg width="16" height="9" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block;"><path d="M3.78126 9.0043C3.0528 9.0043 2.40342 8.83559 1.83312 8.49818C1.26282 8.16076 0.814719 7.71167 0.488831 7.15089C0.162944 6.59012 0 5.97232 0 5.29749C0 4.79849 0.0934529 4.32564 0.280359 3.87892C0.467265 3.4322 0.730852 3.03776 1.07112 2.69559C1.41138 2.34867 1.81155 2.07779 2.27163 1.88294C2.73171 1.6881 3.23492 1.59068 3.78126 1.59068C4.5145 1.59068 5.16628 1.75938 5.73658 2.0968C6.30689 2.43421 6.75498 2.88331 7.08087 3.44408C7.40676 4.00486 7.5697 4.62266 7.5697 5.29749C7.5697 5.79648 7.47625 6.26934 7.28934 6.71606C7.10244 7.16277 6.83885 7.55722 6.49858 7.89938C6.15832 8.24155 5.75815 8.51243 5.29807 8.71203C4.838 8.90688 4.33239 9.0043 3.78126 9.0043Z" fill="#070707"/><path d="M14.6069 10.643C13.5699 10.643 12.6454 10.4008 11.8336 9.91639C11.0217 9.432 10.3838 8.78728 9.91987 7.98224C9.45594 7.17719 9.22398 6.29027 9.22398 5.32149C9.22398 4.60514 9.35702 3.9263 9.62309 3.285C9.88917 2.64369 10.2644 2.07743 10.7488 1.58621C11.2332 1.08818 11.8029 0.699298 12.4578 0.419579C13.1128 0.139859 13.8291 0 14.6069 0C15.6507 0 16.5786 0.242196 17.3904 0.726587C18.2023 1.21098 18.8402 1.8557 19.3041 2.66074C19.768 3.46579 20 4.35271 20 5.32149C20 6.03785 19.867 6.71668 19.6009 7.35798C19.3348 7.99929 18.9596 8.56555 18.4752 9.05677C17.9908 9.54798 17.4211 9.93686 16.7662 10.2234C16.1112 10.5031 15.3915 10.643 14.6069 10.643ZM14.6069 8.9442C15.2823 8.9442 15.8793 8.79752 16.3978 8.50415C16.9231 8.20397 17.3358 7.78439 17.636 7.24541C17.9362 6.69962 18.0863 6.05831 18.0863 5.32149C18.0863 4.57785 17.9362 3.93654 17.636 3.39757C17.3427 2.85177 16.9333 2.43219 16.408 2.13883C15.8827 1.84547 15.2823 1.69878 14.6069 1.69878C13.9315 1.69878 13.3311 1.84547 12.8058 2.13883C12.2872 2.43219 11.8779 2.85177 11.5777 3.39757C11.2844 3.93654 11.1377 4.57785 11.1377 5.32149C11.1377 6.05831 11.2844 6.69962 11.5777 7.24541C11.8779 7.78439 12.2907 8.20397 12.816 8.50415C13.3413 8.79752 13.9383 8.9442 14.6069 8.9442Z" fill="#070707"/></svg>
-      Boop account
-            </div>
-
-            <!-- World account -->
-            <div style="display:flex;gap:5px;align-items:center;justify-content:center;
-        height:20px;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;color:#717680;">
-      <svg width="12" height="12" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block;"><circle cx="14" cy="14" r="12" stroke="#525252" stroke-width="2.5" fill="none"/><ellipse cx="14" cy="14" rx="6.5" ry="12" stroke="#525252" stroke-width="2" fill="none"/><line x1="2" y1="14" x2="26" y2="14" stroke="#525252" stroke-width="2"/><path d="M3 9.5 Q14 11.5 25 9.5" stroke="#525252" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M3 18.5 Q14 20.5 25 18.5" stroke="#525252" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-      World account
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-          </div>
-
-          <!-- Screen 1: onboarding slide 1 — Your identity is safe -->
-          <div class="bd-screen">
-    <img src="images/boop-onboarding-1.png" alt="">
-          </div>
-
-          <!-- Screen 2: onboarding slide 2 — Your hand is your key -->
-          <div class="bd-screen">
-    <img src="images/boop-onboarding-2.png" alt="">
-          </div>
-
-          <!-- Screen 3: terms & conditions — interactive panel overlay -->
-          <div class="bd-screen">
-    <img src="images/boop-terms.png" alt="">
-    <!-- Overlay covers the static panel in the image; exact scale ×0.577 -->
-    <div style="position:absolute;bottom:0;left:0;width:100%;height:145px;box-sizing:border-box;
-        background:#f4f6fa;padding:22px 12px 22px;
-        display:flex;flex-direction:column;gap:14px;">
-      <!-- Checkbox row -->
-      <div style="display:flex;gap:5px;align-items:flex-start;">
-        <div id="bdCheckbox" style="
-          width:8px;height:8px;flex-shrink:0;margin-top:1px;
-          border-radius:1px;border:1px solid #d9d9d9;background:#fff;
-          display:flex;align-items:center;justify-content:center;
-          transition:background .25s,border-color .25s;
-        "></div>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:8px;font-weight:500;
-          color:#070707;line-height:1.45;">
-          Accept the terms and conditions and consent to processing of my biometric data at the event
-        </p>
-      </div>
-      <!-- Accept button — starts disabled (gray) -->
-      <button id="bdAcceptBtn" style="
-        display:flex;align-items:center;justify-content:center;
-        width:100%;height:33px;border-radius:100px;
-        background:#a3a3a3;color:#fff;
-        font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
-        border:none;cursor:default;
-        transition:background .35s,transform .12s;
-      ">Accept</button>
-    </div>
-          </div>
-
-          <!-- Screen 4: date of birth — fully HTML, picker animates 1/1/2000 → Nov 12 1995 -->
-          <div class="bd-screen" style="background:#ecf0f6;display:flex;flex-direction:column;justify-content:space-between;">
-    <div style="padding:37px 12px 0;display:flex;flex-direction:column;gap:20px;">
-      <!-- Title + picker -->
-      <div style="display:flex;flex-direction:column;gap:14px;align-items:center;">
-        <div style="text-align:center;">
-          <p style="margin:0 0 4px;font:700 18px/1.2 'Inter',sans-serif;color:#070707;">Date of birth</p>
-          <p style="margin:0;font:400 7px/1.4 'Inter',sans-serif;color:#525252;">You must be 18 or older to use Boop.</p>
-        </div>
-        <!-- Picker widget -->
-        <div style="position:relative;width:100%;height:110px;overflow:hidden;">
-          <!-- Selection band -->
-          <div style="position:absolute;top:50%;left:3px;right:3px;height:22px;transform:translateY(-50%);background:rgba(255,255,255,0.55);border-radius:6px;z-index:1;pointer-events:none;"></div>
-          <!-- Top/bottom fades -->
-          <div style="position:absolute;inset:0 0 auto 0;height:36px;background:linear-gradient(#ecf0f6 25%,transparent);z-index:2;pointer-events:none;"></div>
-          <div style="position:absolute;inset:auto 0 0 0;height:36px;background:linear-gradient(transparent,#ecf0f6 75%);z-index:2;pointer-events:none;"></div>
-          <!-- Columns -->
-          <div style="display:flex;height:100%;overflow:hidden;">
-            <div style="flex:0 0 55%;overflow:hidden;"><div id="bdPMonth" style="transition:transform 1.3s cubic-bezier(.4,0,.2,1);"></div></div>
-            <div style="flex:0 0 15%;overflow:hidden;text-align:center;"><div id="bdPDay" style="transition:transform 1.3s cubic-bezier(.4,0,.2,1);"></div></div>
-            <div style="flex:0 0 30%;overflow:hidden;"><div id="bdPYear" style="transition:transform 1.3s cubic-bezier(.4,0,.2,1);"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Confirm button — starts disabled -->
-    <div style="background:rgba(255,255,255,0.4);padding:22px 12px;box-sizing:border-box;">
-      <button id="bdConfirmBtn" style="
-        display:flex;align-items:center;justify-content:center;
-        width:100%;height:33px;border-radius:100px;
-        background:#a3a3a3;color:#fff;
-        font:700 10px 'Inter',sans-serif;
-        border:none;cursor:default;
-        transition:background .5s;
-      ">Confirm</button>
-    </div>
-          </div>
-
-          <!-- Screen 5: account created — animated ring + checkmark reveal -->
-          <div class="bd-screen" style="background:#ecf0f6;display:flex;flex-direction:column;justify-content:space-between;padding-top:37px;">
-    <!-- Title -->
-    <div style="display:flex;flex-direction:column;gap:5px;align-items:center;text-align:center;padding:0 12px;">
-      <p style="margin:0;font:700 18px/1.2 'Inter',sans-serif;color:#070707;">Account Created!</p>
-      <p style="margin:0;font:400 7px/1.4 'Inter',sans-serif;color:#525252;">Welcome to Boop. Your account is ready to use.</p>
-    </div>
-    <!-- Illustration -->
-    <div style="flex:1;display:flex;align-items:center;justify-content:center;position:relative;">
-      <!-- Frosted glass circle — hidden until ring completes -->
-      <div id="bdCircleBg" style="width:155px;height:155px;border-radius:50%;background:linear-gradient(-52deg,rgba(255,255,255,0.5) 14%,rgba(242,242,242,0.5) 49%,rgba(227,227,227,0.5) 85%);box-shadow:2px 2px 6px rgba(183,183,183,0.1);opacity:0;transition:opacity .35s ease;"></div>
-      <!-- Clockwise ring — stroke-dashoffset animated to 0 by JS -->
-      <svg style="position:absolute;width:155px;height:155px;" viewBox="0 0 155 155" overflow="visible">
-        <circle id="bdRingPath"
-          cx="77.5" cy="77.5" r="73"
-          fill="none" stroke="#8892C6" stroke-width="3" stroke-linecap="round"
-          stroke-dasharray="459" stroke-dashoffset="459"
-          transform="rotate(-90 77.5 77.5)"
-          style="transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1);"/>
-      </svg>
-      <!-- Checkmark — fades in after ring completes -->
-      <svg id="bdCheckSvg" style="position:absolute;opacity:0;transition:opacity .4s ease;" width="78" height="60" viewBox="0 0 78 60">
-        <path d="M4 36 L27 54 L74 6" stroke="#8892C6" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <!-- Done button -->
-    <div style="padding:22px 12px 28px;box-sizing:border-box;">
-      <button style="display:flex;align-items:center;justify-content:center;width:100%;height:33px;border-radius:100px;background:#070707;color:#fefefe;font:700 10px 'Inter',sans-serif;border:none;cursor:default;">Done</button>
-    </div>
-          </div>
-
-          <!-- Screen 6: scanning / account creation — choose method -->
-          <div class="bd-screen">
-    <img src="images/boop-scanning.png" alt="">
-    <!-- Micro-interaction overlays — positions derived from Figma node 2877:6626 (402×874px frame) -->
-    <div id="bdScan1" style="position:absolute;left:5.1%;top:26.1%;width:90.3%;height:9.2%;border-radius:8px;background:transparent;transition:background .15s ease,transform .12s ease;transform-origin:center;pointer-events:none;"></div>
-    <div id="bdScan2" style="position:absolute;left:5.1%;top:37.1%;width:90.3%;height:9.2%;border-radius:8px;background:transparent;transition:background .15s ease;pointer-events:none;"></div>
-          </div>
-
-          <!-- Screen 7: tap phone on scanner -->
-          <div class="bd-screen">
-    <img src="images/boop-scanning-2.png" alt="">
-          </div>
-
-          <!-- Screen 8: hover-hand prompt — "Hover your hand to begin" -->
-          <div class="bd-screen">
-    <img src="images/boop-hover-hand.png" alt="">
-          </div>
-
-          <!-- Screen 9: gently move hand up and down (Figma 3691:10113) -->
-          <div class="bd-screen">
-    <img src="images/boop-scan-move.png" alt="">
-          </div>
-
-          <!-- Screen 10: scanning step 5 (Figma 3691:10128) -->
-          <div class="bd-screen">
-    <img src="images/boop-scan-5.png" alt="">
-          </div>
-
-          <!-- Screen 11: "HANDS SUCCESSFULLY SCANNED" — animated radial progress (Figma 3735:10447) -->
-          <div class="bd-screen" style="background:#ecf0f6;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding-top:20%;box-sizing:border-box;">
-    <div style="text-align:center;padding:0 23px;width:100%;">
-      <div style="font-family:Inter,sans-serif;font-weight:900;font-size:20px;line-height:1.15;color:#070707;text-transform:uppercase;">HANDS<br>SUCCESSFULLY<br>SCANNED</div>
-      <div style="font-family:Inter,sans-serif;font-weight:500;font-size:11.5px;color:#475569;margin-top:5px;line-height:1.4;">Welcome to Boop. Your account is ready to use</div>
-    </div>
-    <div style="position:relative;width:158px;height:158px;flex-shrink:0;">
-      <!-- blob background -->
-      <div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at center,#ffffff 0%,rgba(255,255,255,0.85) 42%,rgba(236,240,246,0) 70%);"></div>
-      <!-- ring: fills clockwise, then hidden -->
-      <svg id="bdScanRing" viewBox="0 0 158 158" width="158" height="158" style="position:absolute;inset:0;">
-        <circle cx="79" cy="79" r="70" fill="none" stroke="#070707" stroke-width="3.5" stroke-linecap="round"
-          transform="rotate(-90 79 79)" stroke-dasharray="439.82" stroke-dashoffset="439.82"/>
-      </svg>
-      <!-- frosted glass circle: fades in after ring completes -->
-      <div id="bdScanGlass" style="position:absolute;inset:0;border-radius:50%;opacity:0;background:linear-gradient(-52.67deg,rgba(255,255,255,0.5) 13.7%,rgba(242,242,242,0.5) 48.9%,rgba(227,227,227,0.5) 85.5%);box-shadow:2px 2px 6px 0px rgba(183,183,183,0.1);"></div>
-      <!-- checkmark: fades in over glass -->
-      <div id="bdScanCheckmark" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;">
-        <svg width="69" height="49" viewBox="0 0 119.719 85.4414" fill="none" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-          <g>
-            <mask id="bdChkMask" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="116" height="84">
-      <path d="M115.633 12.5982L42.7899 85.4414L4.25614 46.9077C1.90555 44.5571 1.90554 40.746 4.25614 38.3954C6.60674 36.0448 10.4178 36.0448 12.7684 38.3954L42.7899 68.4168L106.78 4.42638C109.225 1.98176 113.188 1.98176 115.633 4.42639C117.89 6.68296 117.89 10.3416 115.633 12.5982Z" fill="#0A0D12"/>
-            </mask>
-            <g mask="url(#bdChkMask)">
-      <g filter="url(#bdChkBlur)">
-        <rect width="175.522" height="77.4166" transform="matrix(-0.866025 0.5 0.5 0.866025 107.149 -34.4023)" fill="#0A0D12"/>
-      </g>
-            </g>
-          </g>
-          <defs>
-            <filter id="bdChkBlur" x="-129.28" y="-118.825" width="359.56" height="323.651" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-      <feGaussianBlur stdDeviation="42" result="effect1_foregroundBlur"/>
-            </filter>
-          </defs>
-        </svg>
-      </div>
-    </div>
-    <div style="padding-bottom:37px;display:flex;align-items:center;justify-content:center;">
-      <svg width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.78126 9.0043C3.0528 9.0043 2.40342 8.83559 1.83312 8.49818C1.26282 8.16076 0.814719 7.71167 0.488831 7.15089C0.162944 6.59012 0 5.97232 0 5.29749C0 4.79849 0.0934529 4.32564 0.280359 3.87892C0.467265 3.4322 0.730852 3.03776 1.07112 2.69559C1.41138 2.34867 1.81155 2.07779 2.27163 1.88294C2.73171 1.6881 3.23492 1.59068 3.78126 1.59068C4.5145 1.59068 5.16628 1.75938 5.73658 2.0968C6.30689 2.43421 6.75498 2.88331 7.08087 3.44408C7.40676 4.00486 7.5697 4.62266 7.5697 5.29749C7.5697 5.79648 7.47625 6.26934 7.28934 6.71606C7.10244 7.16277 6.83885 7.55722 6.49858 7.89938C6.15832 8.24155 5.75815 8.51243 5.29807 8.71203C4.838 8.90688 4.33239 9.0043 3.78126 9.0043Z" fill="#070707"/>
-        <path d="M14.6069 10.643C13.5699 10.643 12.6454 10.4008 11.8336 9.91639C11.0217 9.432 10.3838 8.78728 9.91987 7.98224C9.45594 7.17719 9.22398 6.29027 9.22398 5.32149C9.22398 4.60514 9.35702 3.9263 9.62309 3.285C9.88917 2.64369 10.2644 2.07743 10.7488 1.58621C11.2332 1.08818 11.8029 0.699298 12.4578 0.419579C13.1128 0.139859 13.8291 0 14.6069 0C15.6507 0 16.5786 0.242196 17.3904 0.726587C18.2023 1.21098 18.8402 1.8557 19.3041 2.66074C19.768 3.46579 20 4.35271 20 5.32149C20 6.03785 19.867 6.71668 19.6009 7.35798C19.3348 7.99929 18.9596 8.56555 18.4752 9.05677C17.9908 9.54798 17.4211 9.93686 16.7662 10.2234C16.1112 10.5031 15.3915 10.643 14.6069 10.643ZM14.6069 8.9442C15.2823 8.9442 15.8793 8.79752 16.3978 8.50415C16.9231 8.20397 17.3358 7.78439 17.636 7.24541C17.9362 6.69962 18.0863 6.05831 18.0863 5.32149C18.0863 4.57785 17.9362 3.93654 17.636 3.39757C17.3427 2.85177 16.9333 2.43219 16.408 2.13883C15.8827 1.84547 15.2823 1.69878 14.6069 1.69878C13.9315 1.69878 13.3311 1.84547 12.8058 2.13883C12.2872 2.43219 11.8779 2.85177 11.5777 3.39757C11.2844 3.93654 11.1377 4.57785 11.1377 5.32149C11.1377 6.05831 11.2844 6.69962 11.5777 7.24541C11.8779 7.78439 12.2907 8.20397 12.816 8.50415C13.3413 8.79752 13.9383 8.9442 14.6069 8.9442Z" fill="#070707"/>
-      </svg>
-    </div>
-          </div>
-
-        </div><!-- /#bdSlide -->
-
-        <!-- Sign-in with Boop account track -->
-        <div id="brSlide" style="position:absolute;top:0;left:0;display:none;flex-direction:row;width:100%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);">
-          <!-- S0: Splash — cursor taps Boop account glass button -->
-          <div class="bd-screen">
-    <img src="images/boop-splash-nobtn.png" alt="">
-    <div style="position:absolute;bottom:0;left:0;width:100%;box-sizing:border-box;
-        background:rgba(255,255,255,0.97);padding:19px 12px 28px;">
-      <div style="display:flex;flex-direction:column;gap:9px;width:100%;">
-        <button style="display:flex;align-items:center;justify-content:center;
-          width:100%;height:33px;border-radius:100px;
-          background:#070707;color:#fefefe;
-          font-family:'Inter',sans-serif;font-size:12px;font-weight:500;
-          border:none;cursor:default;">Create a new account</button>
-        <div style="display:flex;flex-direction:column;gap:9px;">
-          <div style="display:flex;gap:6px;align-items:center;overflow:hidden;">
-            <div style="background:#e6e6e6;height:1px;flex:1;flex-shrink:1;"></div>
-            <span style="font-family:'Inter',sans-serif;font-size:7px;font-weight:400;color:#525252;white-space:nowrap;">or sign in with</span>
-            <div style="background:#e6e6e6;height:1px;flex:1;flex-shrink:1;"></div>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:5px;align-items:center;">
-            <div id="brBoopBtn" class="bd-btn2" style="transition:background .12s,transform .1s;">
-      <svg width="16" height="9" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block;"><path d="M3.78126 9.0043C3.0528 9.0043 2.40342 8.83559 1.83312 8.49818C1.26282 8.16076 0.814719 7.71167 0.488831 7.15089C0.162944 6.59012 0 5.97232 0 5.29749C0 4.79849 0.0934529 4.32564 0.280359 3.87892C0.467265 3.4322 0.730852 3.03776 1.07112 2.69559C1.41138 2.34867 1.81155 2.07779 2.27163 1.88294C2.73171 1.6881 3.23492 1.59068 3.78126 1.59068C4.5145 1.59068 5.16628 1.75938 5.73658 2.0968C6.30689 2.43421 6.75498 2.88331 7.08087 3.44408C7.40676 4.00486 7.5697 4.62266 7.5697 5.29749C7.5697 5.79648 7.47625 6.26934 7.28934 6.71606C7.10244 7.16277 6.83885 7.55722 6.49858 7.89938C6.15832 8.24155 5.75815 8.51243 5.29807 8.71203C4.838 8.90688 4.33239 9.0043 3.78126 9.0043Z" fill="#070707"/><path d="M14.6069 10.643C13.5699 10.643 12.6454 10.4008 11.8336 9.91639C11.0217 9.432 10.3838 8.78728 9.91987 7.98224C9.45594 7.17719 9.22398 6.29027 9.22398 5.32149C9.22398 4.60514 9.35702 3.9263 9.62309 3.285C9.88917 2.64369 10.2644 2.07743 10.7488 1.58621C11.2332 1.08818 11.8029 0.699298 12.4578 0.419579C13.1128 0.139859 13.8291 0 14.6069 0C15.6507 0 16.5786 0.242196 17.3904 0.726587C18.2023 1.21098 18.8402 1.8557 19.3041 2.66074C19.768 3.46579 20 4.35271 20 5.32149C20 6.03785 19.867 6.71668 19.6009 7.35798C19.3348 7.99929 18.9596 8.56555 18.4752 9.05677C17.9908 9.54798 17.4211 9.93686 16.7662 10.2234C16.1112 10.5031 15.3915 10.643 14.6069 10.643ZM14.6069 8.9442C15.2823 8.9442 15.8793 8.79752 16.3978 8.50415C16.9231 8.20397 17.3358 7.78439 17.636 7.24541C17.9362 6.69962 18.0863 6.05831 18.0863 5.32149C18.0863 4.57785 17.9362 3.93654 17.636 3.39757C17.3427 2.85177 16.9333 2.43219 16.408 2.13883C15.8827 1.84547 15.2823 1.69878 14.6069 1.69878C13.9315 1.69878 13.3311 1.84547 12.8058 2.13883C12.2872 2.43219 11.8779 2.85177 11.5777 3.39757C11.2844 3.93654 11.1377 4.57785 11.1377 5.32149C11.1377 6.05831 11.2844 6.69962 11.5777 7.24541C11.8779 7.78439 12.2907 8.20397 12.816 8.50415C13.3413 8.79752 13.9383 8.9442 14.6069 8.9442Z" fill="#070707"/></svg>
-      Boop account
-            </div>
-            <div style="display:flex;gap:5px;align-items:center;justify-content:center;
-        height:20px;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;color:#717680;">
-      <svg width="12" height="12" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block;"><circle cx="14" cy="14" r="12" stroke="#525252" stroke-width="2.5" fill="none"/><ellipse cx="14" cy="14" rx="6.5" ry="12" stroke="#525252" stroke-width="2" fill="none"/><line x1="2" y1="14" x2="26" y2="14" stroke="#525252" stroke-width="2"/><path d="M3 9.5 Q14 11.5 25 9.5" stroke="#525252" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M3 18.5 Q14 20.5 25 18.5" stroke="#525252" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-      World account
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-          </div>
-          <!-- S1: Account access — HTML, radios start deselected -->
-          <div class="bd-screen" style="background:#ecf0f6;display:flex;flex-direction:column;">
-    <!-- Header -->
-    <div style="text-align:center;padding:30px 12px 5px;">
-      <span style="font:400 6px/1 'Inter',sans-serif;color:#717680;letter-spacing:0.3px;">Recovery account</span>
-    </div>
-    <!-- Progress bar -->
-    <div style="display:flex;gap:3px;padding:0 12px 8px;">
-      <div id="brStp1" style="flex:1;height:2px;background:#d9d9d9;border-radius:1px;transition:background .4s;"></div>
-      <div id="brStp2" style="flex:1;height:2px;background:#d9d9d9;border-radius:1px;transition:background .4s;"></div>
-    </div>
-    <!-- Back -->
-    <div style="padding:0 12px 8px;display:flex;align-items:center;gap:4px;">
-      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 1L1 5L5 9" stroke="#070707" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span style="font:600 8px/1 'Inter',sans-serif;color:#070707;">Back</span>
-    </div>
-    <!-- Divider -->
-    <div style="height:1px;background:#d9d9d9;margin:0 12px 14px;"></div>
-    <!-- Content -->
-    <div style="padding:0 12px;display:flex;flex-direction:column;gap:11px;">
-      <div style="display:flex;flex-direction:column;gap:4px;">
-        <p style="margin:0;font:700 17px/1.2 'Inter',sans-serif;color:#070707;">Account access</p>
-        <p style="margin:0;font:400 7px/1.4 'Inter',sans-serif;color:#525252;">Do you have access to your Boop account?</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:5px;">
-        <div id="brCard1" style="display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:12px 10px;box-sizing:border-box;transition:background .15s ease,transform .12s ease;">
-          <span style="font:500 7px/1.35 'Inter',sans-serif;color:#070707;flex:1;">I have access to my Boop account</span>
-          <svg width="5" height="9" viewBox="0 0 5 9" fill="none"><path d="M1 1L4 4.5L1 8" stroke="#a0a0a0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div id="brCard2" style="display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:12px 10px;box-sizing:border-box;transition:background .15s ease,transform .12s ease;">
-          <span style="font:400 7px/1.35 'Inter',sans-serif;color:#070707;flex:1;">I do not have access to my Boop account</span>
-          <svg width="5" height="9" viewBox="0 0 5 9" fill="none"><path d="M1 1L4 4.5L1 8" stroke="#a0a0a0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-      </div>
-    </div>
-          </div>
-          <!-- S2: On your old device -->
-          <div class="bd-screen"><img src="images/boop-signin-s1.png" alt="On your old device"></div>
-          <!-- S3: Scan QR from old device -->
-          <div class="bd-screen"><img src="images/boop-signin-s2.png" alt="Scan from your old device"></div>
-        </div><!-- /#brSlide -->
-
-        <!-- Adding card track -->
-        <div id="bcSlide" style="position:absolute;top:0;left:0;display:none;flex-direction:row;width:100%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);">
-          <!-- Screen 0: Cards — empty state (Figma 3625:18006) -->
-          <div class="bd-screen">
-    <img src="images/bc-card-01.png" alt="Cards — empty state">
-    <button id="bcAddBtn">Add new card</button>
-          </div>
-          <!-- Screen 1: Scan Card — camera viewfinder (Figma 2877:7258) -->
-          <div class="bd-screen" style="background:#ecf0f6;display:flex;flex-direction:column;">
-    <!-- Camera viewfinder — black, ~62% of screen height -->
-    <div style="background:#000;flex:0 0 62%;display:flex;flex-direction:column;align-items:center;padding-top:14%;gap:6%;box-sizing:border-box;">
-      <span style="font:400 7px/1.4 'Inter',sans-serif;color:rgba(255,255,255,0.8);text-align:center;flex-shrink:0;">Align card within the frame</span>
-      <!-- Credit card aspect ratio frame with corner brackets -->
-      <div style="position:relative;width:82%;aspect-ratio:1.586;flex-shrink:0;">
-        <div style="position:absolute;top:0;left:0;width:15%;height:2px;background:#fff;border-radius:1px;"></div>
-        <div style="position:absolute;top:0;left:0;width:2px;height:15%;background:#fff;border-radius:1px;"></div>
-        <div style="position:absolute;top:0;right:0;width:15%;height:2px;background:#fff;border-radius:1px;"></div>
-        <div style="position:absolute;top:0;right:0;width:2px;height:15%;background:#fff;border-radius:1px;"></div>
-        <div style="position:absolute;bottom:0;left:0;width:15%;height:2px;background:#fff;border-radius:1px;"></div>
-        <div style="position:absolute;bottom:0;left:0;width:2px;height:15%;background:#fff;border-radius:1px;"></div>
-        <div style="position:absolute;bottom:0;right:0;width:15%;height:2px;background:#fff;border-radius:1px;"></div>
-        <div style="position:absolute;bottom:0;right:0;width:2px;height:15%;background:#fff;border-radius:1px;"></div>
-      </div>
-    </div>
-    <!-- Bottom content -->
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:18px 12px 22px;text-align:center;box-sizing:border-box;">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-        <p style="margin:0;font:700 14px/1.3 'Inter',sans-serif;color:#070707;">Scan Card</p>
-        <p style="margin:0;font:400 7.5px/1.5 'Inter',sans-serif;color:#525252;">Position your card within the frame.<br>Make sure the number and name<br>are clearly visible.</p>
-      </div>
-      <button style="display:flex;align-items:center;justify-content:center;width:100%;height:31px;border-radius:100px;background:transparent;border:1px solid #475569;color:#475569;font:500 8px/1 'Inter',sans-serif;cursor:default;">Enter card details manually</button>
-    </div>
-          </div>
-        </div><!-- /#bcSlide -->
-
-        <!-- Fixed Continue button — lives outside the slide track, never moves -->
-        <button id="bdContBtn" style="
-          position:absolute;bottom:28px;left:12px;right:12px;
-          height:33px;border-radius:100px;
-          background:#070707;color:#fefefe;
-          font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
-          border:none;cursor:default;z-index:5;
-          opacity:0;transition:background .15s,transform .12s,opacity .3s ease;
-        ">Continue</button>
-
-        <!-- Tap cursor -->
-        <div id="bdCursor" style="position:absolute;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,0.32);pointer-events:none;z-index:8;opacity:0;top:74%;left:50%;transform:translate(-50%,-50%);box-shadow:0 2px 10px rgba(0,0,0,.25);"></div>
-
-        <!-- Ripple -->
-        <div id="bdRipple" style="position:absolute;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(0,0,0,0.18);pointer-events:none;z-index:7;opacity:0;top:74%;left:50%;transform:translate(-50%,-50%);"></div>
-
-      </div>
-
-      <!-- iPhone frame — absolute overlay, clips the screen viewport corners -->
-      <img src="images/iphone-mockup.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;">
-    </div>
-
-  <script>
-    (function () {
-      const port    = document.getElementById('bdPort');
-      const slide   = document.getElementById('bdSlide');
-      const btn     = document.getElementById('bdBtn');
-      const contBtn = document.getElementById('bdContBtn');
-      const cursor  = document.getElementById('bdCursor');
-      const ripple  = document.getElementById('bdRipple');
-
-      let _gen = 0;
-
-      function goTo(n) { slide.style.transform = `translateX(-${n * port.offsetWidth}px)`; }
-      function setCursorY(pct) { cursor.style.top  = pct; ripple.style.top  = pct; }
-      function setCursorX(pct) { cursor.style.left = pct; ripple.style.left = pct; }
-
-      function animateTap(yPct, onPress, cb) {
-        setCursorY(yPct);
-        cursor.style.animation = 'none'; cursor.offsetHeight;
-        cursor.style.animation = 'bd-cursor-in .22s forwards';
-        setTimeout(() => { onPress(true);  cursor.style.animation = 'none'; cursor.style.opacity = '1'; cursor.style.transform = 'translate(-50%,-50%) scale(.65)'; }, 380);
-        setTimeout(() => { onPress(false); cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ripple.style.animation = 'none'; ripple.offsetHeight; ripple.style.opacity = '1'; ripple.style.animation = 'bd-ripple .55s forwards'; }, 560);
-        setTimeout(() => { cursor.style.animation = 'bd-cursor-out .2s forwards'; }, 660);
-        setTimeout(cb, 820);
-      }
-      function pressBtn(el, pressed) { el.style.background = pressed ? '#2d2d2d' : '#070707'; el.style.transform = pressed ? 'scale(.97)' : ''; }
-
-      /* ── Date picker initialisation ── */
-      (function() {
-        const RH = 22;
-        const P = ['','',''];
-        function mkCol(el, items, selIdx, initIdx) {
-          el.innerHTML = [...P, ...items, ...P].map((t, i) =>
-    `<div style="height:${RH}px;display:flex;align-items:center;font-family:'Inter',sans-serif;font-size:${i===selIdx?14:10}px;font-weight:${i===selIdx?700:400};color:${i===selIdx?'#0d0d0d':'#8a8a8a'};white-space:nowrap;padding-left:2px;">${t}</div>`
-          ).join('');
-          el.style.transform = `translateY(${44 - initIdx * RH}px)`;
-        }
-        const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-        const days   = Array.from({length:31}, (_,i) => String(i+1));
-        const years  = Array.from({length:21}, (_,i) => String(1990+i));
-        mkCol(document.getElementById('bdPMonth'), months, 13, 3);
-        mkCol(document.getElementById('bdPDay'),   days,   14, 3);
-        mkCol(document.getElementById('bdPYear'),  years,   8, 13);
-      })();
-
-      function resetState() {
-        const RH = 22;
-        slide.style.transition = 'none'; goTo(0);
-        ['bdPMonth','bdPDay','bdPYear'].forEach(id => document.getElementById(id).style.transition = 'none');
-        document.getElementById('bdPMonth').style.transform = `translateY(${44-3*RH}px)`;
-        document.getElementById('bdPDay').style.transform   = `translateY(${44-3*RH}px)`;
-        document.getElementById('bdPYear').style.transform  = `translateY(${44-13*RH}px)`;
-        const cbEl = document.getElementById('bdCheckbox');
-        cbEl.style.background = '#fff'; cbEl.style.borderColor = '#d9d9d9'; cbEl.innerHTML = '';
-        document.getElementById('bdAcceptBtn').style.background = '#a3a3a3';
-        const conf2 = document.getElementById('bdConfirmBtn');
-        conf2.style.background = '#a3a3a3'; conf2.style.transform = '';
-        const ring = document.getElementById('bdRingPath');
-        ring.style.transition = 'none'; ring.style.opacity = '1'; ring.style.strokeDashoffset = '459';
-        document.getElementById('bdCircleBg').style.opacity = '0';
-        document.getElementById('bdCheckSvg').style.opacity  = '0';
-        cursor.style.animation = 'none'; cursor.style.opacity = '0';
-        cursor.style.transform = 'translate(-50%,-50%) scale(1)'; cursor.style.transition = '';
-        contBtn.style.opacity = '0';
-      }
-
-      function reenableTransitions() {
-        slide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
-        ['bdPMonth','bdPDay','bdPYear'].forEach(id => document.getElementById(id).style.transition = '');
-        document.getElementById('bdRingPath').style.transition = 'stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)';
-      }
-
-      function run(delay, startAt) {
-        const g = _gen;
-        const ok = () => _gen === g;
-
-        /* ── Account ring animation then restart ── */
-        const playAccount = () => {
-          setTimeout(() => {
-    if (!ok()) return;
-    document.getElementById('bdRingPath').style.strokeDashoffset = '0';
-    setTimeout(() => {
-      if (!ok()) return;
-      const ring = document.getElementById('bdRingPath');
-      ring.style.transition = 'none'; ring.style.opacity = '0';
-      document.getElementById('bdCircleBg').style.opacity = '1';
-      document.getElementById('bdCheckSvg').style.opacity  = '1';
-      setTimeout(() => {
-        if (!ok()) return;
-        resetState();
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-          reenableTransitions();
-          setTimeout(run, 600);
-        }));
-      }, 2500);
-    }, 1250);
-          }, 500);
-        };
-
-        /* ── DOB picker → confirm → Account ── */
-        const runFromDOB = () => {
-          const RH = 22;
-          const pM   = document.getElementById('bdPMonth');
-          const pD   = document.getElementById('bdPDay');
-          const pY   = document.getElementById('bdPYear');
-          const conf = document.getElementById('bdConfirmBtn');
-          cursor.style.animation = 'none'; cursor.style.opacity = '0';
-          cursor.style.transform = 'translate(-50%,-50%) scale(1)'; cursor.style.transition = 'opacity .2s';
-          const showAt = x => { setCursorX(x); setCursorY('32%'); cursor.style.opacity = '1'; };
-          const hide   = () => { cursor.style.opacity = '0'; };
-          setTimeout(() => {
-    if (!ok()) return;
-    showAt('27%');
-    setTimeout(() => { if (ok()) pM.style.transform = `translateY(${44-13*RH}px)`; }, 200);
-    setTimeout(() => {
-      if (!ok()) return;
-      hide();
-      setTimeout(() => {
-        if (!ok()) return;
-        showAt('62%');
-        setTimeout(() => { if (ok()) pD.style.transform = `translateY(${44-14*RH}px)`; }, 200);
-        setTimeout(() => {
-          if (!ok()) return;
-          hide();
-          setTimeout(() => {
-            if (!ok()) return;
-            showAt('85%');
-            setTimeout(() => { if (ok()) pY.style.transform = `translateY(${44-8*RH}px)`; }, 200);
-            setTimeout(() => {
-      if (!ok()) return;
-      hide(); conf.style.background = '#070707';
-      setTimeout(() => {
-        if (!ok()) return;
-        setCursorX('50%');
-        animateTap('88%',
-          p => { conf.style.background = p ? '#2d2d2d' : '#070707'; conf.style.transform = p ? 'scale(.97)' : ''; },
-          () => setTimeout(() => {
-            if (!ok()) return;
-            goTo(5);
-            playAccount();
-          }, 400)
-        );
-      }, 900);
-            }, 1600);
-          }, 150);
-        }, 1600);
-      }, 150);
-    }, 1600);
-          }, 600);
-        };
-
-        /* ── Terms: checkbox → accept → DOB ── */
-        const runFromTerms = () => {
-          setTimeout(() => {
-    if (!ok()) return;
-    setCursorX('10%');
-    animateTap('81%', () => {}, () => {
-      if (!ok()) return;
-      const cbEl = document.getElementById('bdCheckbox');
-      const abt  = document.getElementById('bdAcceptBtn');
-      cbEl.style.background = '#070707'; cbEl.style.borderColor = '#070707';
-      cbEl.innerHTML = '<svg width="100%" height="100%" viewBox="0 0 8 8"><path d="M1.5 4.5L3.5 6.5L6.5 2" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>';
-      abt.style.background = '#070707';
-      setTimeout(() => {
-        if (!ok()) return;
-        setCursorX('50%');
-        animateTap('89%', pressed => pressBtn(abt, pressed), () => {
-          if (!ok()) return;
-          setTimeout(() => {
-            if (!ok()) return;
-            setCursorX('50%'); goTo(4);
-            runFromDOB();
-          }, 600);
-        });
-      }, 900);
-    });
-          }, 1200);
-        };
-
-        /* ── Onboarding-2: Continue → Terms(3) ── */
-        const runFromOnboarding2 = () => {
-          setTimeout(() => { if (ok()) contBtn.style.opacity = '1'; }, 250);
-          setTimeout(() => {
-    if (!ok()) return;
-    animateTap('88%', pressed => pressBtn(contBtn, pressed), () => {
-      if (!ok()) return;
-      contBtn.style.opacity = '0'; goTo(3);
-      runFromTerms();
-    });
-          }, 1800);
-        };
-
-        /* ── Onboarding-1: Continue → Onboarding-2(2) ── */
-        const runFromOnboarding1 = () => {
-          setTimeout(() => { if (ok()) contBtn.style.opacity = '1'; }, 250);
-          setTimeout(() => {
-    if (!ok()) return;
-    animateTap('88%', pressed => pressBtn(contBtn, pressed), () => {
-      if (!ok()) return;
-      contBtn.style.opacity = '0'; goTo(2);
-      runFromOnboarding2();
-    });
-          }, 1800);
-        };
-
-        /* ── 03 Scanning: 1→2→3→4→1 loop ── */
-        const fromScan = () => {
-          setCursorX('50%');
-          const scan1 = document.getElementById('bdScan1');
-          setTimeout(() => {
-    if (!ok()) return;
-    animateTap('30%',
-      pressed => {
-        if (scan1) {
-          scan1.style.background = pressed ? 'rgba(7,7,7,0.08)' : 'transparent';
-          scan1.style.transform   = pressed ? 'scale(0.98)' : '';
-        }
-      },
-      () => {
-        if (!ok()) return;
-        if (scan1) { scan1.style.background = 'transparent'; scan1.style.transform = ''; }
-        goTo(7);
-        setTimeout(() => {
-          if (!ok()) return;
-          goTo(8);
-          setTimeout(() => {
-            if (!ok()) return;
-            goTo(9);
-            setTimeout(() => {
-      if (!ok()) return;
-      goTo(10);
-      setTimeout(() => {
-        if (!ok()) return;
-        goTo(11);
-        (function(){
-          var ring  = document.querySelector('#bdScanRing circle');
-          var glass = document.getElementById('bdScanGlass');
-          var chk   = document.getElementById('bdScanCheckmark');
-          if (ring)  { ring.style.transition  = 'none'; ring.style.strokeDashoffset = '439.82'; ring.style.opacity = '1'; }
-          if (glass) { glass.style.transition = 'none'; glass.style.opacity = '0'; }
-          if (chk)   { chk.style.transition   = 'none'; chk.style.opacity   = '0'; }
-          requestAnimationFrame(function(){
-            requestAnimationFrame(function(){
-              if (ring) { ring.style.transition = 'stroke-dashoffset 2.0s cubic-bezier(0.4,0,0.2,1)'; ring.style.strokeDashoffset = '0'; }
-            });
-          });
-        })();
-        setTimeout(() => {
-          if (!ok()) return;
-          var ring  = document.querySelector('#bdScanRing circle');
-          var glass = document.getElementById('bdScanGlass');
-          var chk   = document.getElementById('bdScanCheckmark');
-          if (ring)  { ring.style.transition = 'none'; ring.style.opacity = '0'; }
-          if (glass) { glass.style.transition = 'opacity .35s ease'; glass.style.opacity = '1'; }
-          if (chk)   { chk.style.transition  = 'opacity .4s ease .15s'; chk.style.opacity  = '1'; }
-          setTimeout(() => {
-            if (!ok()) return;
-            goTo(6);
-            fromScan();
-          }, 1200);
-        }, 2100);
-      }, 2000);
-            }, 2500);
-          }, 2000);
-        }, 2000);
-      }
-    );
-          }, 1000);
-        };
-
-        /* ── Route to start point ── */
-        if (startAt === 1) {
-          setTimeout(() => { if (ok()) runFromOnboarding1(); }, delay !== undefined ? delay : 600);
-          return;
-        }
-        if (startAt === 2) {
-          setTimeout(() => { if (ok()) runFromOnboarding2(); }, delay !== undefined ? delay : 600);
-          return;
-        }
-        if (startAt === 3) {
-          setTimeout(() => { if (ok()) runFromTerms(); }, delay !== undefined ? delay : 600);
-          return;
-        }
-        if (startAt === 4) {
-          setTimeout(() => { if (ok()) runFromDOB(); }, delay !== undefined ? delay : 600);
-          return;
-        }
-        if (startAt === 5) {
-          setTimeout(() => { if (ok()) playAccount(); }, delay !== undefined ? delay : 600);
-          return;
-        }
-        if (startAt >= 6) {
-          setTimeout(() => { if (ok()) fromScan(); }, delay !== undefined ? delay : 800);
-          return;
-        }
-
-        /* ── Main splash flow: tap Create → onboarding-1(1) → 2(2) → Terms(3) → DOB(4) → Account(5) ── */
-        setTimeout(() => {
-          if (!ok()) return;
-          animateTap('74%',
-    pressed => btn.classList.toggle('pressed', pressed),
-    () => {
-      if (!ok()) return;
-      goTo(1);
-      runFromOnboarding1();
-    }
-          );
-        }, delay !== undefined ? delay : 2000);
-      }
-
-      window.bdCancelReg = function() { ++_gen; };
-
-      window.bdRegRestart = function() {
-        ++_gen;
-        resetState();
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-          reenableTransitions();
-          setTimeout(() => run(500), 600);
-        }));
-      };
-
-      window.bdRunFrom = function(screen) {
-        ++_gen;
-        resetState();
-        goTo(screen);
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-          reenableTransitions();
-          run(600, screen);
-        }));
-      };
-
-      run();
-    })();
-  </script>
-
-    <!-- ── Flow nav ── -->
-    <div class="bd-flow-nav">
-      <div class="bd-flow-nav__item is-active"><span>01</span><span>Splash</span></div>
-      <div id="bdBoopNavItem" class="bd-flow-nav__item"><span>02</span><span>Sign in with Boop account</span></div>
-      <div class="bd-flow-nav__item"><span>03</span><span>Scanning</span></div>
-      <div id="bcCardNavItem" class="bd-flow-nav__item"><span>04</span><span>Adding card</span></div>
-      <div class="bd-flow-nav__item"><span>05</span><span>Terms</span></div>
-      <div class="bd-flow-nav__item"><span>06</span><span>Date of birth</span></div>
-      <div class="bd-flow-nav__item"><span>07</span><span>Account</span></div>
-    </div>
-
-  </div><!-- /.bd-demo-wrap -->
-
-  <script>
-  /* ── Signin flow — runs AFTER nav HTML is in the DOM ── */
-  (function(){
-    var port        = document.getElementById('bdPort');
-    var bdSlide     = document.getElementById('bdSlide');
-    var brSlide     = document.getElementById('brSlide');
-    var bdCont      = document.getElementById('bdContBtn');
-    var cursor      = document.getElementById('bdCursor');
-    var ripple      = document.getElementById('bdRipple');
-    var bcSlide      = document.getElementById('bcSlide');
-    var boopNavItem  = document.getElementById('bdBoopNavItem');
-    var cardNavItem  = document.getElementById('bcCardNavItem');
-    var allNavItems  = document.querySelectorAll('#bdRegDemoWrap .bd-flow-nav__item');
-    var regItems     = Array.from(allNavItems).filter(function(el){ return el !== boopNavItem && el !== cardNavItem; });
-    var brBoopBtn    = document.getElementById('brBoopBtn');
-    var bcAddBtn     = document.getElementById('bcAddBtn');
-
-    var _brGen = 0;
-    var _bcGen = 0;
-
-    function goTo(n){ brSlide.style.transform = 'translateX(-'+(n * port.offsetWidth)+'px)'; }
-    function bcGoTo(n){ bcSlide.style.transform = 'translateX(-'+(n * port.offsetWidth)+'px)'; }
-    function setCursorX(x){ cursor.style.left = x; ripple.style.left = x; }
-    function setCursorY(y){ cursor.style.top  = y; ripple.style.top  = y; }
-
-    function animateTap(yPct, onPress, doneCallback){
-      setCursorY(yPct);
-      cursor.style.opacity = '1';
-      setTimeout(function(){
-        if(onPress) onPress(true);
-        cursor.style.transform = 'translate(-50%,-50%) scale(.85)';
-        ripple.style.animation = 'none'; ripple.offsetHeight;
-        ripple.style.opacity   = '1';
-        ripple.style.animation = 'bd-ripple .55s forwards';
-        setTimeout(function(){
-          if(onPress) onPress(false);
-          cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-          setTimeout(function(){
-    cursor.style.opacity = '0';
-    if(doneCallback) doneCallback();
-          }, 200);
-        }, 350);
-      }, 400);
-    }
-
-    function resetSlide(){
-      brSlide.style.transition = 'none';
-      brSlide.style.transform  = 'translateX(0)';
-      brBoopBtn.style.background = ''; brBoopBtn.style.transform = '';
-      var c1 = document.getElementById('brCard1');
-      if(c1){ c1.style.background = '#fff'; c1.style.transform = ''; }
-      var s1 = document.getElementById('brStp1');
-      var s2 = document.getElementById('brStp2');
-      if(s1) s1.style.background = '#d9d9d9';
-      if(s2) s2.style.background = '#d9d9d9';
-      requestAnimationFrame(function(){ requestAnimationFrame(function(){
-        brSlide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
-      }); });
-    }
-
-    function runRecovery(){
-      var g = _brGen;
-      var ok = function(){ return _brGen === g; };
-
-      setCursorX('50%');
-      /* S0: cursor taps Boop account glass button (~86%) */
-      setTimeout(function(){
-        if(!ok()) return;
-        animateTap('86%',
-          function(pressed){ brBoopBtn.style.background = pressed ? 'rgba(255,255,255,0.2)' : ''; brBoopBtn.style.transform = pressed ? 'scale(.97)' : ''; },
-          function(){
-    if(!ok()) return;
-    goTo(1);
-    var stp1 = document.getElementById('brStp1');
-    if(stp1) setTimeout(function(){ if(ok()) stp1.style.background='#070707'; }, 300);
-    /* S1: tap card 1 directly (~32%) — card selector, no CTA needed */
-    setTimeout(function(){
-      if(!ok()) return;
-      var c1 = document.getElementById('brCard1');
-      animateTap('32%',
-        function(pressed){ if(c1){ c1.style.background = pressed ? 'rgba(0,0,0,0.04)' : '#fff'; c1.style.transform = pressed ? 'scale(0.98)' : ''; } },
-        function(){
-          if(!ok()) return;
-          setTimeout(function(){
-            if(!ok()) return;
-            goTo(2);
-            var stp2 = document.getElementById('brStp2');
-            if(stp2) setTimeout(function(){ if(ok()) stp2.style.background='#070707'; }, 300);
-            /* S2: tap Show QR Code (~91%) */
-            setTimeout(function(){
-      if(!ok()) return;
-      animateTap('91%', null, function(){
-        if(!ok()) return;
-        setTimeout(function(){
-          if(!ok()) return;
-          goTo(3);
-          /* loop: pause then snap back and restart */
-          setTimeout(function(){
-            if(!ok()) return;
-            resetSlide();
-            setTimeout(runRecovery, 600);
-          }, 2500);
-        }, 200);
-      });
-            }, 1400);
-          }, 200);
-        }
-      );
-    }, 1400);
-          }
-        );
-      }, 500);
-    }
-
-    function runCard(){
-      var g = _bcGen;
-      var ok = function(){ return _bcGen === g; };
-      bcSlide.style.transition = 'none'; bcGoTo(0);
-      requestAnimationFrame(function(){ requestAnimationFrame(function(){
-        bcSlide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
-        setCursorX('50%');
-        setTimeout(function(){
-          if(!ok()) return;
-          animateTap('75%', function(pressed){ if(bcAddBtn){ bcAddBtn.classList.toggle('pressed', pressed); } }, function(){
-    if(!ok()) return;
-    bcGoTo(1);
-    setTimeout(function(){
-      if(!ok()) return;
-      bcSlide.style.transition = 'none'; bcGoTo(0);
-      requestAnimationFrame(function(){ requestAnimationFrame(function(){
-        bcSlide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
-        setTimeout(runCard, 500);
-      }); });
-    }, 3000);
-          });
-        }, 1800);
-      }); });
-    }
-
-    function showRecovery(){
-      window.bdCancelReg && window.bdCancelReg();
-      ++_brGen;
-      ++_bcGen;
-      bcSlide.style.display = 'none';
-      bdSlide.style.display = 'none';
-      bdCont.style.opacity  = '0';
-      cursor.style.opacity  = '0';
-      resetSlide();
-      brSlide.style.display = 'flex';
-      allNavItems.forEach(function(el){ el.classList.remove('is-active'); });
-      boopNavItem.classList.add('is-active');
-      setTimeout(runRecovery, 500);
-    }
-
-    function showRegistration(idx){
-      ++_brGen;
-      ++_bcGen;
-      brSlide.style.display = 'none';
-      bcSlide.style.display = 'none';
-      bdSlide.style.display = 'flex';
-      allNavItems.forEach(function(el){ el.classList.remove('is-active'); });
-      regItems[idx || 0].classList.add('is-active');
-      if (idx === 0) {
-        window.bdRegRestart();
-      } else {
-        /* regItems: [0:Splash, 1:03Scan, 2:05Terms, 3:06DOB, 4:07Account] */
-        var screenMap = [0, 6, 3, 4, 5];
-        window.bdRunFrom(screenMap[idx]);
-      }
-    }
-
-    function showCardDemo() {
-      ++_brGen;
-      ++_bcGen;
-      window.bdCancelReg && window.bdCancelReg();
-      brSlide.style.display = 'none';
-      bdSlide.style.display = 'none';
-      bcSlide.style.display = 'flex';
-      bdCont.style.opacity  = '0';
-      cursor.style.opacity = '0';
-      allNavItems.forEach(function(el){ el.classList.remove('is-active'); });
-      cardNavItem.classList.add('is-active');
-      ++_bcGen;
-      setTimeout(runCard, 400);
-    }
-
-    boopNavItem.addEventListener('click', showRecovery);
-    cardNavItem.addEventListener('click', showCardDemo);
-    regItems.forEach(function(el, i){
-      el.addEventListener('click', function(){ showRegistration(i); });
-    });
-  })();
-  </script>
-
-  <!-- Live event -->
+  <!-- Live app V1 -->
   <div class="evt-header">
-    <hr class="evt-divider">
-    <div class="evt-header__text">
-      <span class="s-label" style="margin:0;">Live event · London, 2024</span>
-      <h3 class="evt-title">300 strangers. One question.</h3>
-    </div>
-  </div>
-
-  <div class="evt-car">
-    <div class="evt-car__track" id="evtTrack">
-      <div class="evt-car__slide"><img src="images/event-1.jpg" alt="Live event — people registering their palm at the Boop kiosk"></div>
-      <div class="evt-car__slide"><img src="images/event-2.jpg" alt="Live event — hand over the Boop scanner, guidance screen visible on phone"></div>
-      <div class="evt-car__slide"><img src="images/event-3.jpg" alt="Live event — attendee scanning palm at the kiosk with staff assisting"></div>
-      <div class="evt-car__slide"><img src="images/event-4.jpg" alt="Live event — hand hovering over scanner, Find the White Light screen on phone"></div>
-      <div class="evt-car__slide"><img src="images/event-5.jpg" alt="Live event — attendee using phone to complete registration"></div>
-      <div class="evt-car__slide"><img src="images/event-6.jpg" alt="Live event — hand over scanner with blue processing light ring"></div>
-      <div class="evt-car__slide"><img src="images/event-7.jpg" alt="Live event — group of attendees at the Boop payment kiosk"></div>
-      <div class="evt-car__slide"><img src="images/event-8.jpg" alt="Live event — hand over scanner with blue light ring, payment screen on phone"></div>
-    </div>
-    <button class="evt-car__btn evt-car__btn--prev" onclick="evtMove(-1)" aria-label="Previous">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <button class="evt-car__btn evt-car__btn--next" onclick="evtMove(1)" aria-label="Next">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <div class="evt-car__dots" id="evtDots"></div>
-  </div>
-
-  <p class="s-body" style="margin-top:2rem;">Purchases of goods, drinks, and food happened at physical kiosks via palm scan. The app was used afterward only to check balance and transaction history. The retail activity was the vehicle — <strong>the actual test was whether registration and payment worked, unassisted, for someone doing it for the first time.</strong></p>
-
-  <p class="s-body" style="margin-top:1rem;">Help-seeking was still fairly common — largely tied to hand-position confusion that the guidance screens reduced but didn't eliminate. Overall experience was rated positively despite that friction.</p>
-
-  <div class="evt-header" style="margin-top:3.5rem;">
     <hr class="evt-divider">
     <div class="evt-header__text">
       <span class="s-label" style="margin:0;">Live app · V1</span>
@@ -1396,6 +401,39 @@
       </div>
     </div>
   </div>
+
+  <!-- Live event -->
+  <div class="evt-header" style="margin-top:3.5rem;">
+    <hr class="evt-divider">
+    <div class="evt-header__text">
+      <span class="s-label" style="margin:0;">Live event · London, 2024</span>
+      <h3 class="evt-title">250 strangers. One question.</h3>
+    </div>
+  </div>
+
+  <div class="evt-car">
+    <div class="evt-car__track" id="evtTrack">
+      <div class="evt-car__slide"><img src="images/event-1.jpg" alt="Live event — people registering their palm at the Boop kiosk"></div>
+      <div class="evt-car__slide"><img src="images/event-2.jpg" alt="Live event — hand over the Boop scanner, guidance screen visible on phone"></div>
+      <div class="evt-car__slide"><img src="images/event-3.jpg" alt="Live event — attendee scanning palm at the kiosk with staff assisting"></div>
+      <div class="evt-car__slide"><img src="images/event-4.jpg" alt="Live event — hand hovering over scanner, Find the White Light screen on phone"></div>
+      <div class="evt-car__slide"><img src="images/event-5.jpg" alt="Live event — attendee using phone to complete registration"></div>
+      <div class="evt-car__slide"><img src="images/event-6.jpg" alt="Live event — hand over scanner with blue processing light ring"></div>
+      <div class="evt-car__slide"><img src="images/event-7.jpg" alt="Live event — group of attendees at the Boop payment kiosk"></div>
+      <div class="evt-car__slide"><img src="images/event-8.jpg" alt="Live event — hand over scanner with blue light ring, payment screen on phone"></div>
+    </div>
+    <button class="evt-car__btn evt-car__btn--prev" onclick="evtMove(-1)" aria-label="Previous">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="evt-car__btn evt-car__btn--next" onclick="evtMove(1)" aria-label="Next">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="evt-car__dots" id="evtDots"></div>
+  </div>
+
+  <p class="s-body" style="margin-top:2rem;">Purchases of goods, drinks, and food happened at physical kiosks via palm scan. The app was used afterward only to check balance and transaction history. The retail activity was the vehicle — <strong>the actual test was whether registration and payment worked, unassisted, for someone doing it for the first time.</strong></p>
+
+  <p class="s-body" style="margin-top:1rem;">Help-seeking was still fairly common — largely tied to hand-position confusion that the guidance screens reduced but didn't eliminate. Overall experience was rated positively despite that friction.</p>
 
   <div class="stats-row" style="margin-top:1.5rem;">
     <div class="stat">
@@ -1600,6 +638,985 @@
   <div id="s3b" class="s3-panel active">
     <p class="s-body">Four competing UX concepts were evaluated for scanning guidance in V2. The core problem: the V1 guidance screens still required users to look at their phone instead of the scanner.</p>
 
+  <!-- Interactive prototype -->
+  <div class="evt-header" style="margin-top:3rem;">
+    <hr class="evt-divider">
+    <div class="evt-header__text">
+      <span class="s-label" style="margin:0;">Interactive prototype · V2</span>
+      <h3 class="evt-title">Try the registration flow</h3>
+    </div>
+  </div>
+
+  <p class="s-body" style="margin-top:1rem;">V2 also moved from V1's single main screen to <strong>dedicated screens per step</strong>, tracked in the nav strip below the demo — Splash, Sign in, Scanning, Adding a card, Terms, Date of birth, Account. V1 kept everything on one screen by design (3–4 features max, no mid-flow navigation); V2's longer, more branching flow needed a clearer sense of where you are and what's next.</p>
+
+  <p class="s-body" style="margin-top:1rem;">The balance is gone in V2. V1 held its own top-up balance that you'd spend down and check afterward; V2 has no stored balance at all — it authenticates your palm and routes the payment straight to a linked bank card. The app is a bridge between your hand and your existing cards, not a wallet of its own.</p>
+
+          <style>
+            @keyframes bd-cursor-in  { from{opacity:0;transform:translate(-50%,-50%) scale(.4)} to{opacity:1;transform:translate(-50%,-50%) scale(1)} }
+            @keyframes bd-cursor-out { from{opacity:1;transform:translate(-50%,-50%) scale(1)} to{opacity:0;transform:translate(-50%,-50%) scale(.4)} }
+            @keyframes bd-ripple     { 0%{transform:translate(-50%,-50%) scale(0);opacity:.45} 100%{transform:translate(-50%,-50%) scale(2);opacity:0} }
+
+            /* Screens fill the full port — row flex, each takes 100% width */
+            .bd-screen { flex:0 0 100%; min-width:0; position:relative; overflow:hidden; }
+            .bd-screen img { width:100%;height:100%;object-fit:cover;display:block; }
+
+            /* Primary CTA — Figma: h-55, #070707, Inter Medium 20px — scaled ×0.59 */
+            #bdBtn {
+              display:flex;align-items:center;justify-content:center;
+              width:100%;height:33px;border-radius:100px;
+              background:#070707;color:#fefefe;
+              font-family:'Inter',sans-serif;font-size:12px;font-weight:500;
+              border:none;cursor:default;
+              transition:background .15s, transform .12s;
+            }
+            #bdBtn.pressed { background:#2d2d2d; transform:scale(.97); }
+
+            /* 04 Add new card — same pill as #bdBtn, absolutely positioned over bc-card-01.png */
+            #bcAddBtn {
+              position:absolute; left:12px; right:12px; top:calc(75% - 16px);
+              display:flex; align-items:center; justify-content:center;
+              height:33px; border-radius:100px;
+              background:#070707; color:#fefefe;
+              font-family:'Inter',sans-serif; font-size:10px; font-weight:500;
+              border:none; cursor:default; pointer-events:none;
+              transition:background .15s, transform .12s;
+            }
+            #bcAddBtn.pressed { background:#2d2d2d; transform:scale(.97); }
+
+            /* Onboarding Continue — Figma: h-55, #070707, Inter Bold 16px — scaled ×0.59 */
+            .bd-continue {
+              display:flex;align-items:center;justify-content:center;
+              width:100%;height:33px;border-radius:100px;
+              background:#070707;color:#fefefe;
+              font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
+              border:none;cursor:default;
+              transition:background .15s, transform .12s;
+            }
+
+            /* Secondary CTA — Figma: h-55, glass bg, border #525252, Inter Medium 16px */
+            .bd-btn2 {
+              display:flex;align-items:center;justify-content:center;gap:5px;
+              width:100%;height:33px;border-radius:9999px;
+              background:rgba(255,255,255,0.4);border:1px solid #525252;
+              font-family:'Inter',sans-serif;font-size:10px;font-weight:500;color:#070707;
+              box-sizing:border-box;cursor:default;
+            }
+          </style>
+
+          <div class="bd-demo-wrap" id="bdRegDemoWrap">
+            <!-- aspect-ratio:433/879 establishes parent height from width before images load -->
+            <div style="position:relative;width:260px;flex-shrink:0;aspect-ratio:433/879;">
+
+              <!-- Screen viewport -->
+              <div id="bdPort" style="position:absolute;top:2.5%;left:5.5%;width:89%;height:95.5%;overflow:hidden;z-index:1;">
+
+                <!-- Registration track -->
+                <div id="bdSlide" style="position:absolute;top:0;left:0;display:flex;flex-direction:row;width:100%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);">
+
+                  <!-- Screen 0: splash bg + button panel overlay (exact Figma layout, scaled ×0.59) -->
+                  <div class="bd-screen">
+                    <img src="images/boop-splash-nobtn.png" alt="">
+                    <!-- Button panel: pt-19 pb-28 px-12 col gap-9 — from Figma pt-32 pb-48 px-20 gap-16 -->
+                    <div style="position:absolute;bottom:0;left:0;width:100%;box-sizing:border-box;
+                                background:rgba(255,255,255,0.97);padding:19px 12px 28px;">
+                      <div style="display:flex;flex-direction:column;gap:9px;width:100%;">
+
+                        <!-- Primary -->
+                        <button id="bdBtn">Create a new account</button>
+
+                        <!-- Sub-group: divider + boop + world -->
+                        <div style="display:flex;flex-direction:column;gap:9px;">
+
+                          <!-- Divider -->
+                          <div style="display:flex;gap:6px;align-items:center;overflow:hidden;">
+                            <div style="background:#e6e6e6;height:1px;flex:1;flex-shrink:1;"></div>
+                            <span style="font-family:'Inter',sans-serif;font-size:7px;font-weight:400;color:#525252;white-space:nowrap;">or sign in with</span>
+                            <div style="background:#e6e6e6;height:1px;flex:1;flex-shrink:1;"></div>
+                          </div>
+
+                          <!-- Boop + World col, gap-5 -->
+                          <div style="display:flex;flex-direction:column;gap:5px;align-items:center;">
+
+                            <!-- Boop account -->
+                            <div class="bd-btn2">
+                              <svg width="16" height="9" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block;"><path d="M3.78126 9.0043C3.0528 9.0043 2.40342 8.83559 1.83312 8.49818C1.26282 8.16076 0.814719 7.71167 0.488831 7.15089C0.162944 6.59012 0 5.97232 0 5.29749C0 4.79849 0.0934529 4.32564 0.280359 3.87892C0.467265 3.4322 0.730852 3.03776 1.07112 2.69559C1.41138 2.34867 1.81155 2.07779 2.27163 1.88294C2.73171 1.6881 3.23492 1.59068 3.78126 1.59068C4.5145 1.59068 5.16628 1.75938 5.73658 2.0968C6.30689 2.43421 6.75498 2.88331 7.08087 3.44408C7.40676 4.00486 7.5697 4.62266 7.5697 5.29749C7.5697 5.79648 7.47625 6.26934 7.28934 6.71606C7.10244 7.16277 6.83885 7.55722 6.49858 7.89938C6.15832 8.24155 5.75815 8.51243 5.29807 8.71203C4.838 8.90688 4.33239 9.0043 3.78126 9.0043Z" fill="#070707"/><path d="M14.6069 10.643C13.5699 10.643 12.6454 10.4008 11.8336 9.91639C11.0217 9.432 10.3838 8.78728 9.91987 7.98224C9.45594 7.17719 9.22398 6.29027 9.22398 5.32149C9.22398 4.60514 9.35702 3.9263 9.62309 3.285C9.88917 2.64369 10.2644 2.07743 10.7488 1.58621C11.2332 1.08818 11.8029 0.699298 12.4578 0.419579C13.1128 0.139859 13.8291 0 14.6069 0C15.6507 0 16.5786 0.242196 17.3904 0.726587C18.2023 1.21098 18.8402 1.8557 19.3041 2.66074C19.768 3.46579 20 4.35271 20 5.32149C20 6.03785 19.867 6.71668 19.6009 7.35798C19.3348 7.99929 18.9596 8.56555 18.4752 9.05677C17.9908 9.54798 17.4211 9.93686 16.7662 10.2234C16.1112 10.5031 15.3915 10.643 14.6069 10.643ZM14.6069 8.9442C15.2823 8.9442 15.8793 8.79752 16.3978 8.50415C16.9231 8.20397 17.3358 7.78439 17.636 7.24541C17.9362 6.69962 18.0863 6.05831 18.0863 5.32149C18.0863 4.57785 17.9362 3.93654 17.636 3.39757C17.3427 2.85177 16.9333 2.43219 16.408 2.13883C15.8827 1.84547 15.2823 1.69878 14.6069 1.69878C13.9315 1.69878 13.3311 1.84547 12.8058 2.13883C12.2872 2.43219 11.8779 2.85177 11.5777 3.39757C11.2844 3.93654 11.1377 4.57785 11.1377 5.32149C11.1377 6.05831 11.2844 6.69962 11.5777 7.24541C11.8779 7.78439 12.2907 8.20397 12.816 8.50415C13.3413 8.79752 13.9383 8.9442 14.6069 8.9442Z" fill="#070707"/></svg>
+                              Boop account
+                            </div>
+
+                            <!-- World account -->
+                            <div style="display:flex;gap:5px;align-items:center;justify-content:center;
+                                        height:20px;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;color:#717680;">
+                              <svg width="12" height="12" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block;"><circle cx="14" cy="14" r="12" stroke="#525252" stroke-width="2.5" fill="none"/><ellipse cx="14" cy="14" rx="6.5" ry="12" stroke="#525252" stroke-width="2" fill="none"/><line x1="2" y1="14" x2="26" y2="14" stroke="#525252" stroke-width="2"/><path d="M3 9.5 Q14 11.5 25 9.5" stroke="#525252" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M3 18.5 Q14 20.5 25 18.5" stroke="#525252" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                              World account
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Screen 1: onboarding slide 1 — Your identity is safe -->
+                  <div class="bd-screen">
+                    <img src="images/boop-onboarding-1.png" alt="">
+                  </div>
+
+                  <!-- Screen 2: onboarding slide 2 — Your hand is your key -->
+                  <div class="bd-screen">
+                    <img src="images/boop-onboarding-2.png" alt="">
+                  </div>
+
+                  <!-- Screen 3: terms & conditions — interactive panel overlay -->
+                  <div class="bd-screen">
+                    <img src="images/boop-terms.png" alt="">
+                    <!-- Overlay covers the static panel in the image; exact scale ×0.577 -->
+                    <div style="position:absolute;bottom:0;left:0;width:100%;height:145px;box-sizing:border-box;
+                                background:#f4f6fa;padding:22px 12px 22px;
+                                display:flex;flex-direction:column;gap:14px;">
+                      <!-- Checkbox row -->
+                      <div style="display:flex;gap:5px;align-items:flex-start;">
+                        <div id="bdCheckbox" style="
+                          width:8px;height:8px;flex-shrink:0;margin-top:1px;
+                          border-radius:1px;border:1px solid #d9d9d9;background:#fff;
+                          display:flex;align-items:center;justify-content:center;
+                          transition:background .25s,border-color .25s;
+                        "></div>
+                        <p style="margin:0;font-family:'Inter',sans-serif;font-size:8px;font-weight:500;
+                                  color:#070707;line-height:1.45;">
+                          Accept the terms and conditions and consent to processing of my biometric data at the event
+                        </p>
+                      </div>
+                      <!-- Accept button — starts disabled (gray) -->
+                      <button id="bdAcceptBtn" style="
+                        display:flex;align-items:center;justify-content:center;
+                        width:100%;height:33px;border-radius:100px;
+                        background:#a3a3a3;color:#fff;
+                        font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
+                        border:none;cursor:default;
+                        transition:background .35s,transform .12s;
+                      ">Accept</button>
+                    </div>
+                  </div>
+
+                  <!-- Screen 4: date of birth — fully HTML, picker animates 1/1/2000 → Nov 12 1995 -->
+                  <div class="bd-screen" style="background:#ecf0f6;display:flex;flex-direction:column;justify-content:space-between;">
+                    <div style="padding:37px 12px 0;display:flex;flex-direction:column;gap:20px;">
+                      <!-- Title + picker -->
+                      <div style="display:flex;flex-direction:column;gap:14px;align-items:center;">
+                        <div style="text-align:center;">
+                          <p style="margin:0 0 4px;font:700 18px/1.2 'Inter',sans-serif;color:#070707;">Date of birth</p>
+                          <p style="margin:0;font:400 7px/1.4 'Inter',sans-serif;color:#525252;">You must be 18 or older to use Boop.</p>
+                        </div>
+                        <!-- Picker widget -->
+                        <div style="position:relative;width:100%;height:110px;overflow:hidden;">
+                          <!-- Selection band -->
+                          <div style="position:absolute;top:50%;left:3px;right:3px;height:22px;transform:translateY(-50%);background:rgba(255,255,255,0.55);border-radius:6px;z-index:1;pointer-events:none;"></div>
+                          <!-- Top/bottom fades -->
+                          <div style="position:absolute;inset:0 0 auto 0;height:36px;background:linear-gradient(#ecf0f6 25%,transparent);z-index:2;pointer-events:none;"></div>
+                          <div style="position:absolute;inset:auto 0 0 0;height:36px;background:linear-gradient(transparent,#ecf0f6 75%);z-index:2;pointer-events:none;"></div>
+                          <!-- Columns -->
+                          <div style="display:flex;height:100%;overflow:hidden;">
+                            <div style="flex:0 0 55%;overflow:hidden;"><div id="bdPMonth" style="transition:transform 1.3s cubic-bezier(.4,0,.2,1);"></div></div>
+                            <div style="flex:0 0 15%;overflow:hidden;text-align:center;"><div id="bdPDay" style="transition:transform 1.3s cubic-bezier(.4,0,.2,1);"></div></div>
+                            <div style="flex:0 0 30%;overflow:hidden;"><div id="bdPYear" style="transition:transform 1.3s cubic-bezier(.4,0,.2,1);"></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Confirm button — starts disabled -->
+                    <div style="background:rgba(255,255,255,0.4);padding:22px 12px;box-sizing:border-box;">
+                      <button id="bdConfirmBtn" style="
+                        display:flex;align-items:center;justify-content:center;
+                        width:100%;height:33px;border-radius:100px;
+                        background:#a3a3a3;color:#fff;
+                        font:700 10px 'Inter',sans-serif;
+                        border:none;cursor:default;
+                        transition:background .5s;
+                      ">Confirm</button>
+                    </div>
+                  </div>
+
+                  <!-- Screen 5: account created — animated ring + checkmark reveal -->
+                  <div class="bd-screen" style="background:#ecf0f6;display:flex;flex-direction:column;justify-content:space-between;padding-top:37px;">
+                    <!-- Title -->
+                    <div style="display:flex;flex-direction:column;gap:5px;align-items:center;text-align:center;padding:0 12px;">
+                      <p style="margin:0;font:700 18px/1.2 'Inter',sans-serif;color:#070707;">Account Created!</p>
+                      <p style="margin:0;font:400 7px/1.4 'Inter',sans-serif;color:#525252;">Welcome to Boop. Your account is ready to use.</p>
+                    </div>
+                    <!-- Illustration -->
+                    <div style="flex:1;display:flex;align-items:center;justify-content:center;position:relative;">
+                      <!-- Frosted glass circle — hidden until ring completes -->
+                      <div id="bdCircleBg" style="width:155px;height:155px;border-radius:50%;background:linear-gradient(-52deg,rgba(255,255,255,0.5) 14%,rgba(242,242,242,0.5) 49%,rgba(227,227,227,0.5) 85%);box-shadow:2px 2px 6px rgba(183,183,183,0.1);opacity:0;transition:opacity .35s ease;"></div>
+                      <!-- Clockwise ring — stroke-dashoffset animated to 0 by JS -->
+                      <svg style="position:absolute;width:155px;height:155px;" viewBox="0 0 155 155" overflow="visible">
+                        <circle id="bdRingPath"
+                          cx="77.5" cy="77.5" r="73"
+                          fill="none" stroke="#8892C6" stroke-width="3" stroke-linecap="round"
+                          stroke-dasharray="459" stroke-dashoffset="459"
+                          transform="rotate(-90 77.5 77.5)"
+                          style="transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1);"/>
+                      </svg>
+                      <!-- Checkmark — fades in after ring completes -->
+                      <svg id="bdCheckSvg" style="position:absolute;opacity:0;transition:opacity .4s ease;" width="78" height="60" viewBox="0 0 78 60">
+                        <path d="M4 36 L27 54 L74 6" stroke="#8892C6" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <!-- Done button -->
+                    <div style="padding:22px 12px 28px;box-sizing:border-box;">
+                      <button style="display:flex;align-items:center;justify-content:center;width:100%;height:33px;border-radius:100px;background:#070707;color:#fefefe;font:700 10px 'Inter',sans-serif;border:none;cursor:default;">Done</button>
+                    </div>
+                  </div>
+
+                  <!-- Screen 6: scanning / account creation — choose method -->
+                  <div class="bd-screen">
+                    <img src="images/boop-scanning.png" alt="">
+                    <!-- Micro-interaction overlays — positions derived from Figma node 2877:6626 (402×874px frame) -->
+                    <div id="bdScan1" style="position:absolute;left:5.1%;top:26.1%;width:90.3%;height:9.2%;border-radius:8px;background:transparent;transition:background .15s ease,transform .12s ease;transform-origin:center;pointer-events:none;"></div>
+                    <div id="bdScan2" style="position:absolute;left:5.1%;top:37.1%;width:90.3%;height:9.2%;border-radius:8px;background:transparent;transition:background .15s ease;pointer-events:none;"></div>
+                  </div>
+
+                  <!-- Screen 7: tap phone on scanner -->
+                  <div class="bd-screen">
+                    <img src="images/boop-scanning-2.png" alt="">
+                  </div>
+
+                  <!-- Screen 8: hover-hand prompt — "Hover your hand to begin" -->
+                  <div class="bd-screen">
+                    <img src="images/boop-hover-hand.png" alt="">
+                  </div>
+
+                  <!-- Screen 9: gently move hand up and down (Figma 3691:10113) -->
+                  <div class="bd-screen">
+                    <img src="images/boop-scan-move.png" alt="">
+                  </div>
+
+                  <!-- Screen 10: scanning step 5 (Figma 3691:10128) -->
+                  <div class="bd-screen">
+                    <img src="images/boop-scan-5.png" alt="">
+                  </div>
+
+                  <!-- Screen 11: "HANDS SUCCESSFULLY SCANNED" — animated radial progress (Figma 3735:10447) -->
+                  <div class="bd-screen" style="background:#ecf0f6;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding-top:20%;box-sizing:border-box;">
+                    <div style="text-align:center;padding:0 23px;width:100%;">
+                      <div style="font-family:Inter,sans-serif;font-weight:900;font-size:20px;line-height:1.15;color:#070707;text-transform:uppercase;">HANDS<br>SUCCESSFULLY<br>SCANNED</div>
+                      <div style="font-family:Inter,sans-serif;font-weight:500;font-size:11.5px;color:#475569;margin-top:5px;line-height:1.4;">Welcome to Boop. Your account is ready to use</div>
+                    </div>
+                    <div style="position:relative;width:158px;height:158px;flex-shrink:0;">
+                      <!-- blob background -->
+                      <div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at center,#ffffff 0%,rgba(255,255,255,0.85) 42%,rgba(236,240,246,0) 70%);"></div>
+                      <!-- ring: fills clockwise, then hidden -->
+                      <svg id="bdScanRing" viewBox="0 0 158 158" width="158" height="158" style="position:absolute;inset:0;">
+                        <circle cx="79" cy="79" r="70" fill="none" stroke="#070707" stroke-width="3.5" stroke-linecap="round"
+                          transform="rotate(-90 79 79)" stroke-dasharray="439.82" stroke-dashoffset="439.82"/>
+                      </svg>
+                      <!-- frosted glass circle: fades in after ring completes -->
+                      <div id="bdScanGlass" style="position:absolute;inset:0;border-radius:50%;opacity:0;background:linear-gradient(-52.67deg,rgba(255,255,255,0.5) 13.7%,rgba(242,242,242,0.5) 48.9%,rgba(227,227,227,0.5) 85.5%);box-shadow:2px 2px 6px 0px rgba(183,183,183,0.1);"></div>
+                      <!-- checkmark: fades in over glass -->
+                      <div id="bdScanCheckmark" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;">
+                        <svg width="69" height="49" viewBox="0 0 119.719 85.4414" fill="none" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+                          <g>
+                            <mask id="bdChkMask" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="116" height="84">
+                              <path d="M115.633 12.5982L42.7899 85.4414L4.25614 46.9077C1.90555 44.5571 1.90554 40.746 4.25614 38.3954C6.60674 36.0448 10.4178 36.0448 12.7684 38.3954L42.7899 68.4168L106.78 4.42638C109.225 1.98176 113.188 1.98176 115.633 4.42639C117.89 6.68296 117.89 10.3416 115.633 12.5982Z" fill="#0A0D12"/>
+                            </mask>
+                            <g mask="url(#bdChkMask)">
+                              <g filter="url(#bdChkBlur)">
+                                <rect width="175.522" height="77.4166" transform="matrix(-0.866025 0.5 0.5 0.866025 107.149 -34.4023)" fill="#0A0D12"/>
+                              </g>
+                            </g>
+                          </g>
+                          <defs>
+                            <filter id="bdChkBlur" x="-129.28" y="-118.825" width="359.56" height="323.651" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                              <feGaussianBlur stdDeviation="42" result="effect1_foregroundBlur"/>
+                            </filter>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                    <div style="padding-bottom:37px;display:flex;align-items:center;justify-content:center;">
+                      <svg width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.78126 9.0043C3.0528 9.0043 2.40342 8.83559 1.83312 8.49818C1.26282 8.16076 0.814719 7.71167 0.488831 7.15089C0.162944 6.59012 0 5.97232 0 5.29749C0 4.79849 0.0934529 4.32564 0.280359 3.87892C0.467265 3.4322 0.730852 3.03776 1.07112 2.69559C1.41138 2.34867 1.81155 2.07779 2.27163 1.88294C2.73171 1.6881 3.23492 1.59068 3.78126 1.59068C4.5145 1.59068 5.16628 1.75938 5.73658 2.0968C6.30689 2.43421 6.75498 2.88331 7.08087 3.44408C7.40676 4.00486 7.5697 4.62266 7.5697 5.29749C7.5697 5.79648 7.47625 6.26934 7.28934 6.71606C7.10244 7.16277 6.83885 7.55722 6.49858 7.89938C6.15832 8.24155 5.75815 8.51243 5.29807 8.71203C4.838 8.90688 4.33239 9.0043 3.78126 9.0043Z" fill="#070707"/>
+                        <path d="M14.6069 10.643C13.5699 10.643 12.6454 10.4008 11.8336 9.91639C11.0217 9.432 10.3838 8.78728 9.91987 7.98224C9.45594 7.17719 9.22398 6.29027 9.22398 5.32149C9.22398 4.60514 9.35702 3.9263 9.62309 3.285C9.88917 2.64369 10.2644 2.07743 10.7488 1.58621C11.2332 1.08818 11.8029 0.699298 12.4578 0.419579C13.1128 0.139859 13.8291 0 14.6069 0C15.6507 0 16.5786 0.242196 17.3904 0.726587C18.2023 1.21098 18.8402 1.8557 19.3041 2.66074C19.768 3.46579 20 4.35271 20 5.32149C20 6.03785 19.867 6.71668 19.6009 7.35798C19.3348 7.99929 18.9596 8.56555 18.4752 9.05677C17.9908 9.54798 17.4211 9.93686 16.7662 10.2234C16.1112 10.5031 15.3915 10.643 14.6069 10.643ZM14.6069 8.9442C15.2823 8.9442 15.8793 8.79752 16.3978 8.50415C16.9231 8.20397 17.3358 7.78439 17.636 7.24541C17.9362 6.69962 18.0863 6.05831 18.0863 5.32149C18.0863 4.57785 17.9362 3.93654 17.636 3.39757C17.3427 2.85177 16.9333 2.43219 16.408 2.13883C15.8827 1.84547 15.2823 1.69878 14.6069 1.69878C13.9315 1.69878 13.3311 1.84547 12.8058 2.13883C12.2872 2.43219 11.8779 2.85177 11.5777 3.39757C11.2844 3.93654 11.1377 4.57785 11.1377 5.32149C11.1377 6.05831 11.2844 6.69962 11.5777 7.24541C11.8779 7.78439 12.2907 8.20397 12.816 8.50415C13.3413 8.79752 13.9383 8.9442 14.6069 8.9442Z" fill="#070707"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                </div><!-- /#bdSlide -->
+
+                <!-- Sign-in with Boop account track -->
+                <div id="brSlide" style="position:absolute;top:0;left:0;display:none;flex-direction:row;width:100%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);">
+                  <!-- S0: Splash — cursor taps Boop account glass button -->
+                  <div class="bd-screen">
+                    <img src="images/boop-splash-nobtn.png" alt="">
+                    <div style="position:absolute;bottom:0;left:0;width:100%;box-sizing:border-box;
+                                background:rgba(255,255,255,0.97);padding:19px 12px 28px;">
+                      <div style="display:flex;flex-direction:column;gap:9px;width:100%;">
+                        <button style="display:flex;align-items:center;justify-content:center;
+                          width:100%;height:33px;border-radius:100px;
+                          background:#070707;color:#fefefe;
+                          font-family:'Inter',sans-serif;font-size:12px;font-weight:500;
+                          border:none;cursor:default;">Create a new account</button>
+                        <div style="display:flex;flex-direction:column;gap:9px;">
+                          <div style="display:flex;gap:6px;align-items:center;overflow:hidden;">
+                            <div style="background:#e6e6e6;height:1px;flex:1;flex-shrink:1;"></div>
+                            <span style="font-family:'Inter',sans-serif;font-size:7px;font-weight:400;color:#525252;white-space:nowrap;">or sign in with</span>
+                            <div style="background:#e6e6e6;height:1px;flex:1;flex-shrink:1;"></div>
+                          </div>
+                          <div style="display:flex;flex-direction:column;gap:5px;align-items:center;">
+                            <div id="brBoopBtn" class="bd-btn2" style="transition:background .12s,transform .1s;">
+                              <svg width="16" height="9" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block;"><path d="M3.78126 9.0043C3.0528 9.0043 2.40342 8.83559 1.83312 8.49818C1.26282 8.16076 0.814719 7.71167 0.488831 7.15089C0.162944 6.59012 0 5.97232 0 5.29749C0 4.79849 0.0934529 4.32564 0.280359 3.87892C0.467265 3.4322 0.730852 3.03776 1.07112 2.69559C1.41138 2.34867 1.81155 2.07779 2.27163 1.88294C2.73171 1.6881 3.23492 1.59068 3.78126 1.59068C4.5145 1.59068 5.16628 1.75938 5.73658 2.0968C6.30689 2.43421 6.75498 2.88331 7.08087 3.44408C7.40676 4.00486 7.5697 4.62266 7.5697 5.29749C7.5697 5.79648 7.47625 6.26934 7.28934 6.71606C7.10244 7.16277 6.83885 7.55722 6.49858 7.89938C6.15832 8.24155 5.75815 8.51243 5.29807 8.71203C4.838 8.90688 4.33239 9.0043 3.78126 9.0043Z" fill="#070707"/><path d="M14.6069 10.643C13.5699 10.643 12.6454 10.4008 11.8336 9.91639C11.0217 9.432 10.3838 8.78728 9.91987 7.98224C9.45594 7.17719 9.22398 6.29027 9.22398 5.32149C9.22398 4.60514 9.35702 3.9263 9.62309 3.285C9.88917 2.64369 10.2644 2.07743 10.7488 1.58621C11.2332 1.08818 11.8029 0.699298 12.4578 0.419579C13.1128 0.139859 13.8291 0 14.6069 0C15.6507 0 16.5786 0.242196 17.3904 0.726587C18.2023 1.21098 18.8402 1.8557 19.3041 2.66074C19.768 3.46579 20 4.35271 20 5.32149C20 6.03785 19.867 6.71668 19.6009 7.35798C19.3348 7.99929 18.9596 8.56555 18.4752 9.05677C17.9908 9.54798 17.4211 9.93686 16.7662 10.2234C16.1112 10.5031 15.3915 10.643 14.6069 10.643ZM14.6069 8.9442C15.2823 8.9442 15.8793 8.79752 16.3978 8.50415C16.9231 8.20397 17.3358 7.78439 17.636 7.24541C17.9362 6.69962 18.0863 6.05831 18.0863 5.32149C18.0863 4.57785 17.9362 3.93654 17.636 3.39757C17.3427 2.85177 16.9333 2.43219 16.408 2.13883C15.8827 1.84547 15.2823 1.69878 14.6069 1.69878C13.9315 1.69878 13.3311 1.84547 12.8058 2.13883C12.2872 2.43219 11.8779 2.85177 11.5777 3.39757C11.2844 3.93654 11.1377 4.57785 11.1377 5.32149C11.1377 6.05831 11.2844 6.69962 11.5777 7.24541C11.8779 7.78439 12.2907 8.20397 12.816 8.50415C13.3413 8.79752 13.9383 8.9442 14.6069 8.9442Z" fill="#070707"/></svg>
+                              Boop account
+                            </div>
+                            <div style="display:flex;gap:5px;align-items:center;justify-content:center;
+                                        height:20px;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;color:#717680;">
+                              <svg width="12" height="12" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block;"><circle cx="14" cy="14" r="12" stroke="#525252" stroke-width="2.5" fill="none"/><ellipse cx="14" cy="14" rx="6.5" ry="12" stroke="#525252" stroke-width="2" fill="none"/><line x1="2" y1="14" x2="26" y2="14" stroke="#525252" stroke-width="2"/><path d="M3 9.5 Q14 11.5 25 9.5" stroke="#525252" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M3 18.5 Q14 20.5 25 18.5" stroke="#525252" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                              World account
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- S1: Account access — HTML, radios start deselected -->
+                  <div class="bd-screen" style="background:#ecf0f6;display:flex;flex-direction:column;">
+                    <!-- Header -->
+                    <div style="text-align:center;padding:30px 12px 5px;">
+                      <span style="font:400 6px/1 'Inter',sans-serif;color:#717680;letter-spacing:0.3px;">Recovery account</span>
+                    </div>
+                    <!-- Progress bar -->
+                    <div style="display:flex;gap:3px;padding:0 12px 8px;">
+                      <div id="brStp1" style="flex:1;height:2px;background:#d9d9d9;border-radius:1px;transition:background .4s;"></div>
+                      <div id="brStp2" style="flex:1;height:2px;background:#d9d9d9;border-radius:1px;transition:background .4s;"></div>
+                    </div>
+                    <!-- Back -->
+                    <div style="padding:0 12px 8px;display:flex;align-items:center;gap:4px;">
+                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 1L1 5L5 9" stroke="#070707" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      <span style="font:600 8px/1 'Inter',sans-serif;color:#070707;">Back</span>
+                    </div>
+                    <!-- Divider -->
+                    <div style="height:1px;background:#d9d9d9;margin:0 12px 14px;"></div>
+                    <!-- Content -->
+                    <div style="padding:0 12px;display:flex;flex-direction:column;gap:11px;">
+                      <div style="display:flex;flex-direction:column;gap:4px;">
+                        <p style="margin:0;font:700 17px/1.2 'Inter',sans-serif;color:#070707;">Account access</p>
+                        <p style="margin:0;font:400 7px/1.4 'Inter',sans-serif;color:#525252;">Do you have access to your Boop account?</p>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:5px;">
+                        <div id="brCard1" style="display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:12px 10px;box-sizing:border-box;transition:background .15s ease,transform .12s ease;">
+                          <span style="font:500 7px/1.35 'Inter',sans-serif;color:#070707;flex:1;">I have access to my Boop account</span>
+                          <svg width="5" height="9" viewBox="0 0 5 9" fill="none"><path d="M1 1L4 4.5L1 8" stroke="#a0a0a0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div id="brCard2" style="display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:12px 10px;box-sizing:border-box;transition:background .15s ease,transform .12s ease;">
+                          <span style="font:400 7px/1.35 'Inter',sans-serif;color:#070707;flex:1;">I do not have access to my Boop account</span>
+                          <svg width="5" height="9" viewBox="0 0 5 9" fill="none"><path d="M1 1L4 4.5L1 8" stroke="#a0a0a0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- S2: On your old device -->
+                  <div class="bd-screen"><img src="images/boop-signin-s1.png" alt="On your old device"></div>
+                  <!-- S3: Scan QR from old device -->
+                  <div class="bd-screen"><img src="images/boop-signin-s2.png" alt="Scan from your old device"></div>
+                </div><!-- /#brSlide -->
+
+                <!-- Adding card track -->
+                <div id="bcSlide" style="position:absolute;top:0;left:0;display:none;flex-direction:row;width:100%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);">
+                  <!-- Screen 0: Cards — empty state (Figma 3625:18006) -->
+                  <div class="bd-screen">
+                    <img src="images/bc-card-01.png" alt="Cards — empty state">
+                    <button id="bcAddBtn">Add new card</button>
+                  </div>
+                  <!-- Screen 1: Scan Card — camera viewfinder (Figma 2877:7258) -->
+                  <div class="bd-screen" style="background:#ecf0f6;display:flex;flex-direction:column;">
+                    <!-- Camera viewfinder — black, ~62% of screen height -->
+                    <div style="background:#000;flex:0 0 62%;display:flex;flex-direction:column;align-items:center;padding-top:14%;gap:6%;box-sizing:border-box;">
+                      <span style="font:400 7px/1.4 'Inter',sans-serif;color:rgba(255,255,255,0.8);text-align:center;flex-shrink:0;">Align card within the frame</span>
+                      <!-- Credit card aspect ratio frame with corner brackets -->
+                      <div style="position:relative;width:82%;aspect-ratio:1.586;flex-shrink:0;">
+                        <div style="position:absolute;top:0;left:0;width:15%;height:2px;background:#fff;border-radius:1px;"></div>
+                        <div style="position:absolute;top:0;left:0;width:2px;height:15%;background:#fff;border-radius:1px;"></div>
+                        <div style="position:absolute;top:0;right:0;width:15%;height:2px;background:#fff;border-radius:1px;"></div>
+                        <div style="position:absolute;top:0;right:0;width:2px;height:15%;background:#fff;border-radius:1px;"></div>
+                        <div style="position:absolute;bottom:0;left:0;width:15%;height:2px;background:#fff;border-radius:1px;"></div>
+                        <div style="position:absolute;bottom:0;left:0;width:2px;height:15%;background:#fff;border-radius:1px;"></div>
+                        <div style="position:absolute;bottom:0;right:0;width:15%;height:2px;background:#fff;border-radius:1px;"></div>
+                        <div style="position:absolute;bottom:0;right:0;width:2px;height:15%;background:#fff;border-radius:1px;"></div>
+                      </div>
+                    </div>
+                    <!-- Bottom content -->
+                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:18px 12px 22px;text-align:center;box-sizing:border-box;">
+                      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+                        <p style="margin:0;font:700 14px/1.3 'Inter',sans-serif;color:#070707;">Scan Card</p>
+                        <p style="margin:0;font:400 7.5px/1.5 'Inter',sans-serif;color:#525252;">Position your card within the frame.<br>Make sure the number and name<br>are clearly visible.</p>
+                      </div>
+                      <button style="display:flex;align-items:center;justify-content:center;width:100%;height:31px;border-radius:100px;background:transparent;border:1px solid #475569;color:#475569;font:500 8px/1 'Inter',sans-serif;cursor:default;">Enter card details manually</button>
+                    </div>
+                  </div>
+                </div><!-- /#bcSlide -->
+
+                <!-- Fixed Continue button — lives outside the slide track, never moves -->
+                <button id="bdContBtn" style="
+                  position:absolute;bottom:28px;left:12px;right:12px;
+                  height:33px;border-radius:100px;
+                  background:#070707;color:#fefefe;
+                  font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
+                  border:none;cursor:default;z-index:5;
+                  opacity:0;transition:background .15s,transform .12s,opacity .3s ease;
+                ">Continue</button>
+
+                <!-- Tap cursor -->
+                <div id="bdCursor" style="position:absolute;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,0.32);pointer-events:none;z-index:8;opacity:0;top:74%;left:50%;transform:translate(-50%,-50%);box-shadow:0 2px 10px rgba(0,0,0,.25);"></div>
+
+                <!-- Ripple -->
+                <div id="bdRipple" style="position:absolute;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(0,0,0,0.18);pointer-events:none;z-index:7;opacity:0;top:74%;left:50%;transform:translate(-50%,-50%);"></div>
+
+              </div>
+
+              <!-- iPhone frame — absolute overlay, clips the screen viewport corners -->
+              <img src="images/iphone-mockup.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;">
+            </div>
+
+          <script>
+            (function () {
+              const port    = document.getElementById('bdPort');
+              const slide   = document.getElementById('bdSlide');
+              const btn     = document.getElementById('bdBtn');
+              const contBtn = document.getElementById('bdContBtn');
+              const cursor  = document.getElementById('bdCursor');
+              const ripple  = document.getElementById('bdRipple');
+
+              let _gen = 0;
+
+              function goTo(n) { slide.style.transform = `translateX(-${n * port.offsetWidth}px)`; }
+              function setCursorY(pct) { cursor.style.top  = pct; ripple.style.top  = pct; }
+              function setCursorX(pct) { cursor.style.left = pct; ripple.style.left = pct; }
+
+              function animateTap(yPct, onPress, cb) {
+                setCursorY(yPct);
+                cursor.style.animation = 'none'; cursor.offsetHeight;
+                cursor.style.animation = 'bd-cursor-in .22s forwards';
+                setTimeout(() => { onPress(true);  cursor.style.animation = 'none'; cursor.style.opacity = '1'; cursor.style.transform = 'translate(-50%,-50%) scale(.65)'; }, 380);
+                setTimeout(() => { onPress(false); cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ripple.style.animation = 'none'; ripple.offsetHeight; ripple.style.opacity = '1'; ripple.style.animation = 'bd-ripple .55s forwards'; }, 560);
+                setTimeout(() => { cursor.style.animation = 'bd-cursor-out .2s forwards'; }, 660);
+                setTimeout(cb, 820);
+              }
+              function pressBtn(el, pressed) { el.style.background = pressed ? '#2d2d2d' : '#070707'; el.style.transform = pressed ? 'scale(.97)' : ''; }
+
+              /* ── Date picker initialisation ── */
+              (function() {
+                const RH = 22;
+                const P = ['','',''];
+                function mkCol(el, items, selIdx, initIdx) {
+                  el.innerHTML = [...P, ...items, ...P].map((t, i) =>
+                    `<div style="height:${RH}px;display:flex;align-items:center;font-family:'Inter',sans-serif;font-size:${i===selIdx?14:10}px;font-weight:${i===selIdx?700:400};color:${i===selIdx?'#0d0d0d':'#8a8a8a'};white-space:nowrap;padding-left:2px;">${t}</div>`
+                  ).join('');
+                  el.style.transform = `translateY(${44 - initIdx * RH}px)`;
+                }
+                const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                const days   = Array.from({length:31}, (_,i) => String(i+1));
+                const years  = Array.from({length:21}, (_,i) => String(1990+i));
+                mkCol(document.getElementById('bdPMonth'), months, 13, 3);
+                mkCol(document.getElementById('bdPDay'),   days,   14, 3);
+                mkCol(document.getElementById('bdPYear'),  years,   8, 13);
+              })();
+
+              function resetState() {
+                const RH = 22;
+                slide.style.transition = 'none'; goTo(0);
+                ['bdPMonth','bdPDay','bdPYear'].forEach(id => document.getElementById(id).style.transition = 'none');
+                document.getElementById('bdPMonth').style.transform = `translateY(${44-3*RH}px)`;
+                document.getElementById('bdPDay').style.transform   = `translateY(${44-3*RH}px)`;
+                document.getElementById('bdPYear').style.transform  = `translateY(${44-13*RH}px)`;
+                const cbEl = document.getElementById('bdCheckbox');
+                cbEl.style.background = '#fff'; cbEl.style.borderColor = '#d9d9d9'; cbEl.innerHTML = '';
+                document.getElementById('bdAcceptBtn').style.background = '#a3a3a3';
+                const conf2 = document.getElementById('bdConfirmBtn');
+                conf2.style.background = '#a3a3a3'; conf2.style.transform = '';
+                const ring = document.getElementById('bdRingPath');
+                ring.style.transition = 'none'; ring.style.opacity = '1'; ring.style.strokeDashoffset = '459';
+                document.getElementById('bdCircleBg').style.opacity = '0';
+                document.getElementById('bdCheckSvg').style.opacity  = '0';
+                cursor.style.animation = 'none'; cursor.style.opacity = '0';
+                cursor.style.transform = 'translate(-50%,-50%) scale(1)'; cursor.style.transition = '';
+                contBtn.style.opacity = '0';
+              }
+
+              function reenableTransitions() {
+                slide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
+                ['bdPMonth','bdPDay','bdPYear'].forEach(id => document.getElementById(id).style.transition = '');
+                document.getElementById('bdRingPath').style.transition = 'stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)';
+              }
+
+              function run(delay, startAt) {
+                const g = _gen;
+                const ok = () => _gen === g;
+
+                /* ── Account ring animation then restart ── */
+                const playAccount = () => {
+                  setTimeout(() => {
+                    if (!ok()) return;
+                    document.getElementById('bdRingPath').style.strokeDashoffset = '0';
+                    setTimeout(() => {
+                      if (!ok()) return;
+                      const ring = document.getElementById('bdRingPath');
+                      ring.style.transition = 'none'; ring.style.opacity = '0';
+                      document.getElementById('bdCircleBg').style.opacity = '1';
+                      document.getElementById('bdCheckSvg').style.opacity  = '1';
+                      setTimeout(() => {
+                        if (!ok()) return;
+                        resetState();
+                        requestAnimationFrame(() => requestAnimationFrame(() => {
+                          reenableTransitions();
+                          setTimeout(run, 600);
+                        }));
+                      }, 2500);
+                    }, 1250);
+                  }, 500);
+                };
+
+                /* ── DOB picker → confirm → Account ── */
+                const runFromDOB = () => {
+                  const RH = 22;
+                  const pM   = document.getElementById('bdPMonth');
+                  const pD   = document.getElementById('bdPDay');
+                  const pY   = document.getElementById('bdPYear');
+                  const conf = document.getElementById('bdConfirmBtn');
+                  cursor.style.animation = 'none'; cursor.style.opacity = '0';
+                  cursor.style.transform = 'translate(-50%,-50%) scale(1)'; cursor.style.transition = 'opacity .2s';
+                  const showAt = x => { setCursorX(x); setCursorY('32%'); cursor.style.opacity = '1'; };
+                  const hide   = () => { cursor.style.opacity = '0'; };
+                  setTimeout(() => {
+                    if (!ok()) return;
+                    showAt('27%');
+                    setTimeout(() => { if (ok()) pM.style.transform = `translateY(${44-13*RH}px)`; }, 200);
+                    setTimeout(() => {
+                      if (!ok()) return;
+                      hide();
+                      setTimeout(() => {
+                        if (!ok()) return;
+                        showAt('62%');
+                        setTimeout(() => { if (ok()) pD.style.transform = `translateY(${44-14*RH}px)`; }, 200);
+                        setTimeout(() => {
+                          if (!ok()) return;
+                          hide();
+                          setTimeout(() => {
+                            if (!ok()) return;
+                            showAt('85%');
+                            setTimeout(() => { if (ok()) pY.style.transform = `translateY(${44-8*RH}px)`; }, 200);
+                            setTimeout(() => {
+                              if (!ok()) return;
+                              hide(); conf.style.background = '#070707';
+                              setTimeout(() => {
+                                if (!ok()) return;
+                                setCursorX('50%');
+                                animateTap('88%',
+                                  p => { conf.style.background = p ? '#2d2d2d' : '#070707'; conf.style.transform = p ? 'scale(.97)' : ''; },
+                                  () => setTimeout(() => {
+                                    if (!ok()) return;
+                                    goTo(5);
+                                    playAccount();
+                                  }, 400)
+                                );
+                              }, 900);
+                            }, 1600);
+                          }, 150);
+                        }, 1600);
+                      }, 150);
+                    }, 1600);
+                  }, 600);
+                };
+
+                /* ── Terms: checkbox → accept → DOB ── */
+                const runFromTerms = () => {
+                  setTimeout(() => {
+                    if (!ok()) return;
+                    setCursorX('10%');
+                    animateTap('81%', () => {}, () => {
+                      if (!ok()) return;
+                      const cbEl = document.getElementById('bdCheckbox');
+                      const abt  = document.getElementById('bdAcceptBtn');
+                      cbEl.style.background = '#070707'; cbEl.style.borderColor = '#070707';
+                      cbEl.innerHTML = '<svg width="100%" height="100%" viewBox="0 0 8 8"><path d="M1.5 4.5L3.5 6.5L6.5 2" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>';
+                      abt.style.background = '#070707';
+                      setTimeout(() => {
+                        if (!ok()) return;
+                        setCursorX('50%');
+                        animateTap('89%', pressed => pressBtn(abt, pressed), () => {
+                          if (!ok()) return;
+                          setTimeout(() => {
+                            if (!ok()) return;
+                            setCursorX('50%'); goTo(4);
+                            runFromDOB();
+                          }, 600);
+                        });
+                      }, 900);
+                    });
+                  }, 1200);
+                };
+
+                /* ── Onboarding-2: Continue → Terms(3) ── */
+                const runFromOnboarding2 = () => {
+                  setTimeout(() => { if (ok()) contBtn.style.opacity = '1'; }, 250);
+                  setTimeout(() => {
+                    if (!ok()) return;
+                    animateTap('88%', pressed => pressBtn(contBtn, pressed), () => {
+                      if (!ok()) return;
+                      contBtn.style.opacity = '0'; goTo(3);
+                      runFromTerms();
+                    });
+                  }, 1800);
+                };
+
+                /* ── Onboarding-1: Continue → Onboarding-2(2) ── */
+                const runFromOnboarding1 = () => {
+                  setTimeout(() => { if (ok()) contBtn.style.opacity = '1'; }, 250);
+                  setTimeout(() => {
+                    if (!ok()) return;
+                    animateTap('88%', pressed => pressBtn(contBtn, pressed), () => {
+                      if (!ok()) return;
+                      contBtn.style.opacity = '0'; goTo(2);
+                      runFromOnboarding2();
+                    });
+                  }, 1800);
+                };
+
+                /* ── 03 Scanning: 1→2→3→4→1 loop ── */
+                const fromScan = () => {
+                  setCursorX('50%');
+                  const scan1 = document.getElementById('bdScan1');
+                  setTimeout(() => {
+                    if (!ok()) return;
+                    animateTap('30%',
+                      pressed => {
+                        if (scan1) {
+                          scan1.style.background = pressed ? 'rgba(7,7,7,0.08)' : 'transparent';
+                          scan1.style.transform   = pressed ? 'scale(0.98)' : '';
+                        }
+                      },
+                      () => {
+                        if (!ok()) return;
+                        if (scan1) { scan1.style.background = 'transparent'; scan1.style.transform = ''; }
+                        goTo(7);
+                        setTimeout(() => {
+                          if (!ok()) return;
+                          goTo(8);
+                          setTimeout(() => {
+                            if (!ok()) return;
+                            goTo(9);
+                            setTimeout(() => {
+                              if (!ok()) return;
+                              goTo(10);
+                              setTimeout(() => {
+                                if (!ok()) return;
+                                goTo(11);
+                                (function(){
+                                  var ring  = document.querySelector('#bdScanRing circle');
+                                  var glass = document.getElementById('bdScanGlass');
+                                  var chk   = document.getElementById('bdScanCheckmark');
+                                  if (ring)  { ring.style.transition  = 'none'; ring.style.strokeDashoffset = '439.82'; ring.style.opacity = '1'; }
+                                  if (glass) { glass.style.transition = 'none'; glass.style.opacity = '0'; }
+                                  if (chk)   { chk.style.transition   = 'none'; chk.style.opacity   = '0'; }
+                                  requestAnimationFrame(function(){
+                                    requestAnimationFrame(function(){
+                                      if (ring) { ring.style.transition = 'stroke-dashoffset 2.0s cubic-bezier(0.4,0,0.2,1)'; ring.style.strokeDashoffset = '0'; }
+                                    });
+                                  });
+                                })();
+                                setTimeout(() => {
+                                  if (!ok()) return;
+                                  var ring  = document.querySelector('#bdScanRing circle');
+                                  var glass = document.getElementById('bdScanGlass');
+                                  var chk   = document.getElementById('bdScanCheckmark');
+                                  if (ring)  { ring.style.transition = 'none'; ring.style.opacity = '0'; }
+                                  if (glass) { glass.style.transition = 'opacity .35s ease'; glass.style.opacity = '1'; }
+                                  if (chk)   { chk.style.transition  = 'opacity .4s ease .15s'; chk.style.opacity  = '1'; }
+                                  setTimeout(() => {
+                                    if (!ok()) return;
+                                    goTo(6);
+                                    fromScan();
+                                  }, 1200);
+                                }, 2100);
+                              }, 2000);
+                            }, 2500);
+                          }, 2000);
+                        }, 2000);
+                      }
+                    );
+                  }, 1000);
+                };
+
+                /* ── Route to start point ── */
+                if (startAt === 1) {
+                  setTimeout(() => { if (ok()) runFromOnboarding1(); }, delay !== undefined ? delay : 600);
+                  return;
+                }
+                if (startAt === 2) {
+                  setTimeout(() => { if (ok()) runFromOnboarding2(); }, delay !== undefined ? delay : 600);
+                  return;
+                }
+                if (startAt === 3) {
+                  setTimeout(() => { if (ok()) runFromTerms(); }, delay !== undefined ? delay : 600);
+                  return;
+                }
+                if (startAt === 4) {
+                  setTimeout(() => { if (ok()) runFromDOB(); }, delay !== undefined ? delay : 600);
+                  return;
+                }
+                if (startAt === 5) {
+                  setTimeout(() => { if (ok()) playAccount(); }, delay !== undefined ? delay : 600);
+                  return;
+                }
+                if (startAt >= 6) {
+                  setTimeout(() => { if (ok()) fromScan(); }, delay !== undefined ? delay : 800);
+                  return;
+                }
+
+                /* ── Main splash flow: tap Create → onboarding-1(1) → 2(2) → Terms(3) → DOB(4) → Account(5) ── */
+                setTimeout(() => {
+                  if (!ok()) return;
+                  animateTap('74%',
+                    pressed => btn.classList.toggle('pressed', pressed),
+                    () => {
+                      if (!ok()) return;
+                      goTo(1);
+                      runFromOnboarding1();
+                    }
+                  );
+                }, delay !== undefined ? delay : 2000);
+              }
+
+              window.bdCancelReg = function() { ++_gen; };
+
+              window.bdRegRestart = function() {
+                ++_gen;
+                resetState();
+                requestAnimationFrame(() => requestAnimationFrame(() => {
+                  reenableTransitions();
+                  setTimeout(() => run(500), 600);
+                }));
+              };
+
+              window.bdRunFrom = function(screen) {
+                ++_gen;
+                resetState();
+                goTo(screen);
+                requestAnimationFrame(() => requestAnimationFrame(() => {
+                  reenableTransitions();
+                  run(600, screen);
+                }));
+              };
+
+              run();
+            })();
+          </script>
+
+            <!-- ── Flow nav ── -->
+            <div class="bd-flow-nav">
+              <div class="bd-flow-nav__item is-active"><span>01</span><span>Splash</span></div>
+              <div id="bdBoopNavItem" class="bd-flow-nav__item"><span>02</span><span>Sign in with Boop account</span></div>
+              <div class="bd-flow-nav__item"><span>03</span><span>Scanning</span></div>
+              <div id="bcCardNavItem" class="bd-flow-nav__item"><span>04</span><span>Adding card</span></div>
+              <div class="bd-flow-nav__item"><span>05</span><span>Terms</span></div>
+              <div class="bd-flow-nav__item"><span>06</span><span>Date of birth</span></div>
+              <div class="bd-flow-nav__item"><span>07</span><span>Account</span></div>
+            </div>
+
+          </div><!-- /.bd-demo-wrap -->
+
+          <script>
+          /* ── Signin flow — runs AFTER nav HTML is in the DOM ── */
+          (function(){
+            var port        = document.getElementById('bdPort');
+            var bdSlide     = document.getElementById('bdSlide');
+            var brSlide     = document.getElementById('brSlide');
+            var bdCont      = document.getElementById('bdContBtn');
+            var cursor      = document.getElementById('bdCursor');
+            var ripple      = document.getElementById('bdRipple');
+            var bcSlide      = document.getElementById('bcSlide');
+            var boopNavItem  = document.getElementById('bdBoopNavItem');
+            var cardNavItem  = document.getElementById('bcCardNavItem');
+            var allNavItems  = document.querySelectorAll('#bdRegDemoWrap .bd-flow-nav__item');
+            var regItems     = Array.from(allNavItems).filter(function(el){ return el !== boopNavItem && el !== cardNavItem; });
+            var brBoopBtn    = document.getElementById('brBoopBtn');
+            var bcAddBtn     = document.getElementById('bcAddBtn');
+
+            var _brGen = 0;
+            var _bcGen = 0;
+
+            function goTo(n){ brSlide.style.transform = 'translateX(-'+(n * port.offsetWidth)+'px)'; }
+            function bcGoTo(n){ bcSlide.style.transform = 'translateX(-'+(n * port.offsetWidth)+'px)'; }
+            function setCursorX(x){ cursor.style.left = x; ripple.style.left = x; }
+            function setCursorY(y){ cursor.style.top  = y; ripple.style.top  = y; }
+
+            function animateTap(yPct, onPress, doneCallback){
+              setCursorY(yPct);
+              cursor.style.opacity = '1';
+              setTimeout(function(){
+                if(onPress) onPress(true);
+                cursor.style.transform = 'translate(-50%,-50%) scale(.85)';
+                ripple.style.animation = 'none'; ripple.offsetHeight;
+                ripple.style.opacity   = '1';
+                ripple.style.animation = 'bd-ripple .55s forwards';
+                setTimeout(function(){
+                  if(onPress) onPress(false);
+                  cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+                  setTimeout(function(){
+                    cursor.style.opacity = '0';
+                    if(doneCallback) doneCallback();
+                  }, 200);
+                }, 350);
+              }, 400);
+            }
+
+            function resetSlide(){
+              brSlide.style.transition = 'none';
+              brSlide.style.transform  = 'translateX(0)';
+              brBoopBtn.style.background = ''; brBoopBtn.style.transform = '';
+              var c1 = document.getElementById('brCard1');
+              if(c1){ c1.style.background = '#fff'; c1.style.transform = ''; }
+              var s1 = document.getElementById('brStp1');
+              var s2 = document.getElementById('brStp2');
+              if(s1) s1.style.background = '#d9d9d9';
+              if(s2) s2.style.background = '#d9d9d9';
+              requestAnimationFrame(function(){ requestAnimationFrame(function(){
+                brSlide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
+              }); });
+            }
+
+            function runRecovery(){
+              var g = _brGen;
+              var ok = function(){ return _brGen === g; };
+
+              setCursorX('50%');
+              /* S0: cursor taps Boop account glass button (~86%) */
+              setTimeout(function(){
+                if(!ok()) return;
+                animateTap('86%',
+                  function(pressed){ brBoopBtn.style.background = pressed ? 'rgba(255,255,255,0.2)' : ''; brBoopBtn.style.transform = pressed ? 'scale(.97)' : ''; },
+                  function(){
+                    if(!ok()) return;
+                    goTo(1);
+                    var stp1 = document.getElementById('brStp1');
+                    if(stp1) setTimeout(function(){ if(ok()) stp1.style.background='#070707'; }, 300);
+                    /* S1: tap card 1 directly (~32%) — card selector, no CTA needed */
+                    setTimeout(function(){
+                      if(!ok()) return;
+                      var c1 = document.getElementById('brCard1');
+                      animateTap('32%',
+                        function(pressed){ if(c1){ c1.style.background = pressed ? 'rgba(0,0,0,0.04)' : '#fff'; c1.style.transform = pressed ? 'scale(0.98)' : ''; } },
+                        function(){
+                          if(!ok()) return;
+                          setTimeout(function(){
+                            if(!ok()) return;
+                            goTo(2);
+                            var stp2 = document.getElementById('brStp2');
+                            if(stp2) setTimeout(function(){ if(ok()) stp2.style.background='#070707'; }, 300);
+                            /* S2: tap Show QR Code (~91%) */
+                            setTimeout(function(){
+                              if(!ok()) return;
+                              animateTap('91%', null, function(){
+                                if(!ok()) return;
+                                setTimeout(function(){
+                                  if(!ok()) return;
+                                  goTo(3);
+                                  /* loop: pause then snap back and restart */
+                                  setTimeout(function(){
+                                    if(!ok()) return;
+                                    resetSlide();
+                                    setTimeout(runRecovery, 600);
+                                  }, 2500);
+                                }, 200);
+                              });
+                            }, 1400);
+                          }, 200);
+                        }
+                      );
+                    }, 1400);
+                  }
+                );
+              }, 500);
+            }
+
+            function runCard(){
+              var g = _bcGen;
+              var ok = function(){ return _bcGen === g; };
+              bcSlide.style.transition = 'none'; bcGoTo(0);
+              requestAnimationFrame(function(){ requestAnimationFrame(function(){
+                bcSlide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
+                setCursorX('50%');
+                setTimeout(function(){
+                  if(!ok()) return;
+                  animateTap('75%', function(pressed){ if(bcAddBtn){ bcAddBtn.classList.toggle('pressed', pressed); } }, function(){
+                    if(!ok()) return;
+                    bcGoTo(1);
+                    setTimeout(function(){
+                      if(!ok()) return;
+                      bcSlide.style.transition = 'none'; bcGoTo(0);
+                      requestAnimationFrame(function(){ requestAnimationFrame(function(){
+                        bcSlide.style.transition = 'transform .45s cubic-bezier(.4,0,.2,1)';
+                        setTimeout(runCard, 500);
+                      }); });
+                    }, 3000);
+                  });
+                }, 1800);
+              }); });
+            }
+
+            function showRecovery(){
+              window.bdCancelReg && window.bdCancelReg();
+              ++_brGen;
+              ++_bcGen;
+              bcSlide.style.display = 'none';
+              bdSlide.style.display = 'none';
+              bdCont.style.opacity  = '0';
+              cursor.style.opacity  = '0';
+              resetSlide();
+              brSlide.style.display = 'flex';
+              allNavItems.forEach(function(el){ el.classList.remove('is-active'); });
+              boopNavItem.classList.add('is-active');
+              setTimeout(runRecovery, 500);
+            }
+
+            function showRegistration(idx){
+              ++_brGen;
+              ++_bcGen;
+              brSlide.style.display = 'none';
+              bcSlide.style.display = 'none';
+              bdSlide.style.display = 'flex';
+              allNavItems.forEach(function(el){ el.classList.remove('is-active'); });
+              regItems[idx || 0].classList.add('is-active');
+              if (idx === 0) {
+                window.bdRegRestart();
+              } else {
+                /* regItems: [0:Splash, 1:03Scan, 2:05Terms, 3:06DOB, 4:07Account] */
+                var screenMap = [0, 6, 3, 4, 5];
+                window.bdRunFrom(screenMap[idx]);
+              }
+            }
+
+            function showCardDemo() {
+              ++_brGen;
+              ++_bcGen;
+              window.bdCancelReg && window.bdCancelReg();
+              brSlide.style.display = 'none';
+              bdSlide.style.display = 'none';
+              bcSlide.style.display = 'flex';
+              bdCont.style.opacity  = '0';
+              cursor.style.opacity = '0';
+              allNavItems.forEach(function(el){ el.classList.remove('is-active'); });
+              cardNavItem.classList.add('is-active');
+              ++_bcGen;
+              setTimeout(runCard, 400);
+            }
+
+            boopNavItem.addEventListener('click', showRecovery);
+            cardNavItem.addEventListener('click', showCardDemo);
+            regItems.forEach(function(el, i){
+              el.addEventListener('click', function(){ showRegistration(i); });
+            });
+          })();
+          </script>
     <div class="proposals" style="margin-top:2rem;">
       <div class="proposal">
         <div class="proposal__num">01</div>
@@ -1638,6 +1655,24 @@
         <span class="img-ph__note">Export from Boop_2.0 Figma</span>
       </div>
     </figure>
+
+    <div class="tradeoff-list" style="margin-top:2.5rem;">
+      <div class="tradeoff">
+        <div class="tradeoff__title">Native app, not mini-app</div>
+        <div class="tradeoff__row">
+          <span class="tradeoff__row-label">Discovery</span>
+          <span class="tradeoff__row-text">Stakeholders asked for Boop to ship as a World mini-app — faster to spin up, no separate app-store listing.</span>
+        </div>
+        <div class="tradeoff__row">
+          <span class="tradeoff__row-label">My call</span>
+          <span class="tradeoff__row-text">Pushed back: a mini-app makes registration depend on the World app already being installed and open — an extra install/launch step that works against the whole "a stranger can register unassisted" goal. Argued for native instead.</span>
+        </div>
+        <div class="tradeoff__row">
+          <span class="tradeoff__row-label">Outcome</span>
+          <span class="tradeoff__row-text">Native app shipped. Confirmed and documented in the V2 Requirements doc — not a mini-app, explicitly.</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Dig deeper: full four proposals -->
@@ -1719,17 +1754,17 @@
     <button class="dd__btn" aria-expanded="false" onclick="toggleDD('dd-v2')">
       <span class="dd__btn-label">
         <span class="dd__btn-tag">Dig deeper</span>
-        V2 full flow — welcome → World ID → hand registration → wallet → card adding
+        V2 full flow — welcome → World ID → hand registration → card linking → card adding
       </span>
       <span class="dd__icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
     </button>
     <div class="dd__panel">
       <div class="dd__label">Secondary layer · Alpha — not live-tested</div>
-      <p class="dd__body">The complete V2 registration flow: welcome screen, World ID link or create new, generic hand registration (non-handed illustration that mirrors whichever hand the user picks), multi-card wallet setup (max 2 active), card adding via scan or manual entry, and device/scanner locator map.</p>
+      <p class="dd__body">The complete V2 registration flow: welcome screen, World ID link or create new, generic hand registration (non-handed illustration that mirrors whichever hand the user picks), linked-card setup (max 2 active cards, no stored balance — payment routes straight to the linked card), card adding via scan or manual entry, and device/scanner locator map.</p>
       <figure class="img-ph img-ph--hifi img-ph--wide" aria-label="V2 full flow placeholder">
         <div class="img-ph__inner">
           <span class="img-ph__type">hi-fi</span>
-          <span class="img-ph__desc">V2 full flow — welcome → World ID link/create → hand registration → wallet → card adding</span>
+          <span class="img-ph__desc">V2 full flow — welcome → World ID link/create → hand registration → card linking → card adding</span>
           <span class="img-ph__note">Export from Boop_2.0 Figma · Alpha</span>
         </div>
       </figure>
